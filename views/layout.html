@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include modules/meta.html%>
+    <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.gradient.min.css">
+    <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.min.css">
+    <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.gradient.min.css">
+    <link rel="stylesheet" href="/script/vendors/mediaelement/mediaelementplayer.min.css">
+    <link rel="stylesheet" href="/styles/app.css?t=1">
+    <!--[if gte IE 9]><!-->
+    <script src="/script/jquery-2.2.0.min.js"></script>
+    <script src="/script/vendors/uikit/js/uikit.min.js" charset="utf-8"></script>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="/script/jquery-1.12.1.min.js" charset="utf-8"></script>
+    <script src="/script/html5shiv.min.js" charset="utf-8"></script>
+    <script src="/script/es5-shim.min.js" charset="utf-8"></script>
+    <script src="/script/es5-sham.min.js" charset="utf-8"></script>
+    <script src="/script/console-polyfill.js" charset="utf-8"></script>
+    <script src="/script/vendors/uikit/js/uikit-ie8.min.js" charset="utf-8"></script>
+    <![endif]-->
+    <script src="/script/react.js" charset="utf-8"></script>
+    <script src="/script/react-dom.js" charset="utf-8"></script>
+    <script src="/script/adaptation.min.js" charset="utf-8"></script>
+    <script src="/script/vendors/slider.js" charset="utf-8"></script>
+    <script src="/script/vendors/jquery.tinyscrollbar.js" charset="utf-8"></script>
+  	<script src="/script/vendors/mediaelement/mediaelement-and-player.js"></script>
+    <script src="//api.video.taobao.com//video/getPlayerJS"></script>
+  </head>
+  <body>
+    <div class='adaptation-1200 root-view' id='adaptation'>
+      <% include modules/header.html %>
+      <div id="J_Main">
+      <%- body %>
+      </div>
+      <div id='J_DetailModalContainer' ></div>
+      <% include modules/footer.html %>
+      <% include modules/toolbar.html %>
+    </div>
+    <script src='/script/vendors/mousewheel.js' charset='utf-8'></script>
+    <script src='/script/vendors/scroll.js?t=1' charset='utf-8'></script>
+    <% include modules/thirdpartservice.html %>
+  </body>
+</html>
