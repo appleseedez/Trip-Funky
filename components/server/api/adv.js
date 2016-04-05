@@ -2,6 +2,7 @@ import adv from '../cache/db/module/adv.js'
 import _ from 'lodash'
 import env from '../cache/config'
 let r = env.Thinky.r
+
 const advApi = {
   // 广告
   'get+/adv/:position': function*(next) {
