@@ -7,15 +7,30 @@ var _ = require('lodash')
 
 var Config = require("../config.js");
 var Adv = require("./module/adv.js");
+var CitySite = require("./module/city-site.js");
+var Attraction = require("./module/attraction.js");
+var Pringles = require("./module/pringles.js");
+var Sample = require("./module/sample.js");
+var Suite = require("./module/suite.js");
 
 
 var models = {
-  "Adv": Adv
+  "Adv": Adv,
+  "CitySite":CitySite,
+  "Attraction": Attraction,
+  "Pringles":Pringles,
+  "Sample":Sample,
+  "Suite":Suite
 }
 
 var dbTool = null;
 var mSyncFlg = {
-  "Adv": false
+  "Adv": false,
+  "CitySite": false,
+  "Attraction": false,
+  "Pringles":false,
+  "Sample":false,
+  "Suite":false
 };
 
 //查询工具类
@@ -168,10 +183,10 @@ exports.Instance = function() {
   var tasks1 = ['Adv'];
 
   // 二级资源,更新不是很平凡的资源
-  var tasks2 = [];
+  var tasks2 = ['Pringles', 'Sample', 'Suite'];
 
   // 三级资源,不经常更新的资源
-  var tasks3 = [];
+  var tasks3 = ['Attraction', 'CitySite'];
 
   if (dbTool == null) {
     dbTool = new DBUtil();

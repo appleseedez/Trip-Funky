@@ -10,7 +10,17 @@ const DBConfig = {
     port:'28015'
   },
   // 广告数据
-  AdvPath:"/api/adv/all"
+  AdvPath:"/api/adv/all",
+  // 城市站点
+  CityPath:"/api/city",
+  // 景点
+  AttractionPath:"/api/attractions/all",
+  // 样片
+  SamplePath: "api/sample/all",
+  // 客片
+  PringlesPath: "api/pringles/all",
+  // 套系
+  SuitePath: "api/suite/all"
 };
 
 const Thinky = require('thinky')(DBConfig.rethink);

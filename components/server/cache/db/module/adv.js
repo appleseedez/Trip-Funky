@@ -4,9 +4,6 @@
 var env=require("../../config");
 var type=env.Thinky.type;
 
-/*
- */
-
 // 广告模型
 const Adv = env.Thinky.createModel('adv', {
     // Id
