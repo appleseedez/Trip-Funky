@@ -153,7 +153,6 @@ function Sync(type) {
 }
 
 DBUtil.prototype.isCacheDataUsable = function(moduleName) {
-  console.log('modelName:',moduleName);
   return mSyncFlg[moduleName];
 };
 
