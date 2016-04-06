@@ -61,6 +61,12 @@ ReactServer.use(StaticFile('./assets',{'maxage':3*60*1000})) // 其他静态资�
 /** 准备进入路由层。 先确保一切为默认 **/
 ReactServer.use(function*(next){
   this.APIKey = null
+  /**如果域名是mt开头就是微信 this.platformClass 将会通过render变量被写到根div的class上**/
+  if (this.request.header.host.indexOf('mt.') === 0) {
+    this.platformClass = 'adaptation-mobile'
+  }else {
+    this.platformClass = 'adaptation-1200'
+  }
   yield next
 })
 ReactServer.use(apiRouter.routes()) // api路由

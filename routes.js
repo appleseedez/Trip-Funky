@@ -51,25 +51,32 @@ export { apiRouter }
 
 const siteRouter = new Router()
 
-const renderOption = (templateName, params) =>{
+const renderOption = (templateName, currentUrl,platformClass,params,wrapperClass) =>{
   let p = params || {}
   return {
     'title':ComponentsSeo[templateName].seoTitle || '',
     'seoKeywords':ComponentsSeo[templateName].seoKeywords || '',
     'seoDescription':ComponentsSeo[templateName].seoDescription || '',
     'reactMarkup': renderToString(ComponentsIndex[templateName]),
-    'reactNavMarkup': renderToString(<Navigation />),
+    'reactNavMarkup': renderToString(<Navigation currentUrl={currentUrl||'/'} />),
+    'wrapperClass':wrapperClass || 't', // t: 顶部有菜单的margin un: 无margin b:底部有margin tb 顶部底部都有margin
+    'platformClass':platformClass || 'adaptation-1200',
     'main': templateName,// 客户端渲染使用的脚本名称和模板名称一致
     'params':JSON.stringify(p),
     'mode':(process.env.NODE_ENV === 'production')?'production':'development'
   }
 }
-
+/** this.platformClass 是通过前置的中间件设置。 这里有点丑，想办法优化**/
 siteRouter.get('/',function* (next){
-  yield this.render('modules/default',renderOption('home'))
+  yield this.render('modules/default',renderOption('home','/',this.platformClass))
 })
 siteRouter.get('/home',function* (next){
-  yield this.render('modules/default',renderOption('home'))
+  yield this.render('modules/default',renderOption('home','/home',this.platformClass))
 })
-
+siteRouter.get('/sample',function* (next){
+  yield this.render('modules/default',renderOption('sample','/sample',this.platformClass))
+})
+siteRouter.get('/pringles',function* (next){
+  yield this.render('modules/default',renderOption('pringles','/pringles',this.platformClass))
+})
 export { siteRouter }
