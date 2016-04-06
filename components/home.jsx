@@ -15,7 +15,7 @@ const Home = React.createClass({
           </div>
         </div>
         <div className="gray-bg-box">
-          <div className="photo-box layout-center-box"><img src="./images/adv-bann.jpg" /></div>
+          <div className="photo-box layout-center-box"><img src="/images/bann.jpg" /></div>
           <div className="list-recommend layout-center-box">
             <div className="item-recomd-adv">
                 <a className="img-box" href=""><img src="//img.jsbn.com/images/tour-artwork-img1.jpg" /><div className="cover-layer"></div></a>

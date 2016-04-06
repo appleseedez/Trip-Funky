@@ -1,10 +1,12 @@
 import React, { PropTypes } from 'react'
+import { Index } from '../index.jsx'
 import { Home } from '../home.jsx'
 import { Sample } from '../sample.jsx'
 import { Pringles } from '../pringles.jsx'
 
 
 const ComponentsIndex = {
+  'index': <Index />,
   'home': <Home />,
 'sample': <Sample />,
 'pringles': <Pringles />,
@@ -14,6 +16,11 @@ const ComponentsIndex = {
 
 
 const ComponentsSeo = {
+  'index':{
+    'seoTitle':'index',
+    'seoKeywords':'index',
+    'seoDescription':'index'
+  },
   'home':{
     'seoTitle':'home',
     'seoKeywords':'home',

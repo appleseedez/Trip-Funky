@@ -68,7 +68,7 @@ const renderOption = (templateName, currentUrl,platformClass,params,wrapperClass
 }
 /** this.platformClass 是通过前置的中间件设置。 这里有点丑，想办法优化**/
 siteRouter.get('/',function* (next){
-  yield this.render('modules/default',renderOption('home','/',this.platformClass))
+  yield this.render('modules/default',renderOption('index','/',this.platformClass))
 })
 siteRouter.get('/home',function* (next){
   yield this.render('modules/default',renderOption('home','/home',this.platformClass))

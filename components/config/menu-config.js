@@ -1,6 +1,6 @@
 const MenuConfig = {
   '/':{
-    'name':'首页'
+    'name':'城市选择'
   },
   '/home':{
     'name':'首页'

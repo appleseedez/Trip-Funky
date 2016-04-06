@@ -8,7 +8,6 @@ const advApi = {
   'get+/adv/:position': function*(next) {
 
     this.APIKey = 'Adv'
-
     if (this.params.position === 'all') {
       this.model = adv.filter({})
     } else {
@@ -32,7 +31,7 @@ const advApi = {
         }
       }
     })
-
+    let results = yield this.model.run()
     this.model = this.model.orderBy(r.desc('weight'))
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize);
 

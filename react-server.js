@@ -104,6 +104,7 @@ let dataFetchMiddleWare = function*(next) {
       try {
         //从缓存数据库中去查询。
         if (this.model) {
+          console.log(this.model);
           resData.data = yield this.model.run()
           resData.code = 200
           resData.success = true

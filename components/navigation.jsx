@@ -5,7 +5,11 @@ const Navigation = React.createClass({
 
     render() {
         let menuIndex = 0
+        if (this.props.currentUrl === '/') {
+          return null
+        }
         return (
+
             <div className='app-header'>
                 <div className='relative-box'>
                     <div className='title-box' id='J_menu_btn'>
@@ -16,7 +20,7 @@ const Navigation = React.createClass({
                     </div>
                     <a style={{
                         display: 'block'
-                    }} href={'/'}>
+                    }} href={'/home'}>
                         <div className='logo-box ico-sanya'></div>
                     </a>
                     <div className='win-rig-btn' id='J_win_rig_btn'>

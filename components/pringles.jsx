@@ -13,7 +13,7 @@ const Pringles = React.createClass({
         </div>
         <div className="gray-bg-box">
           <div className="photo-box layout-center-box">
-            <img src="./images/ypxx-sy.png" />
+            <img src="/images/ypxx-sy.png" />
           </div>
           <div className="block-tit-box">
             <h1><b>客片欣赏</b></h1>
