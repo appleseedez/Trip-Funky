@@ -12,15 +12,15 @@ const DBConfig = {
   // 广告数据
   AdvPath:"/api/adv/all",
   // 城市站点
-  CityPath:"/api/city",
+  CitySitePath:"/api/city",
   // 景点
-  AttractionPath:"/api/attractions/all",
+  AttractionPath:"/api/attractions",
   // 样片
-  SamplePath: "api/sample/all",
+  SamplePath: "/api/sample",
   // 客片
-  PringlesPath: "api/pringles/all",
+  PringlesPath: "/api/pringles",
   // 套系
-  SuitePath: "api/suite/all"
+  SuitePath: "/api/suite"
 };
 
 const Thinky = require('thinky')(DBConfig.rethink);

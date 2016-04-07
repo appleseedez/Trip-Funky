@@ -161,7 +161,8 @@ if (process.env.NODE_ENV === 'test') {
   module.exports = ReactServer.callback();
 } else {
   ReactServer.listen(8001);
-  console.log((process.env.NODE_ENV === 'production')?'open http://trip.jsbn.com':'open http://trip-dev.jsbn.com:8001')
+  // TODO tt.jsbn.com mtt.jsbn.com作为预发布域名测试,正式环境需要切换
+  console.log((process.env.NODE_ENV === 'production')?'open http://tt.jsbn.com':'open http://trip-dev.jsbn.com:8001')
 }
 
 ReactServer.on('error', function (err) {
