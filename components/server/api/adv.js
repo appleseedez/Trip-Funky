@@ -31,7 +31,7 @@ const advApi = {
         }
       }
     })
-    let results = yield this.model.run()
+
     this.model = this.model.orderBy(r.desc('weight'))
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize);
 
