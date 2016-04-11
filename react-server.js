@@ -98,53 +98,43 @@ let dataFetchMiddleWare = function*(next) {
   }
 
   if (this.APIKey) {
-    // DBUtil.isCacheDataUsable 方法 返回真表示数据缓存可用。否则表示数据正在同步。不可以从缓存拉
-    if (DBUtil.isCacheDataUsable(this.APIKey)) {
-      console.log('dbCache:', this.request.url);
-      try {
-        //从缓存数据库中去查询。
-        if (this.model) {
-          console.log(this.model);
-          resData.data = yield this.model.run()
-          resData.code = 200
-          resData.success = true
-          resData.count = this.count || resData.data.length
+
+    // api的数据先到内存去查询,查询不到再走后续流程
+    let resCacheData = MEMUtil.getMemCache(this.request.url)
+    if (resCacheData != null) {
+      this.body = resCacheData
+    } else {
+      // DBUtil.isCacheDataUsable 方法 返回真表示数据缓存可用。否则表示数据正在同步。不可以从缓存拉
+      if (DBUtil.isCacheDataUsable(this.APIKey)) {
+        console.log('dbCache:', this.request.url);
+        try {
+          //从缓存数据库中去查询。
+          if (this.model) {
+            console.log(this.model);
+            resData.data = yield this.model.run()
+            resData.code = 200
+            resData.success = true
+            resData.count = this.count || resData.data.length
+          }
+        } catch (err) {
+          console.log('数据库异常memCache:', this.request.url);
+          //缓存数据不可用。 去做代理数据请求
+          resData  = yield* proxyFetcher(this.request.url,this.request.url)
         }
-      } catch (err) {
-        console.log('数据库异常memCache:', this.request.url);
+      } else {
+        console.log('memCache:', this.request.url);
         //缓存数据不可用。 去做代理数据请求
         resData  = yield* proxyFetcher(this.request.url,this.request.url)
       }
-    } else {
-      console.log('memCache:', this.request.url);
-      //缓存数据不可用。 去做代理数据请求
-      resData  = yield* proxyFetcher(this.request.url,this.request.url)
+
+      // 把结果缓存到内存
+      if(resData.success) {
+        MEMUtil.setMemCache(this.request.url, resData)
+      }
+
+      this.body = resData
     }
 
-    // // 针对2.0的套系数据格式进行修正
-    // if (this.APIKey === 'Suite') {
-    //   resData.data = _.isArray(resData.data) ? resData.data : []
-    //   if ( resData.data.length > 0 && resData.data[0]['pcDetailImages']) {
-    //     let images = []
-    //     let origin = JSON.parse(resData.data[0]['pcDetailImages'])
-    //     let keys = [
-    //       'pc_detailImages',
-    //       'pc_serviceImages',
-    //       'pc_cosmeticImages',
-    //       'pc_clothShootImages',
-    //       'pc_baseSampleImages',
-    //       'pc_processImages'
-    //     ]
-    //     _.each(keys, function(v) {
-    //       _.each(origin[v] || [], function(v1) {
-    //         images.push(v1)
-    //       })
-    //     })
-    //     resData.data[0]['pcDetailImages'] = JSON.stringify(images)
-    //   }
-    // }
-
-    this.body = resData
   }
   yield next
 }
