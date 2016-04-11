@@ -20,7 +20,7 @@ const PageFooter = React.createClass({
                             </p>
                         </div>
                         <div className="photo-box photo-box-mgt10 layout-center-box">
-                            <img src="./assets/images/ypxx-sy.png"/>
+                            <img src="/images/ypxx-sy.png"/>
                         </div>
                         <div className="bt-border btborder">
                             <ul className="list-promise">
