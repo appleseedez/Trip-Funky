@@ -3,32 +3,32 @@
  */
 const DBConfig = {
   cache_flg: true, // DB数据库缓存开关 true开启 false关闭
-  cache_time_check: 60000*30, // 缓存清理时间,30分钟
+  cache_time_check: 60000*60*12, // 缓存清理时间,12小时
   rethink:{
     db:'trip',
     host:'127.0.0.1',
     port:'28015'
   },
   // 广告数据
-  AdvPath:"/api/adv/all",
+  AdvPath:"/api/data/adv",
   // 城市站点
-  CitySitePath:"/api/city",
+  CitySitePath:"/api/data/city",
   // 景点
-  AttractionPath:"/api/attractions",
+  AttractionPath:"/api/data/attractions",
   // 样片
-  SamplePath: "/api/sample",
+  SamplePath: "/api/data/sample",
   // 客片
-  PringlesPath: "/api/pringles",
+  PringlesPath: "/api/data/pringles",
   // 套系
-  SuitePath: "/api/suite"
+  SuitePath: "/api/data/suite"
 };
 
 const Thinky = require('thinky')(DBConfig.rethink);
 
 const MemConfig = {
-  cache_timeout: 60000*5,// 缓存时间
-  cache_time_check: 60000*5,// 缓存清理时间
-  cache_max_size: 100*100*3 // 最大缓存数
+  cache_timeout: 60000*10,// 缓存时间
+  cache_time_check: 60000*10,// 缓存清理时间
+  cache_max_size: 1000*3 // 最大缓存数
 };
 
 module.exports = {

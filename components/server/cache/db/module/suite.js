@@ -56,14 +56,12 @@ const Suite = env.Thinky.createModel('suite', {
   attractionsId: type.number(),
   // 景点名称
   attractionsName: type.string(),
-  /************************************start************************************/
-  // 网站详细图片集 TODO:api的列表无此项,需要增加
+  // 网站详细图片集
   pcDetailImages: type.string(),
   // APP详细图片集
   appDetailImages: type.string(),
   // 微信详细图片集
   wxDetailImages: type.string(),
-  /************************************end************************************/
   // 权重
   weight: type.number()
 })
