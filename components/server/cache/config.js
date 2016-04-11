@@ -27,7 +27,6 @@ const Thinky = require('thinky')(DBConfig.rethink);
 
 const MemConfig = {
   cache_timeout: 60000*10,// 缓存时间
-  cache_time_check: 60000*10,// 缓存清理时间
   cache_max_size: 1000*3 // 最大缓存数
 };
 
