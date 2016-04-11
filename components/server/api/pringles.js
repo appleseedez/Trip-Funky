@@ -5,15 +5,8 @@ import pringles from '../cache/db/module/pringles.js'
 
 const pringlesApi = {
   // 套系列表
-  'get+/api/pringles': function*(next) {
+  'get+/pringles': function*(next) {
     this.APIKey = 'Pringles'
-    //if (this.params.position === 'all') {
-    //  this.model = pringles.filter({})
-    //} else {
-    //  this.model = pringles.filter({
-    //    position: this.params.position
-    //  })
-    //}
     this.model = pringles;
 
     let pageIndex = 0;
@@ -30,7 +23,7 @@ const pringlesApi = {
           pageSize = 1
         }
       } else if(k.indexOf('cityId') !== -1) {// 旅拍城市Id
-        this.model = this.model.filter({placeId:parseInt(this.request.query['placeId'])})
+        this.model = this.model.filter({cityId:parseInt(this.request.query['cityId'])})
       } else if(k.indexOf('attractionsId') !== -1) {// 旅拍景点Id
         this.model = this.model.filter({attractionsId:parseInt(this.request.query['attractionsId'])})
       }
@@ -46,12 +39,15 @@ const pringlesApi = {
     this.model = this.model.orderBy(r.desc('weight'))
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize)
 
+    // 只取有用的字段
+    this.model = this.model.pluck("id","name","coverUrlWeb","coverUrlWx","coverUrlApp","actorFemaleName","actorMaleName","description","cityId","attractionsId");
+
     yield next
   },
+
   // 客片详情
   'get+/pringles/detail/:id': function*(next) {
     this.APIKey = 'Pringles'
-
     this.model = suite.filter({
       id: parseInt(this.params.id)
     })

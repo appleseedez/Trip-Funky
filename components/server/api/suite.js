@@ -7,13 +7,6 @@ const suiteApi = {
   // 套系列表
   'get+/api/suite': function*(next) {
     this.APIKey = 'Suite'
-    //if (this.params.position === 'all') {
-    //  this.model = suite.filter({})
-    //} else {
-    //  this.model = suite.filter({
-    //    position: this.params.position
-    //  })
-    //}
     this.model = suite;
 
     let pageIndex = 0;
@@ -30,7 +23,7 @@ const suiteApi = {
           pageSize = 1
         }
       } else if(k.indexOf('cityId') !== -1) {// 旅拍城市Id
-        this.model = this.model.filter({placeId:parseInt(this.request.query['placeId'])})
+        this.model = this.model.filter({cityId:parseInt(this.request.query['cityId'])})
       } else if(k.indexOf('attractionsId') !== -1) {// 旅拍景点Id
         this.model = this.model.filter({attractionsId:parseInt(this.request.query['attractionsId'])})
       }
@@ -46,12 +39,16 @@ const suiteApi = {
     this.model = this.model.orderBy(r.desc('weight'))
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize)
 
+    // 只取有用的字段
+    this.model = this.model.pluck("id","name","level","coverUrlWeb","coverUrlWx","coverUrlApp","description",
+      "detail","salePrice","cityId","attractionsId","cityName","attractionsName");
+
     yield next
   },
+
   // 套系详情
   'get+/suite/detail/:id': function*(next) {
     this.APIKey = 'Suite'
-
     this.model = suite.filter({
       id: parseInt(this.params.id)
     })
