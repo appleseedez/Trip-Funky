@@ -13,11 +13,11 @@ const Suite = env.Thinky.createModel('suite', {
   // 套系等级 1 高套，2 中套，3 低套
   level: type.number(),
   // 网站封面图片地址
-  coverUrl: type.string(),
+  coverUrlWeb: type.string(),
   // 微信封面图片地址
-  wechatUrl: type.string(),
+  coverUrlWx: type.string(),
   // APP封面图片地址
-  mobileUrl: type.string(),
+  coverUrlApp: type.string(),
   // 套系描述
   description: type.string(),
   // 套系详情
@@ -25,13 +25,13 @@ const Suite = env.Thinky.createModel('suite', {
   // 现价
   salePrice: type.number(),
   // 原价
-  //originalPrice
+  originalPrice: type.number(),
   // 熊宝贝Id
   originalSuiteId: type.string(),
-  // 旅拍城市Id
-  placeId: type.number(),
+  // 旅拍分站城市ID
+  cityId: type.number(),
   // 旅拍城市名称
-  placeName: type.string(),
+  cityName: type.string(),
   // 景点Id
   attractionsId: type.number(),
   // 景点名称

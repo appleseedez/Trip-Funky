@@ -4,14 +4,27 @@
 var env=require("../../config");
 var type=env.Thinky.type;
 
+/*
+ {
+ "id": 4,
+ "createTime": 1454466150000,
+ "updateTime": 1454466150000,
+ "operater": 1,
+ "isUsed": 1,
+ "name": "海滩",
+ "description": "10",
+ "cityId": 4,
+ "weight": "10"
+ }
+* */
 // 旅拍城市景点模型
 const Attraction = env.Thinky.createModel('attraction', {
   // Id
   id: type.number(),
   // 名称
   name: type.string(),
-  // 城市ID(旅拍地ID)
-  placeId: type.number(),
+  // 旅拍分站城市ID
+  cityId: type.number(),
   // 描述
   description: type.string(),
   // 权重

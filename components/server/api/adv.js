@@ -29,6 +29,9 @@ const advApi = {
         if (pageSize < 0) {
           pageSize = 1
         }
+      } else if(k.indexOf('cityId') !== -1) {
+        // 旅拍分站城市ID
+        this.model = this.model.filter({cityId:parseInt(this.request.query['cityId'])})
       }
     })
 

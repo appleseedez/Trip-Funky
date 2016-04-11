@@ -4,12 +4,35 @@
 var env=require("../../config");
 var type=env.Thinky.type;
 
+/*
+ {
+ "id": 446,
+ "createTime": 1460083163000,
+ "updateTime": 1460083163000,
+ "operater": 1,
+ "isUsed": 1,
+ "name": "三亚旅拍",
+ "cityId": 5,
+ "type": 1,
+ "coverUrlWeb": "http://test-jsbn.oss-cn-shenzhen.aliyuncs.com/trip/vda/20160408/14600831616977012_1920x1098.jpg",
+ "coverUrlWx": "http://test-jsbn.oss-cn-shenzhen.aliyuncs.com/trip/vda/20160408/14600831617813489_1920x1098.jpg",
+ "coverUrlApp": "http://test-jsbn.oss-cn-shenzhen.aliyuncs.com/trip/vda/20160408/14600831617394492_1920x1098.jpg",
+ "description": "让你体验不一样的婚纱摄影",
+ "linkUrl": "http://trip.jsbn.com/#/sample?_k=ce2ph1",
+ "videoUrl": "",
+ "position": "index_top",
+ "weight": 100
+ }
+* */
+
 // 广告模型
 const Adv = env.Thinky.createModel('adv', {
     // Id
     id: type.number(),
     // 广告名称
     name: type.string(),
+    // 发布的旅拍分站城市ID
+    cityId: type.number(),
     // 广告类型 0：图片广告 1：视频广告
     type: type.number(),
     // 网站封面图片地址

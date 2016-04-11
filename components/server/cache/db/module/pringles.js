@@ -11,19 +11,19 @@ const Pringles = env.Thinky.createModel('pringles', {
   // 客片名称
   name: type.string(),
   // 网站封面图片地址
-  coverUrl: type.string(),
+  coverUrlWeb: type.string(),
   // 微信封面图片地址
-  wechatUrl: type.string(),
+  coverUrlWx: type.string(),
   // APP封面图片地址
-  mobileUrl: type.string(),
+  coverUrlApp: type.string(),
   // 女主角
   actorFemaleName: type.string(),
   // 男主角
   actorMaleName: type.string(),
   // 客片描述
   description: type.string(),
-  // 城市ID(旅拍地ID)
-  placeId: type.number(),
+  // 旅拍分站城市ID
+  cityId: type.number(),
   // 景点ID
   attractionsId: type.number(),
   /************************************start************************************/
