@@ -161,113 +161,6 @@ body {
   border-left: 6px solid #666;
   transform: rotate(90deg);
 }
-/* 全局右边浮动功能条 */
-.main-rig-func-box {
-  position: fixed;
-  right: 10px;
-  bottom: 40px;
-  margin-left: 620px;
-  z-index: 2000;
-}
-.main-rig-func-box .hover-box {
-  margin-top: 1px;
-  display: block;
-}
-.main-rig-func-box .hover-first-box {
-  margin-top: 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-.main-rig-func-box .hover-box .pos-box {
-  width: 40px;
-  height: 40px;
-  background-color: #000;
-  line-height: 16px;
-  text-align: center;
-  cursor: pointer;
-  overflow: hidden;
-  float: left;
-}
-.main-rig-func-box .hover-box .pos-box span {
-  color: #f1f1f1;
-  padding: 4px 5px 0;
-  display: none;
-}
-.main-rig-func-box .hover-box:hover span {
-  display: block;
-}
-.main-rig-func-box .func-box {
-  height: 0;
-  overflow: hidden;
-  position: relative;
-  float: left;
-}
-.main-rig-func-box .func-box i {
-  margin: 11px auto 0;
-}
-.main-rig-func-box .hover-box:hover i {
-  display: none;
-}
-.main-rig-func-box .disgin-box {
-  margin-top: 1px;
-  position: relative;
-  height: 17px;
-  cursor: pointer;
-  opacity: 0.2;
-}
-.main-rig-func-box .disgin-box i {
-  float: left;
-  margin-right: 1px;
-}
-.main-rig-func-box .disgin-box .rect-3-js {
-  left: 0;
-  top: 13px;
-  float: none;
-  position: absolute;
-}
-.main-rig-func-box .disgin-box-top {
-  height: auto;
-}
-.main-rig-func-box .disgin-box-top i {
-  float: none;
-}
-.main-rig-func-box:hover .disgin-box {
-  opacity: 1;
-}
-.main-rig-func-box:hover .func-box {
-  height: 204px;
-}
-.phone-window-pop-box {
-  height: 40px;
-  width: 0px;
-  overflow: hidden;
-  background-color: #000;
-  display: block;
-  position: fixed;
-  right: 51px;
-  bottom: 163px;
-  z-index: 3000;
-}
-.phone-window-pop-box span {
-  line-height: 40px;
-  padding: 0 10px;
-  color: #f1f1f1;
-  font-size: 12px;
-  white-space: nowrap;
-}
-.qr-code-box {
-  width: 0px;
-  background-color: #000;
-  overflow: hidden;
-  position: fixed;
-  right: 51px;
-  bottom: 62px;
-  z-index: 3000;
-}
-.qr-code-box img {
-  display: block;
-  padding: 10px;
-}
 .wx-layer-box {
   display: none;
   position: absolute;
@@ -1608,7 +1501,7 @@ body {
 .adaptation-1200 .mainhome-view .main-top .header li .cover-layer {
   position: absolute;
   top: 0;
-  background-color: #f0d88b;
+  background-color: #F0D88B;
   width: 100%;
   height: 100%;
   -moz-transition: all 0.2s ease 0s;
@@ -1622,7 +1515,7 @@ body {
 .adaptation-1200 .mainhome-view .main-top .header li:hover .cover-layer {
   position: absolute;
   top: 0;
-  background-color: #f0d88b;
+  background-color: #F0D88B;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -1818,7 +1711,7 @@ body {
 .adaptation-1200 .samples-view .suite-list .layer-box {
   position: absolute;
   top: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -2068,7 +1961,7 @@ body {
 .adaptation-1200 .pringles-view .suite-list .layer-box {
   position: absolute;
   top: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -2172,7 +2065,7 @@ body {
   height: 0;
   border-style: solid;
   display: block;
-  border-color: transparent #eeeeee transparent transparent;
+  border-color: transparent #eee transparent transparent;
   border-width: 30px 30px 30px 0;
 }
 .adaptation-1200 .pringles-view .tab-box-fj .arrow-rig {
@@ -2189,7 +2082,7 @@ body {
   height: 0;
   border-style: solid;
   display: block;
-  border-color: transparent transparent transparent #eeeeee;
+  border-color: transparent transparent transparent #eee;
   border-width: 30px 0 30px 30px;
 }
 .adaptation-1200 .pringles-view .tab-box-fj:hover .arrow-lef {
@@ -2698,7 +2591,7 @@ body {
 .adaptation-1200 .home-view .suite-list .layer-box {
   position: absolute;
   top: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -3002,7 +2895,7 @@ body {
   visibility: hidden;
 }
 .adaptation-1200 .photo-show-box .item {
-  border: 3px solid #ffffff;
+  border: 3px solid #fff;
   text-align: center;
   float: left;
   overflow: hidden;
