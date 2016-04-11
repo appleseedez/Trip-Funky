@@ -7,13 +7,10 @@ var type=env.Thinky.type;
 /*
  {
  "id": 4,
- "createTime": 1454466150000,
- "updateTime": 1454466150000,
- "operater": 1,
- "isUsed": 1,
  "name": "海滩",
  "description": "10",
  "cityId": 4,
+ "cityName": "三亚",
  "weight": "10"
  }
 * */
@@ -25,6 +22,8 @@ const Attraction = env.Thinky.createModel('attraction', {
   name: type.string(),
   // 旅拍分站城市ID
   cityId: type.number(),
+  // 旅拍分站城市名称
+  cityName: type.string(),
   // 描述
   description: type.string(),
   // 权重

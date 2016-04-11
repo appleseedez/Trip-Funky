@@ -17,13 +17,31 @@ const citySiteApi = {
   },
 
   // 根据城市ID获取旅拍景点
-  'get+/attractions/:cityId': function*(next) {
+  'get+/attractions': function*(next) {
     this.APIKey = 'Attraction'
-    this.model = attraction.filter({
-      placeId: parseInt(this.params.cityId)
+    this.model = attraction;
+
+    let pageIndex = 0;
+    let pageSize = 10;
+    _.each(this.request.query, (v, k) => {
+      if (k.indexOf('pageIndex') !== -1) {
+        pageIndex = parseInt(this.request.query['pageIndex'] || '1') - 1
+        if (pageIndex < 0) {
+          pageIndex = 0
+        }
+      } else if(k.indexOf('pageSize') !== -1) {
+        pageSize = parseInt(this.request.query['pageSize'] || '1')
+        if (pageSize < 0) {
+          pageSize = 1
+        }
+      } else if(k.indexOf('cityId') !== -1) {
+        // 旅拍分站城市ID
+        this.model = this.model.filter({cityId:parseInt(this.request.query['cityId'])})
+      }
     })
 
     this.model = this.model.orderBy(r.desc('weight'))
+    this.model = this.model.skip(pageIndex * pageSize).limit(pageSize);
 
     yield next
   }

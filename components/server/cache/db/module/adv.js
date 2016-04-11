@@ -7,10 +7,6 @@ var type=env.Thinky.type;
 /*
  {
  "id": 446,
- "createTime": 1460083163000,
- "updateTime": 1460083163000,
- "operater": 1,
- "isUsed": 1,
  "name": "三亚旅拍",
  "cityId": 5,
  "type": 1,

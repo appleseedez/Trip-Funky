@@ -33,7 +33,7 @@ const MemConfig = {
 
 module.exports = {
   'APIPort': "8088",
-  'APIHost': (process.env.NODE_ENV === 'production')?'10.44.120.114':'192.168.1.6',
+  'APIHost': (process.env.NODE_ENV === 'production')?'10.170.45.15':'192.168.1.6',// 10.170.45.15的公网IP是120.24.213.186
   'DBConfig':DBConfig,
   'Thinky':Thinky,
   'MemConfig':MemConfig

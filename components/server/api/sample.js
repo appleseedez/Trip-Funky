@@ -4,16 +4,10 @@
 import sample from '../cache/db/module/sample.js'
 
 const sampleApi = {
+
   // 样片列表
-  'get+/api/sample': function*(next) {
+  'get+/sample': function*(next) {
     this.APIKey = 'Sample'
-    //if (this.params.position === 'all') {
-    //  this.model = sample.filter({})
-    //} else {
-    //  this.model = sample.filter({
-    //    position: this.params.position
-    //  })
-    //}
     this.model = sample;
 
     let pageIndex = 0;
@@ -30,7 +24,7 @@ const sampleApi = {
           pageSize = 1
         }
       } else if(k.indexOf('cityId') !== -1) {// 旅拍城市Id
-        this.model = this.model.filter({placeId:parseInt(this.request.query['placeId'])})
+        this.model = this.model.filter({cityId:parseInt(this.request.query['cityId'])})
       } else if(k.indexOf('attractionsId') !== -1) {// 旅拍景点Id
         this.model = this.model.filter({attractionsId:parseInt(this.request.query['attractionsId'])})
       }
@@ -46,14 +40,18 @@ const sampleApi = {
     this.model = this.model.orderBy(r.desc('weight'))
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize)
 
+    // 只取有用的字段
+    this.model = this.model.pluck("id","name","coverUrlWeb","coverUrlWx","coverUrlApp","description","cityId","attractionsId");
+
     yield next
   },
+
   // 样片详情
   'get+/sample/detail/:id': function*(next) {
     this.APIKey = 'Sample'
 
     this.model = suite.filter({
-      id: parseInt(this.params.id)
+      id:parseInt(this.params.id)
     })
 
     yield next

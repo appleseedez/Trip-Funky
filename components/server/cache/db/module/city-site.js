@@ -6,15 +6,11 @@ var type=env.Thinky.type;
 
 /*
  {
- "id": 4,
- "createTime": 1454466087000,
- "updateTime": 1460082893000,
- "operater": 1,
- "isUsed": 1,
- "countryType": 1,
- "name": "三亚",
- "description": "三亚",
- "weight": "5"
+ "id": 10,
+ "type": 1,
+ "name": "青岛",
+ "description": "好地方，不多说。",
+ "weight": "1000"
  }
 * */
 // 旅拍城市站点模型
