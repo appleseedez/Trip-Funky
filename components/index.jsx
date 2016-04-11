@@ -11,14 +11,14 @@ const Index = React.createClass({
                             <div className="right-box ico-text"/>
                         </div>
                         <div className="relative-box">
-                            <div className="left-box ico-lp"/>
+                            <div className="left-box ico-lp select-box"/>
                         </div>
                     </div>
                     <div className="bannar-all-box">
                         <div className="header bannar">
                             <ul className="slider">
                                 <li className="item">
-                                    <a href className="img-box">
+                                    <a href={'/'} className="img-box">
                                         <img src="/images/home_banner_bg.jpg"/>
                                         <div className="cover-layer"/>
                                     </a>
@@ -34,6 +34,7 @@ const Index = React.createClass({
 
         )
     }
+
 })
 
 export {Index}
