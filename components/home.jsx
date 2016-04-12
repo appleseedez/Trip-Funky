@@ -8,7 +8,6 @@ import { PringlesRecommand } from './common/pringles-recommand.jsx'
 import { SuiteRecommand } from './common/suite-recommand.jsx'
 const Home = React.createClass({
   render () {
-    console.log(this.props.dataParams);
     return (
       <div className='home-view'>
         <div className='bannar-all-box' >
@@ -28,7 +27,7 @@ const Home = React.createClass({
           </div>
           <p>Golden trip, so it's really good.</p>
         </div>
-        <SampleRecommand />
+        <SampleRecommand {...HomeConfig['SampleRecommand']} cityId={this.props.dataParams.cityId}/>
         <div className="photo-box photo-box-border layout-center-box"><img src="/images/static-3.jpg" /></div>
         <div className="photo-box layout-center-box"><img src="/images/static-4.jpg" /></div>
         <div className="photo-box layout-center-box"><img src="/images/static-6.jpg" /></div>
@@ -52,6 +51,13 @@ const Home = React.createClass({
         <PageFooter />
       </div>
     )
+  },
+  getDefaultProps(){
+    return {
+      dataParams:{
+        cityId:-1
+      }
+    }
   }
 })
 
