@@ -77,9 +77,9 @@ siteRouter.get('/home',function* (next){
   yield this.render('modules/default',renderOption('home','/home',this.platformClass,this.request.query))
 })
 siteRouter.get('/sample',function* (next){
-  yield this.render('modules/default',renderOption('sample','/sample',this.platformClass))
+  yield this.render('modules/default',renderOption('sample','/sample',this.platformClass,this.request.query))
 })
 siteRouter.get('/pringles',function* (next){
-  yield this.render('modules/default',renderOption('pringles','/pringles',this.platformClass))
+  yield this.render('modules/default',renderOption('pringles','/pringles',this.platformClass,this.request.query))
 })
 export { siteRouter }
