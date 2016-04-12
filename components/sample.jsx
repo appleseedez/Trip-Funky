@@ -3,6 +3,8 @@ import { PageFooter } from './common/page-footer.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { SampleConfig } from './config/sample-config'
 import { SuiteRecommand } from './common/suite-recommand.jsx'
+import { TripListItem } from './common/trip-list-item.jsx'
+import _ from 'lodash'
 
 const Sample = React.createClass({
   render () {
@@ -19,8 +21,8 @@ const Sample = React.createClass({
             <h1><b>样片欣赏</b></h1>
             <h2>Golden trip, so it's really good.</h2>
           </div>
-          <div>SampleList</div>
-          <div className="list-more-btn" id='J_btn_more'>
+          <TripListItem {...SampleConfig['TripListItem']} type={'sample'} params={_.merge({'cityId':this.props.dataParams.cityId},SampleConfig['TripListItem'].params)}/>
+          <div className="list-more-btn" id='J_MoreButton'>
               <span>查看更多</span>
           </div>
         </div>

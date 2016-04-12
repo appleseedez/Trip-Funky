@@ -12,7 +12,15 @@ const SampleConfig = {
         'pageSize': 4,
         'pageIndex': 1
     }
-}, BaseConfig)
+}, BaseConfig),
+'TripListItem':_.merge({
+  dataUrl:'sample',
+  params:{
+    'pageSize':10,
+    'pageIndex':1
+  }
+},BaseConfig)
+
 }
 
 

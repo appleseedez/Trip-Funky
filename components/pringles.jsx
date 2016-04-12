@@ -3,6 +3,8 @@ import { MediaSlider } from './common/media-slider.jsx'
 import { PringlesConfig } from './config/pringles-config'
 import { SuiteRecommand } from './common/suite-recommand.jsx'
 import { PageFooter } from './common/page-footer.jsx'
+import { TripListItem } from './common/trip-list-item.jsx'
+import _ from 'lodash'
 const Pringles = React.createClass({
   render () {
     return (
@@ -20,8 +22,8 @@ const Pringles = React.createClass({
             <h1><b>客片欣赏</b></h1>
             <h2>Golden trip, so it's really good.</h2>
           </div>
-          <div>PringlesList</div>
-          <div className="list-more-btn" id='J_btn_more'>
+          <TripListItem {...PringlesConfig['TripListItem']} type={'pringles'} params={_.merge({'cityId':this.props.dataParams.cityId},PringlesConfig['TripListItem'].params)}/>
+          <div className="list-more-btn" id='J_MoreButton'>
             <span>查看更多</span>
           </div>
         </div>
