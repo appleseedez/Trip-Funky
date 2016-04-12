@@ -47,7 +47,7 @@ const Home = React.createClass({
             </div>
             <p>Golden trip, so it's really good.</p>
         </div>
-        <SuiteRecommand />
+        <SuiteRecommand {...HomeConfig['SuiteRecommand']} cityId={this.props.dataParams.cityId}/>
         <PageFooter />
       </div>
     )

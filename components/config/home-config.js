@@ -21,7 +21,14 @@ const HomeConfig = {
             'pageSize': 4,
             'pageIndex': 1
         }
-    }, BaseConfig)
+    }, BaseConfig),
+    'SuiteRecommand': _.merge({
+        dataUrl: 'suite',
+        params: {
+            'pageSize': 4,
+            'pageIndex': 1
+        }
+    }, BaseConfig),
 }
 
 
