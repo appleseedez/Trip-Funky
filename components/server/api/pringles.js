@@ -3,6 +3,8 @@
  */
 import pringles from '../cache/db/module/pringles.js'
 import _ from 'lodash'
+import env from '../cache/config'
+let r = env.Thinky.r
 
 const pringlesApi = {
   // 套系列表

@@ -3,6 +3,8 @@
  */
 import sample from '../cache/db/module/sample.js'
 import _ from 'lodash'
+import env from '../cache/config'
+let r = env.Thinky.r
 
 const sampleApi = {
 
