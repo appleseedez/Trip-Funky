@@ -4,18 +4,16 @@ import { MediaSlider } from './common/media-slider.jsx'
 import { HomeConfig } from './config/home-config'
 const Home = React.createClass({
   render () {
+    console.log(this.props.dataParams);
     return (
       <div className='home-view'>
-        <div className='logo-container'>
-          <div className='logo-box ico-sanya'></div>
-        </div>
         <div className='bannar-all-box' >
           <div className='slider-box bannar' style={{height:HomeConfig['MediaSlider']['height']}} id='slider_top'>
             <MediaSlider {...HomeConfig['MediaSlider']} />
           </div>
         </div>
         <div className="gray-bg-box">
-          <div className="photo-box layout-center-box"><img src="/images/bann.jpg" /></div>
+          <div className="photo-box layout-center-box"><img src="/images/static-1.jpg" /></div>
           <div className="list-recommend layout-center-box">
             <div className="item-recomd-adv">
                 <a className="img-box" href=""><img src="//img.jsbn.com/images/tour-artwork-img1.jpg" /><div className="cover-layer"></div></a>

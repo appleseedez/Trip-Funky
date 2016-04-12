@@ -71,7 +71,7 @@ siteRouter.get('/',function* (next){
   yield this.render('modules/default',renderOption('index','/',this.platformClass))
 })
 siteRouter.get('/home',function* (next){
-  yield this.render('modules/default',renderOption('home','/home',this.platformClass))
+  yield this.render('modules/default',renderOption('home','/home',this.platformClass,this.request.query))
 })
 siteRouter.get('/sample',function* (next){
   yield this.render('modules/default',renderOption('sample','/sample',this.platformClass))
