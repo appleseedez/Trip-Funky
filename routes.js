@@ -82,4 +82,7 @@ siteRouter.get('/sample',function* (next){
 siteRouter.get('/pringles',function* (next){
   yield this.render('modules/default',renderOption('pringles','/pringles',this.platformClass,this.request.query))
 })
+siteRouter.get('/suite',function* (next){
+  yield this.render('modules/default',renderOption('suite','/suite',this.platformClass,this.request.query))
+})
 export { siteRouter }

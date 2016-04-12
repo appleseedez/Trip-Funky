@@ -110,6 +110,7 @@ const Navigation = React.createClass({
                                     <div className="bit-1"></div>
                                     <div className="bit-2"></div>
                                     <div className="bit-3"></div>
+                                    <div className="bit-4"></div>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +128,7 @@ const Navigation = React.createClass({
                                 <a href={'/pringles?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/pringles')?'current':''}>客片欣赏</a>
                             </li>
                             <li>
-                                <a href={'#suite'}>套系报价</a>
+                                <a href={'/suite?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/suite')?'current':''}>套系报价</a>
                             </li>
                         </ul>
                     </div>
