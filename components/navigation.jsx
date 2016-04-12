@@ -121,13 +121,13 @@ const Navigation = React.createClass({
                                 <a className="current">{city.name + '首页'}</a>
                             </li>
                             <li>
-                                <a>作品欣赏</a>
+                                <a href={'/sample?cityId='+this.props.dataParams.cityId}>作品欣赏</a>
                             </li>
                             <li>
-                                <a>客片欣赏</a>
+                                <a href={'/pringles?cityId='+this.props.dataParams.cityId}>客片欣赏</a>
                             </li>
                             <li>
-                                <a>套系欣赏</a>
+                                <a href={'/#suite'}>套系欣赏</a>
                             </li>
                         </ul>
                     </div>
@@ -140,7 +140,10 @@ const Navigation = React.createClass({
         )
     },
     getDefaultProps() {
-        return {dataUrl: 'city'}
+        return {dataUrl: 'city',dataParams:{
+          cityId:-1,
+          name:''
+        }}
     },
     getInitialState() {
         return {city: []}
