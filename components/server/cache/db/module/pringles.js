@@ -32,6 +32,8 @@ var type=env.Thinky.type;
 const Pringles = env.Thinky.createModel('pringles', {
   // Id
   id: type.number(),
+  // 上传日期
+  updateTime: type.string(),
   // 客片名称
   name: type.string(),
   // 客片描述

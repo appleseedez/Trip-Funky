@@ -28,6 +28,8 @@ var type=env.Thinky.type;
 const Sample = env.Thinky.createModel('sample', {
   // Id
   id: type.number(),
+  // 上传日期
+  updateTime: type.string(),
   // 客片名称
   name: type.string(),
   // 样片描述
