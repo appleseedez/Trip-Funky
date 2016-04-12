@@ -2,6 +2,7 @@
  * Created by chenjianjun on 16/4/5.
  */
 import suite from '../cache/db/module/suite.js'
+import _ from 'lodash'
 
 const suiteApi = {
   // 套系列表

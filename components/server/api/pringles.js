@@ -2,6 +2,7 @@
  * Created by chenjianjun on 16/4/5.
  */
 import pringles from '../cache/db/module/pringles.js'
+import _ from 'lodash'
 
 const pringlesApi = {
   // 套系列表

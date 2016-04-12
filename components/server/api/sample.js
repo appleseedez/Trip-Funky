@@ -2,6 +2,7 @@
  * Created by chenjianjun on 16/4/5.
  */
 import sample from '../cache/db/module/sample.js'
+import _ from 'lodash'
 
 const sampleApi = {
 
