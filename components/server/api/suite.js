@@ -3,6 +3,8 @@
  */
 import suite from '../cache/db/module/suite.js'
 import _ from 'lodash'
+import env from '../cache/config'
+let r = env.Thinky.r
 
 const suiteApi = {
   // 套系列表
