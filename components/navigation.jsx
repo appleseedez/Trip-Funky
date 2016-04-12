@@ -127,7 +127,7 @@ const Navigation = React.createClass({
                                 <a href={'/pringles?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/pringles')?'current':''}>客片欣赏</a>
                             </li>
                             <li>
-                                <a href={'#suite'}>套系欣赏</a>
+                                <a href={'#suite'}>套系报价</a>
                             </li>
                         </ul>
                     </div>
