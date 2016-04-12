@@ -1,7 +1,10 @@
+/**
+ * Created by chenjianjun on 16/4/12.
+ */
 import _ from 'lodash'
 import { BaseConfig } from './base'
 
-const SampleConfig = {
+const SuiteConfig = {
   // 广告轮播
   'MediaSlider': _.merge({
     'dataUrl': 'adv/index_top',
@@ -10,7 +13,7 @@ const SampleConfig = {
   }, BaseConfig),
 
   'TripListItem':_.merge({
-    dataUrl:'sample',
+    dataUrl:'suite',
     params:{
       'pageSize':10,
       'pageIndex':1
@@ -18,4 +21,4 @@ const SampleConfig = {
   },BaseConfig)
 }
 
-export { SampleConfig }
+export { SuiteConfig }
