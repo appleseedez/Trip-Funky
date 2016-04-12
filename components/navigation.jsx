@@ -118,16 +118,16 @@ const Navigation = React.createClass({
                         </div>
                         <ul className="drop-down-menu" id="J_drop_down_menu">
                             <li>
-                                <a className="current">{city.name + '首页'}</a>
+                                <a href={'/home?cityId='+this.props.dataParams.cityId +'&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/home')?'current':''}>{city.name + '首页'}</a>
                             </li>
                             <li>
-                                <a href={'/sample?cityId='+this.props.dataParams.cityId}>作品欣赏</a>
+                                <a href={'/sample?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/sample')?'current':''}>作品欣赏</a>
                             </li>
                             <li>
-                                <a href={'/pringles?cityId='+this.props.dataParams.cityId}>客片欣赏</a>
+                                <a href={'/pringles?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/pringles')?'current':''}>客片欣赏</a>
                             </li>
                             <li>
-                                <a href={'/#suite'}>套系欣赏</a>
+                                <a href={'#suite'}>套系欣赏</a>
                             </li>
                         </ul>
                     </div>
@@ -147,6 +147,9 @@ const Navigation = React.createClass({
     },
     getInitialState() {
         return {city: []}
+    },
+    componentWillReceiveProps(nextProps) {
+      console.log('nav:',nextProps);
     },
     componentDidMount() {
         const setup = () => {

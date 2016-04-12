@@ -38,9 +38,9 @@ const Home = React.createClass({
           </div>
           <p>Golden trip, so it's really good.</p>
         </div>
-        <PringlesRecommand />
+        <PringlesRecommand {...HomeConfig['PringlesRecommand']} cityId={this.props.dataParams.cityId}/>
         <div className="photo-box layout-center-box"><img src="/images/static-5.jpg" /></div>
-        <div className="block-tit-box" id='suiteAchor'>
+        <div className="block-tit-box" id='suite'>
             <div className="border-box">
               <h1><span>金色旅拍</span><b>套系热卖</b></h1>
               <h2></h2>
