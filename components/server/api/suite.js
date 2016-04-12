@@ -8,7 +8,7 @@ let r = env.Thinky.r
 
 const suiteApi = {
   // 套系列表
-  'get+/api/suite': function*(next) {
+  'get+/suite': function*(next) {
     this.APIKey = 'Suite'
     this.model = suite;
 
