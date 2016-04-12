@@ -19,7 +19,7 @@ const SuiteRecommand = React.createClass({
                             <div className="info-box">
                                 <a href>
                                     <h1>
-                                        <b>{parseFloat(v.salePrice).toFixed(2)}</b>
+                                        <b>{parseFloat(v.salePrice||0.0).toFixed(2)}</b>
                                         <span>元</span>
                                     </h1>
                                     <div className="jsbn">
@@ -34,7 +34,7 @@ const SuiteRecommand = React.createClass({
                                             {v.attractionsName || 'Haven'}
                                         </span>
                                     </a>
-                                    <a className="btn-2">马上抢订</a>
+                                    <a style={{display:'none'}} className="btn-2">马上抢订</a>
                                 </div>
                             </div>
                         </li>
