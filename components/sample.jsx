@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 import { PageFooter } from './common/page-footer.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { SampleConfig } from './config/sample-config'
+import { SuiteRecommand } from './common/suite-recommand.jsx'
+
 const Sample = React.createClass({
   render () {
     return (
@@ -22,14 +24,24 @@ const Sample = React.createClass({
               <span>查看更多</span>
           </div>
         </div>
-        <div id='suite' className="block-tit-box">
-          <h1><span>金色旅拍</span><b>套系报价</b></h1>
-          <h2>Golden trip, so it's really good.</h2>
+        <div className="block-tit-box" id='suite'>
+            <div className="border-box">
+              <h1><span>金色旅拍</span><b>套系热卖</b></h1>
+              <h2></h2>
+            </div>
+            <p>Golden trip, so it's really good.</p>
         </div>
-        <div>Suite</div>
+        <SuiteRecommand {...SampleConfig['SuiteRecommand']} cityId={this.props.dataParams.cityId}/>
         <PageFooter />
       </div>
     )
+  },
+  getDefaultProps(){
+    return {
+      dataParams:{
+        cityId:-1
+      }
+    }
   }
 })
 
