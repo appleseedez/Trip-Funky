@@ -10,7 +10,7 @@ const SampleRecommand = React.createClass({
   _.map(this.state.data,(v,k)=>{
     let item = null
     switch (k) {
-      case 0:
+      case 1:
         item = (
           <li className="item item-big marginLeft" key={k}>
               <div className="img-box">
@@ -27,7 +27,7 @@ const SampleRecommand = React.createClass({
         break;
       case 3:
         item=(
-          <li className="item item-last item-mgt" key={k}>
+          <li className="item  item-mgt" key={k}>
               <div className="img-box">
                   <a className="href-box"/>
                   <div className="info-box">
@@ -42,7 +42,7 @@ const SampleRecommand = React.createClass({
         break;
       case 4:
         item=(
-          <li className="item item-mgt" key={k}>
+          <li className="item item-last item-mgt" key={k}>
               <div className="img-box">
                   <a className="href-box"/>
                   <div className="info-box">
@@ -104,7 +104,8 @@ const SampleRecommand = React.createClass({
               name:'金色百年'
             })
           })
-          this.setState({ data:j.data })
+          let d =_.concat(_.reverse(j.data.slice(0,2)),j.data.slice(2,3),_.reverse(j.data.slice(3)))
+          this.setState({ data:d })
         })
       }
     }
