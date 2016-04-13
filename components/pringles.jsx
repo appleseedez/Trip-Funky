@@ -11,7 +11,7 @@ const Pringles = React.createClass({
       <div className='pringles-view'>
         <div className='bannar-all-box' >
           <div className='slider-box bannar' style={{height:PringlesConfig['MediaSlider']['height']}} id='slider_top'>
-            <MediaSlider {...PringlesConfig['MediaSlider']} />
+            <MediaSlider {...PringlesConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
           </div>
         </div>
         <div className="gray-bg-box">

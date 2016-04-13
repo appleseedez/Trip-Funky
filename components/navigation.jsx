@@ -6,7 +6,6 @@ import {BaseConfig} from './config/base'
 const Navigation = React.createClass({
 
     render() {
-      console.log(this.props.dataParams);
         let city = _.filter(this.state.city, (v) => {
             return this.props.dataParams.cityId === v.id+''
         })[0] || {'name':''}

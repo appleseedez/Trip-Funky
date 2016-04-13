@@ -12,7 +12,7 @@ const Home = React.createClass({
       <div className='home-view'>
         <div className='bannar-all-box' >
           <div className='slider-box bannar' style={{height:HomeConfig['MediaSlider']['height']}} id='slider_top'>
-            <MediaSlider {...HomeConfig['MediaSlider']} />
+            <MediaSlider {...HomeConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
           </div>
         </div>
         <div className="gray-bg-box">

@@ -12,7 +12,7 @@ const Sample = React.createClass({
       <div className='samples-view'>
         <div className='bannar-all-box' >
           <div className='slider-box bannar' style={{height:SampleConfig['MediaSlider']['height']}} id='slider_top'>
-            <MediaSlider {...SampleConfig['MediaSlider']} />
+            <MediaSlider {...SampleConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
           </div>
         </div>
         <div className='gray-bg-box'>
