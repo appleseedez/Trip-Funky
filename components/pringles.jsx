@@ -27,14 +27,6 @@ const Pringles = React.createClass({
             <span>查看更多</span>
           </div>
         </div>
-        <div className="block-tit-box" id='suite'>
-            <div className="border-box">
-              <h1><span>金色旅拍</span><b>套系热卖</b></h1>
-              <h2></h2>
-            </div>
-            <p>Golden trip, so it's really good.</p>
-        </div>
-        <SuiteRecommand {...PringlesConfig['SuiteRecommand']} cityId={this.props.dataParams.cityId}/>
         <PageFooter />
       </div>
     )
