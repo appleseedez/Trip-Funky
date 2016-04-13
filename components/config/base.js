@@ -22,7 +22,7 @@ const BaseConfig = {
             return BaseConfig.baseUrl + paramsUrl
         }
     },
-    fetchFunc: function(component, nextProps, shuffle) {
+    fetchFunc: function(component, nextProps, shuffle, setCallBack) {
         if (null === nextProps) {
             return (component) => {
                 const loadMore = () => {
@@ -46,12 +46,11 @@ const BaseConfig = {
                             if (t.length === component.state.count) {
                                 $('#J_MoreButton').hide()
                             }
-                            console.log(t, temp, currentIndex);
                             component.setState({
                                 'data': shuffle ? _.shuffle(t) : t,
                                 'dataStore': temp,
                                 'currentIndex': currentIndex
-                            })
+                            },setCallBack)
                         })
                 }
                 const loadLess = () => {
@@ -81,12 +80,11 @@ const BaseConfig = {
                             }
                             let temp = []
                             temp[0] = j.data
-                            console.log(j.data, temp);
                             component.setState({
                                 data: j.data,
                                 count: j.count,
                                 dataStore: temp
-                            })
+                            },setCallBack)
                         })
                 }
             }
@@ -113,13 +111,12 @@ const BaseConfig = {
                             }
                             let temp = []
                             temp[0] = j.data
-                            console.log(j.data, temp);
                             component.setState({
                                 data: shuffle ? _.shuffle(j.data) : j.data,
                                 count: j.count,
                                 dataStore: temp,
                                 currentIndex: 0
-                            })
+                            },setCallBack)
                         })
                 }
             }

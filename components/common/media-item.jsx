@@ -165,17 +165,12 @@ const VideoItem = React.createClass({
       }else {
         console.log('视频地址格式错误')
       }
-
-
     }
   }
 })
 
-
-
 const ImageItem = React.createClass({
   render () {
-
     /**
     如果mediaUrl是有带widthXheight的。
     就应该把这个实际的图片尺寸提取出来。

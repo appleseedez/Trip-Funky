@@ -15,7 +15,7 @@ const SuiteConfig = {
   'TripListItem':_.merge({
     dataUrl:'suite',
     params:{
-      'pageSize':10,
+      'pageSize':1,
       'pageIndex':1
     }
   },BaseConfig)

@@ -11,6 +11,7 @@
     "build-sample": "watchify ./src/client/sample.js -o 'uglifyjs -cm > ./assets/script/modules/sample.min.js'",
     "build-pringles": "watchify ./src/client/pringles.js -o 'uglifyjs -cm > ./assets/script/modules/pringles.min.js'",
     "build-suite": "watchify ./src/client/suite.js -o 'uglifyjs -cm > ./assets/script/modules/suite.min.js'",
+    "build-suite-detail": "watchify ./src/client/suite-detail.js -o 'uglifyjs -cm > ./assets/script/modules/suite-detail.min.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

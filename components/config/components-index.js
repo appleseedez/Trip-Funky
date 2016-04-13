@@ -4,6 +4,7 @@ import { Home } from '../home.jsx'
 import { Sample } from '../sample.jsx'
 import { Pringles } from '../pringles.jsx'
 import { Suite } from '../suite.jsx'
+import { SuiteDetail } from '../suite-detail.jsx'
 
 
 const ComponentsIndex = {
@@ -11,7 +12,8 @@ const ComponentsIndex = {
   'home': <Home />,
   'sample': <Sample />,
   'pringles': <Pringles />,
-  'suite': <Suite />
+  'suite': <Suite />,
+  'suite-detail':<SuiteDetail />
 }
 
 
@@ -41,6 +43,11 @@ const ComponentsSeo = {
     'seoTitle':'suite',
     'seoKeywords':'suite',
     'seoDescription':'suite'
+  },
+  'suite-detail':{
+    'seoTitle':'suite-detail',
+    'seoKeywords':'suite-detail',
+    'seoDescription':'suite-detail'
   }
 }
 

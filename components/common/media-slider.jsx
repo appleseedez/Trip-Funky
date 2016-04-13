@@ -53,7 +53,6 @@ const MediaSlider = React.createClass({
     if (_.size(nextProps.params)>0) {
       p = '?'+$.param(nextProps.params)
     }
-    console.log(nextProps.baseUrl);
     fetch(nextProps.baseUrl + nextProps.dataUrl + p)
     .then(res => {return res.json()})
     .then(j=>{
@@ -70,11 +69,9 @@ const MediaSlider = React.createClass({
       if (_.size(this.props.params)>0) {
         p = '?'+$.param(this.props.params)
       }
-      console.log(this.props.baseUrl);
       fetch(this.props.baseUrl + this.props.dataUrl + p)
       .then(res => {return res.json()})
       .then(j=>{
-        console.log(j.data);
         this.setState({ data:j.data },()=>{
           $('#slider_top').length>0 && $('#slider_top').Slider()
         })
