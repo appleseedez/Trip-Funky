@@ -664,15 +664,6 @@ body {
 .adaptation-mobile .select-module .nav-local {
   background-color: transparent;
 }
-.adaptation-mobile .select-module.mainhome-module {
-  width: 100%;
-  height: 50%;
-  position: relative;
-  top: 20%;
-}
-.adaptation-mobile .select-module.mainhome-module .nav-local {
-  background-color: transparent;
-}
 .adaptation-mobile .select-module .menu-box {
   padding: 0px 20px;
   background-color: rgba(138, 208, 210, 0.75);
@@ -706,23 +697,24 @@ body {
   *zoom: 1;
 }
 .adaptation-mobile .select-module .menu-box .tab-box ul li {
-  width: 40%;
+  width: 45%;
   background-color: transparent;
   display: block;
   float: left;
   height: auto;
+  text-align: center;
+  text-indent: 0;
   margin-right: 10px;
   margin-bottom: 10px;
+  padding: 8px;
+  background-color: rgba(55, 159, 174, 0.6);
+  border-radius: 20px;
 }
 .adaptation-mobile .select-module .menu-box .tab-box ul li a {
   color: #ffffff;
   font-size: 16px;
   line-height: 16px;
   padding: 5px;
-}
-.adaptation-mobile .select-module .menu-box .tab-box ul li a:hover {
-  background-color: rgba(55, 159, 174, 0.6);
-  border-radius: 2px;
 }
 .adaptation-mobile .select-module .menu-box .tab-box ul:after {
   content: ".";
@@ -732,6 +724,19 @@ body {
   visibility: hidden;
 }
 .adaptation-mobile .select-module .close-box {
+  display: none;
+}
+.adaptation-mobile .select-module.mainhome-module {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  top: 20%;
+}
+.adaptation-mobile .select-module.mainhome-module .nav-local {
+  background-color: transparent;
+}
+.adaptation-mobile .select-module.mainhome-module .close-box {
+  display: block;
   width: 20px;
   height: 20px;
   position: absolute;
@@ -739,7 +744,7 @@ body {
   top: 5px;
   right: 10px;
 }
-.adaptation-mobile .select-module .close-box a {
+.adaptation-mobile .select-module.mainhome-module .close-box a {
   display: block;
   width: 100%;
   height: 100%;
@@ -1939,6 +1944,141 @@ body {
 .adaptation-1200 .app-header .logo-box {
   float: left;
   margin-top: 22px;
+}
+.adaptation-1200 .main-rig-func-box {
+  /* 全局右边浮动功能条 */
+  position: fixed;
+  right: 10px;
+  bottom: 40px;
+  margin-left: 620px;
+  z-index: 2000;
+}
+.adaptation-1200 .main-rig-func-box .rect-4-js {
+  background-image: url("../images/hover-head.png");
+}
+.adaptation-1200 .main-rig-func-box .rect-1-js {
+  background-image: url("../images/rect-1-js.png");
+}
+.adaptation-1200 .main-rig-func-box .ico-16-js {
+  background-image: url(../images/ico-16-js.png);
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  display: block;
+}
+.adaptation-1200 .main-rig-func-box .ico-16-2-js {
+  background-position: 0 0;
+}
+.adaptation-1200 .main-rig-func-box .ico-16-2-js {
+  background-position: 0 -18px;
+}
+.adaptation-1200 .main-rig-func-box .ico-16-3-js {
+  background-position: 0 -36px;
+}
+.adaptation-1200 .main-rig-func-box .ico-16-4-js {
+  background-position: 0 -54px;
+}
+.adaptation-1200 .main-rig-func-box .ico-16-5-js {
+  background-position: 0 -72px;
+}
+.adaptation-1200 .main-rig-func-box .hover-first-box {
+  margin-top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.adaptation-1200 .main-rig-func-box .hover-box {
+  margin-top: 1px;
+  display: block;
+}
+.adaptation-1200 .main-rig-func-box .hover-box .pos-box {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  float: left;
+}
+.adaptation-1200 .main-rig-func-box .hover-box .pos-box span {
+  color: #f1f1f1;
+  padding: 4px 5px 0;
+  display: none;
+}
+.adaptation-1200 .main-rig-func-box .hover-box:hover span {
+  display: block;
+}
+.adaptation-1200 .main-rig-func-box .hover-box:hover i {
+  display: none;
+}
+.adaptation-1200 .main-rig-func-box .func-box {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+.adaptation-1200 .main-rig-func-box .func-box i {
+  margin: 11px auto 0;
+}
+.adaptation-1200 .main-rig-func-box .disgin-box {
+  margin-top: 1px;
+  position: relative;
+  height: 17px;
+  cursor: pointer;
+  opacity: 0.2;
+}
+.adaptation-1200 .main-rig-func-box .disgin-box i {
+  float: left;
+  margin-right: 1px;
+}
+.adaptation-1200 .main-rig-func-box .disgin-box .rect-3-js {
+  left: 0;
+  top: 13px;
+  float: none;
+  position: absolute;
+}
+.adaptation-1200 .main-rig-func-box .disgin-box-top {
+  height: auto;
+}
+.adaptation-1200 .main-rig-func-box .disgin-box-top i {
+  float: none;
+}
+.adaptation-1200 .main-rig-func-box:hover .disgin-box {
+  opacity: 1;
+}
+.adaptation-1200 .main-rig-func-box:hover .func-box {
+  height: 204px;
+}
+.adaptation-1200 .phone-window-pop-box {
+  height: 40px;
+  width: 0px;
+  overflow: hidden;
+  background-color: #000;
+  display: block;
+  position: fixed;
+  right: 51px;
+  bottom: 163px;
+  z-index: 3000;
+}
+.adaptation-1200 .phone-window-pop-box span {
+  line-height: 40px;
+  padding: 0 10px;
+  color: #f1f1f1;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.adaptation-1200 .qr-code-box {
+  width: 0px;
+  background-color: #000;
+  overflow: hidden;
+  position: fixed;
+  right: 51px;
+  bottom: 62px;
+  z-index: 3000;
+}
+.adaptation-1200 .qr-code-box img {
+  display: block;
+  padding: 10px;
 }
 .adaptation-1200 .select-module {
   opacity: 0;
