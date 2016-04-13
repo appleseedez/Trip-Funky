@@ -7,13 +7,11 @@ import { TripListItem } from './common/trip-list-item.jsx'
 
 const SuiteItemInfo = React.createClass({
   render() {
-
     //info信息用|符号做分割
     let infoData = this.props.info && this.props.info.split && this.props.info.split('|') || []
     return (
       <div className="info">
         <div className="overview">
-          <h1>{this.props.name}</h1>
           {
             _.map(infoData,(v,k)=>{
               return (<span key={k}><p>{v}</p></span>)
@@ -34,9 +32,10 @@ const SuiteList = React.createClass({
           _.map(this.state.data, (v,k) => {
             return (
               <li key={k} className="item">
-                <a href={hrefUrl+v.id} className="img-box">
+                <a className="img-box" href={hrefUrl+v.id} target="_brank">
                   <img src={v.coverUrlWeb} />
                 </a>
+                <div className="tit-box"><h1>{v.name}</h1></div>
                 <div className="scrollbarall">
                   <div className="scrollbar">
                     <div className="track">
@@ -48,13 +47,13 @@ const SuiteList = React.createClass({
                   </div>
                   <div className="viewport">
                     {
-                      <SuiteItemInfo name={v.name} info={v.detail} />
+                      <SuiteItemInfo info={v.detail} />
                     }
                   </div>
                 </div>
                 <div className='price-box'>
                   <div className='price'><span>{v.salePrice}</span><b>RMB</b></div>
-                  <a className='btn-detail'>查看详情</a>
+                  <a className='btn-detail' href={hrefUrl+v.id} target="_brank">详情</a>
                 </div>
               </li>
             )
@@ -80,20 +79,20 @@ const SuiteList = React.createClass({
         let e = $(v)
         e.tinyscrollbar();
         e.find('.scrollbar').css({
-          opacity: 1
+          opacity: 0
         });
 
-        //e.bind('mouseenter', function() {
-        //  $('.scrollbar', e).animate({
-        //    opacity: 1
-        //  }, 300);
-        //});
-        //
-        //e.bind('mouseleave', function() {
-        //  $('.scrollbar', e).animate({
-        //    opacity: 0
-        //  }, 300);
-        //});
+        e.bind('mouseenter', function() {
+          $('.scrollbar', e).animate({
+            opacity: 1
+          }, 300);
+        });
+
+        e.bind('mouseleave', function() {
+          $('.scrollbar', e).animate({
+            opacity: 0
+          }, 300);
+        });
       });
     }
 
