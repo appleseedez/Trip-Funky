@@ -28,7 +28,7 @@ const SampleDetails = React.createClass({
         </div>
         <div className="block-tit-box">
           <div className="border-box">
-            <h1><span>金色旅拍</span><b>三亚样片</b></h1>
+            <h1><span>金色旅拍</span><b>样片欣赏</b></h1>
             <h2></h2>
           </div>
           <p>Golden trip, so it's really good.</p>
@@ -68,7 +68,7 @@ const SampleDetails = React.createClass({
                          data-uk-lightbox="{'group':'sample-img'}"
                          data-lightbox-type='image'
                          href={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
-                        <img src={v+'@130w_130h_90Q'} />
+                        <img src={v+'@1e_1c_0o_0l_130h_130w_90q.src'} />
                       </a>
                     )
                   })

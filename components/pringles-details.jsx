@@ -21,7 +21,7 @@ const PringlesDetails = React.createClass({
         </div>
         <div className="block-tit-box">
           <div className="border-box">
-            <h1><span>金色旅拍</span><b>三亚客片</b></h1>
+            <h1><span>金色旅拍</span><b>客片欣赏</b></h1>
             <h2></h2>
           </div>
           <p>Golden trip, so it's really good.</p>
@@ -51,7 +51,7 @@ const PringlesDetails = React.createClass({
                       <li key={k} className="item item-current"
                           data-big-img-url={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
                         <a className="img-box">
-                          <img src={v+'@130w_130h_90Q'} />
+                          <img src={v+'@1e_1c_0o_0l_130h_130w_90q.src'} />
                         </a>
                       </li>
                     )

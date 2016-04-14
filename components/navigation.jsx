@@ -15,9 +15,9 @@ const CityChooser = React.createClass({
                           <a></a>
                       </div>
                       <div className="menu-box">
-                          <div className="tab-box inland">
+                          <div className="tab-box inland tab-current">
                               <a href="#">
-                                  <span className="tab-title tab-current"></span>
+                                  <span className="tab-title"></span>
                               </a>
                               <ul className="tab-item">
                                   {_.map(this.props.city, (v, k) => {
