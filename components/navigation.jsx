@@ -3,92 +3,70 @@ import {MenuConfig} from './config/menu-config'
 import _ from 'lodash'
 import {BaseConfig} from './config/base'
 
+
+const CityChooser = React.createClass({
+  render () {
+    return (
+      <div className="sliding-window">
+          <div className="content-view">
+              <div className="select-module mainhome-module">
+                  <div className="nav-local">
+                      <div className="close-box">
+                          <a></a>
+                      </div>
+                      <div className="menu-box">
+                          <div className="tab-box inland">
+                              <a href="#">
+                                  <span className="tab-title tab-current"></span>
+                              </a>
+                              <ul className="tab-item">
+                                  {_.map(this.props.city, (v, k) => {
+                                      return (
+                                          <li key={k}>
+                                              <a href={'/home?cityId=' + v.id + '&type=' + v.type}>{v.name}</a>
+                                          </li>
+                                      )
+                                  })
+                                }
+                              </ul>
+                          </div>
+                          <div className="tab-box oversea">
+                              <a href="#">
+                                  <span className="tab-title"></span>
+                              </a>
+                              <ul className="tab-item" style={{
+                                  display: 'none'
+                              }}>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    )
+  }
+})
+
+
+
+
 const Navigation = React.createClass({
 
     render() {
         let city = _.filter(this.state.city, (v) => {
-            return this.props.dataParams.cityId === v.id+''
-        })[0] || {'name':''}
+            return this.props.dataParams.cityId === v.id + ''
+        })[0] || {
+            'name': '获取中...'
+        }
         if (this.props.currentUrl === '/') {
             return (
-                <div>
-                    <div className="sliding-window">
-                        <div className="content-view">
-                            <div className="select-module">
-                                <div className="close-box">
-                                    <a/>
-                                </div>
-                                <div className="menu-box">
-                                    <ul>
-                                        <li className="item item-current">
-                                            <a href="#">
-                                                <img src="/images/home_btn_1.png" alt/>
-                                            </a>
-                                        </li>
-                                        <li className="item ">
-                                            <a href="#">
-                                                <img src="/images/home_btn_2.png" alt/>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="tab-box scroll-view">
-                                    <ul className="nav-local">
-                                        {_.map(this.state.city, (v, k) => {
-                                            return (
-                                                <li key={k}>
-                                                    <a href={'/home?cityId=' + v.id + '&type=' + v.type}>{v.name}</a>
-                                                </li>
-                                            )
-                                        })
-}
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+              <CityChooser city={this.state.city} />
             )
         }
         return (
             <div>
-                <div className="sliding-window">
-                    <div className="content-view">
-                        <div className="select-module">
-                            <div className="close-box">
-                                <a/>
-                            </div>
-                            <div className="menu-box">
-                                <ul>
-                                    <li className="item item-current">
-                                        <a href="#">
-                                            <img src="/images/home_btn_1.png" alt/>
-                                        </a>
-                                    </li>
-                                    <li className="item ">
-                                        <a href="#">
-                                            <img src="/images/home_btn_2.png" alt/>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="tab-box scroll-view">
-                                <ul className="nav-local">
-                                    {_.map(this.state.city, (v, k) => {
-                                        return (
-                                            <li key={k}>
-                                                <a href={'/home?cityId=' + v.id + '&type=' + v.type}>{v.name}</a>
-                                            </li>
-                                        )
-                                    })
-}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <CityChooser city={this.state.city} />
                 <div className="app-top">
                     <div className="relative-box">
                         <span className="lef"></span>
@@ -97,7 +75,7 @@ const Navigation = React.createClass({
                 </div>
                 <div className="app-header">
                     <div className="relative-box">
-                        <a className="logo-pc"/>
+                        <a href={'/'} className="logo-pc"/>
                         <span className="city-name">{city.name}</span>
                         <div className="title-box" id="J_menu_btn">
                             <i className="arrow-1 arrow-r-1 transition"/>
@@ -118,16 +96,24 @@ const Navigation = React.createClass({
                         </div>
                         <ul className="drop-down-menu" id="J_drop_down_menu">
                             <li>
-                                <a href={'/home?cityId='+this.props.dataParams.cityId +'&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/home')?'current':''}>{city.name + '首页'}</a>
+                                <a href={'/home?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/home')
+                                    ? 'current'
+                                    : ''}>{city.name + '首页'}</a>
                             </li>
                             <li>
-                                <a href={'/sample?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/sample')?'current':''}>作品欣赏</a>
+                                <a href={'/sample?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/sample')
+                                    ? 'current'
+                                    : ''}>作品欣赏</a>
                             </li>
                             <li>
-                                <a href={'/pringles?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/pringles')?'current':''}>客片欣赏</a>
+                                <a href={'/pringles?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/pringles')
+                                    ? 'current'
+                                    : ''}>客片欣赏</a>
                             </li>
                             <li>
-                                <a href={'/suite?cityId='+this.props.dataParams.cityId + '&type='+this.props.dataParams.type} className={(this.props.currentUrl === '/suite')?'current':''}>套系报价</a>
+                                <a href={'/suite?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/suite')
+                                    ? 'current'
+                                    : ''}>套系报价</a>
                             </li>
                         </ul>
                     </div>
@@ -140,16 +126,19 @@ const Navigation = React.createClass({
         )
     },
     getDefaultProps() {
-        return {dataUrl: 'city',dataParams:{
-          cityId:-1,
-          name:''
-        }}
+        return {
+            dataUrl: 'city',
+            dataParams: {
+                cityId: -1,
+                name: ''
+            }
+        }
     },
     getInitialState() {
         return {city: []}
     },
     componentWillReceiveProps(nextProps) {
-      console.log('nav:',nextProps);
+        console.log('nav:', nextProps);
     },
     componentDidMount() {
         const setup = () => {
