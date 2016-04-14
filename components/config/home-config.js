@@ -8,6 +8,9 @@ const HomeConfig = {
         'aspectRatio': '192:68',
         'height': 680
     }, BaseConfig), // 广告轮播
+    'IndexHot1':_.merge({
+        'dataUrl': 'adv/index_hot1',
+    }, BaseConfig),
     'SampleRecommand': _.merge({
         dataUrl: 'sample',
         params: {
