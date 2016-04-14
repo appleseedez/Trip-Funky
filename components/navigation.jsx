@@ -182,7 +182,7 @@ const Navigation = React.createClass({
 
             J_menu_btn.bind('click', function() {
                 (B_drop_down === false && J_menu_btn.find('i').attr('class', 'arrow-1 arrow-b-1 transition') && J_drop_down_menu.animate({
-                    height: 50 * 3
+                    height: 50 * 4
                 }, 300, function() {
                     B_drop_down = true
                 })) || (B_drop_down === true && J_menu_btn.find('i').attr('class', 'arrow-1 arrow-r-1 transition') && J_drop_down_menu.animate({
