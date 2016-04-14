@@ -14,25 +14,23 @@ import { PringlesDetailsConfig } from './config/pringles-details-config'
 const PringlesDetails = React.createClass({
   render() {
     return(
-      <div className="layout-center-box">
-        <div className="box-img">
-          {
-            /*传入aspectRatio='1:-1' -1表示以100%作为值 见代码*/
-            _.map(this.state.details, (v, k) => {
-              return (
-                <MediaItem key={k} mediaUrl={v} width={1920} aspectRatio={'1:-1'} />
-              );
-            })
-          }
-        </div>
+      <div className="detail-view">
       </div>
     );
   },
 
   getInitialState: function() {
     return {
-      details: []
+      details: {}
     };
+  },
+
+  getDefaultProps(){
+    return {
+      dataParams:{
+        cityId:-1
+      }
+    }
   },
 
   componentDidMount() {
@@ -44,7 +42,7 @@ const PringlesDetails = React.createClass({
         .then(j=>{
           if(j.success && j.data.length > 0) {
             // 因为后天返回的pcDetailImages是一个字符串,所以要转换成json
-            this.setState({details:j.data[0].pcDetailImages});
+            this.setState({details:j.data[0]});
           }
         })
     }

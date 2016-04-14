@@ -1,6 +1,6 @@
 import _ from 'lodash'
 const BaseConfig = {
-    baseUrl: 'api/',
+    baseUrl: '/api/',
     buildUrl: function(params, urlTemplate) {
         let paramsUrl = urlTemplate
         if (_.size(params) > 0 && paramsUrl) { //参数获取正确
