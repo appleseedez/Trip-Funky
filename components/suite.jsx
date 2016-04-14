@@ -98,7 +98,7 @@ const SuiteList = React.createClass({
 
     let SuiteList = SuiteConfig['TripListItem']
     SuiteList.params=_.merge(SuiteList.params, {'cityId':this.props.cityId});
-    SuiteList['fetchFunc'](this,null,true,setupScrollbar)(this,null,true,setupScrollbar)
+    SuiteList['fetchFunc'](this,null,false,setupScrollbar)(this,null,true,setupScrollbar)
   }
 
 })
