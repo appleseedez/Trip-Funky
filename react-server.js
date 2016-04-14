@@ -62,11 +62,13 @@ ReactServer.use(StaticFile('./assets',{'maxage':3*60*1000})) // 其他静态资�
 ReactServer.use(function*(next){
   this.APIKey = null
   /**如果域名是mt开头就是微信 this.platformClass 将会通过render变量被写到根div的class上**/
-  if (this.request.header.host.indexOf('mt.') === 0) {
+  if (this.request.header.host.indexOf('mt') === 0) {
     this.platformClass = 'adaptation-mobile'
   }else {
     this.platformClass = 'adaptation-1200'
   }
+  console.log(this.request.header.host)
+  console.log(this.platformClass)
   yield next
 })
 ReactServer.use(apiRouter.routes()) // api路由
@@ -143,15 +145,13 @@ ReactServer.use(dataFetchMiddleWare)
 ReactServer.use(siteRouter.routes()) // 网站路由
 
 
-console.log(process.env.NODE_ENV);
-
 /**服务器异常处理**/
 if (process.env.NODE_ENV === 'test') {
   module.exports = ReactServer.callback();
 } else {
   ReactServer.listen(8001);
-  // TODO tt.jsbn.com mtt.jsbn.com作为预发布域名测试,正式环境需要切换
-  console.log((process.env.NODE_ENV === 'production')?'open http://tt.jsbn.com':'open http://trip-dev.jsbn.com:8001')
+  console.log(process.env.NODE_ENV);
+  //console.log((process.env.NODE_ENV === 'production')?'open http://tt.jsbn.com':'open http://trip-dev.jsbn.com:8001')
 }
 
 ReactServer.on('error', function (err) {
