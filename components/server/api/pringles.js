@@ -51,7 +51,7 @@ const pringlesApi = {
   // 客片详情
   'get+/pringles/detail/:id': function*(next) {
     this.APIKey = 'Pringles'
-    this.model = suite.filter({
+    this.model = pringles.filter({
       id: parseInt(this.params.id)
     })
 

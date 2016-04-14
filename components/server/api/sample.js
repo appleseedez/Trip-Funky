@@ -53,7 +53,7 @@ const sampleApi = {
   'get+/sample/detail/:id': function*(next) {
     this.APIKey = 'Sample'
 
-    this.model = suite.filter({
+    this.model = sample.filter({
       id:parseInt(this.params.id)
     })
 
