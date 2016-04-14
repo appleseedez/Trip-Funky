@@ -35,7 +35,6 @@ const PringlesDetails = React.createClass({
     };
   },
 
-  // pcDetailImages  pringles/detail/828
   componentDidMount() {
     let cfg = PringlesDetailsConfig['PringlesDetails']
     let fetchUrl = cfg['buildUrl'](this.props.dataParams,cfg['dataUrl'])
@@ -45,7 +44,7 @@ const PringlesDetails = React.createClass({
         .then(j=>{
           if(j.success && j.data.length > 0) {
             // 因为后天返回的pcDetailImages是一个字符串,所以要转换成json
-            this.setState({details:JSON.parse(j.data[0].pcDetailImages)});
+            this.setState({details:j.data[0].pcDetailImages});
           }
         })
     }

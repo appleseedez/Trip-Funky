@@ -5,13 +5,14 @@ import _ from 'lodash'
 const TripListItem = React.createClass({
   render () {
     if (this.props.type === 'sample') {
+      let hrefUrl='/suite-detail?cityId='+this.props.cityId+'&type='+this.props.type+'&id='
       return (
         <ul className="recommend-list layout-center-box">
        {
          _.map(this.state.data,(v,k)=>{
            return(
              <li key={k} className="item-box">
-               <a href={'/'} className="img-box" target='_blank'>
+               <a href={hrefUrl+} className="img-box" target='_blank'>
                  <MediaItem
                    height={576}
                    aspectRatio={'-1:576'}
