@@ -67,8 +67,6 @@ ReactServer.use(function*(next){
   }else {
     this.platformClass = 'adaptation-1200'
   }
-  console.log(this.request.header.host)
-  console.log(this.platformClass)
   yield next
 })
 ReactServer.use(apiRouter.routes()) // api路由

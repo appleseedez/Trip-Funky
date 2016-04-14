@@ -4,10 +4,10 @@
 import _ from 'lodash'
 import { BaseConfig } from './base'
 
-const SuiteDetailConfig = {
+const SuiteDetailsConfig = {
   'SuiteDetails':_.merge({
     dataUrl:'suite/detail/'
   },BaseConfig)
 }
 
-export { SuiteDetailConfig }
+export { SuiteDetailsConfig }

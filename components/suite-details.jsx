@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react'
 import _ from 'lodash'
-import { SuiteDetailConfig } from './config/suite-detail-config'
+import { SuiteDetailsConfig } from './config/suite-details-config'
 import { MediaItem } from './common/media-item.jsx'
 
-const SuiteDetail = React.createClass({
+const SuiteDetails = React.createClass({
   render () {
     return (
       <div className='layout-center-box'>
@@ -40,7 +40,7 @@ const SuiteDetail = React.createClass({
     }
   },
   componentDidMount() {
-    let cfg = SuiteDetailConfig['SuiteDetails']
+    let cfg = SuiteDetailsConfig['SuiteDetails']
     let fetchUrl = cfg['baseUrl']+cfg['dataUrl']+this.props.dataParams.id
     if(fetchUrl){
       fetch(fetchUrl)
@@ -71,4 +71,4 @@ const SuiteDetail = React.createClass({
   }
 })
 
-export { SuiteDetail }
+export { SuiteDetails }

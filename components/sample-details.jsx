@@ -39,6 +39,10 @@ const SampleDetails = React.createClass({
   componentDidMount() {
     let cfg = SampleDetailsConfig['SampleDetails']
     let fetchUrl = cfg['buildUrl'](this.props.dataParams,cfg['dataUrl'])
+
+    console.log(JSON.stringify(this.props.dataParams))
+    console.log(fetchUrl)
+
     if(fetchUrl){
       fetch(fetchUrl)
         .then(res => {return res.json()})

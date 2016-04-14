@@ -108,7 +108,7 @@ const Suite = React.createClass({
     return (
       <div className="suites-view">
         <div className='bannar-all-box' >
-          <div className='slider-box bannar' style={{height:SuiteConfig['MediaSlider']['height']}} id='slider_top'>
+          <div className='slider-box bannar' id='slider_top'>
             <MediaSlider {...SuiteConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
           </div>
         </div>

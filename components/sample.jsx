@@ -8,10 +8,11 @@ import _ from 'lodash'
 
 const Sample = React.createClass({
   render () {
+    console.log(JSON.stringify(this.props.dataParams))
     return (
       <div className='samples-view'>
         <div className='bannar-all-box' >
-          <div className='slider-box bannar' style={{height:SampleConfig['MediaSlider']['height']}} id='slider_top'>
+          <div className='slider-box bannar' id='slider_top'>
             <MediaSlider {...SampleConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
           </div>
         </div>

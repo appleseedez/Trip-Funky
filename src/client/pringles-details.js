@@ -1,7 +1,7 @@
 /**
  * Created by chenjianjun on 16/3/9.
  */
-import { PringlesDetails } from '../../components/pringles-detail.jsx'
+import { PringlesDetails } from '../../components/pringles-details.jsx'
 import { Navigation } from '../../components/navigation.jsx'
 import 'es6-promise'
 import 'fetch-detector'
