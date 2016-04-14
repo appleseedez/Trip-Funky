@@ -1,15 +1,8 @@
 import _ from 'lodash'
-const Mode = process.env.NODE_ENV || $('#J_Matrix').attr('data-mode')
 const BaseConfig = {
-    mode: Mode,
     baseUrl: 'api/',
     buildUrl: function(params, urlTemplate) {
-        /*
-          客户端渲染时， 由于是外部引入脚本的方式
-          <script class='J_Matrix' data-params='{"id":124}' scr='xxx.min.js' />
-          所以，可以从data-params取得传入的参数。然后在组件被render的时候，传入给组件的dataParams字段
-        */
-        let paramsUrl = urlTemplate //SampleDetailsConfig['SampleDetails'].dataUrl || undefined
+        let paramsUrl = urlTemplate
         if (_.size(params) > 0 && paramsUrl) { //参数获取正确
             /**
             例如url为: /sample/:id/:typeId
