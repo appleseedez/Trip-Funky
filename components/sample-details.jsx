@@ -68,7 +68,7 @@ const SampleDetails = React.createClass({
                          data-uk-lightbox="{'group':'sample-img'}"
                          data-lightbox-type='image'
                          href={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
-                        <MediaItem aspectRatio='1:1' height={130} mediaUrl={v} water={false} />
+                        <img src={v+'@130w_130h_90Q'} />
                       </a>
                     )
                   })
