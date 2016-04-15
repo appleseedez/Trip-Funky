@@ -69,6 +69,7 @@ const SampleDetails = React.createClass({
                          data-lightbox-type='image'
                          href={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
                         <img src={srcUrl} />
+                        <div className="round-shade-10"></div>
                       </a>
                     )
                   })
