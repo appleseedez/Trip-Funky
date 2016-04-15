@@ -11,6 +11,7 @@ import citySiteApi from './components/server/api/city'
 import pringlesApi from './components/server/api/pringles'
 import sampleApi from './components/server/api/sample'
 import suiteApi from './components/server/api/suite'
+import cacheManagerApi from './components/server/api/cache-manager.js'
 
 const apiRouter = new Router({
   'prefix':'/api'
@@ -38,7 +39,8 @@ const apiRouterList = [
   citySiteApi,
   pringlesApi,
   sampleApi,
-  suiteApi
+  suiteApi,
+  cacheManagerApi
 ]
 _.each(apiRouterList,(route,index)=>{
   _.each(route,(value,key)=>{
