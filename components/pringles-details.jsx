@@ -49,11 +49,17 @@ const PringlesDetails = React.createClass({
               <ul className="small-img-box">
                 {
                   _.map(this.state.details.pcDetailImages, (v,k)=> {
+                    let srcUrl = v;
+                    if(this.props.platform === '0') {// 如果是pc端,需要切图
+                      srcUrl += '@1e_1c_0o_0l_130h_130w_90q.src';
+                    } else {
+                      srcUrl += '@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                    }
                     return(
                       <li key={k} className="item item-current"
                           data-big-img-url={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
                         <a className="img-box">
-                          <img src={v+'@1e_1c_0o_0l_130h_130w_90q.src'} />
+                          <img src={srcUrl} />
                         </a>
                       </li>
                     )
@@ -63,9 +69,6 @@ const PringlesDetails = React.createClass({
             </div>
           </div>
         </div>
-
-        <PageFooter />
-
       </div>
     );
   },
@@ -78,13 +81,12 @@ const PringlesDetails = React.createClass({
 
   getDefaultProps(){
     return {
-      dataParams:{
-        cityId:-1
-      }
+      platform:'0'
     }
   },
 
   componentDidMount() {
+    console.log('平台:'+this.props.platform)
 
     const setUp = ()=> {
       $('#photo_slider').Slider({type:'Horizontal'});

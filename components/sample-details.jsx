@@ -57,12 +57,18 @@ const SampleDetails = React.createClass({
               <div className="small-img-box">
                 {
                   _.map(this.state.details.pcDetailImages, (v,k)=>{
+                    let srcUrl = v;
+                    if(this.props.platform === '0') {// 如果是pc端,需要切图
+                      srcUrl += '@1e_1c_0o_0l_130h_130w_90q.src';
+                    } else {
+                      srcUrl += '@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                    }
                     return(
                       <a key={k} className="item item-current img-box"
                          data-uk-lightbox="{'group':'sample-img'}"
                          data-lightbox-type='image'
                          href={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
-                        <img src={v+'@1e_1c_0o_0l_130h_130w_90q.src'} />
+                        <img src={srcUrl} />
                       </a>
                     )
                   })
@@ -72,9 +78,6 @@ const SampleDetails = React.createClass({
 
           </div>
         </div>
-
-        <PageFooter />
-
       </div>
     );
   },
@@ -87,13 +90,13 @@ const SampleDetails = React.createClass({
 
   getDefaultProps(){
     return {
-      dataParams:{
-        cityId:-1
-      }
+      platform:'0'
     }
   },
 
   componentDidMount() {
+    console.log('平台:'+this.props.platform)
+
     let cfg = SampleDetailsConfig['SampleDetails']
     let fetchUrl = cfg['buildUrl'](this.props.dataParams,cfg['dataUrl'])
 
