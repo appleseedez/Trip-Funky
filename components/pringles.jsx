@@ -32,7 +32,6 @@ const Pringles = React.createClass({
             <span>查看更多</span>
           </div>
         </div>
-        <PageFooter />
       </div>
     )
   },

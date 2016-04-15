@@ -19,7 +19,7 @@ const CitySite = env.Thinky.createModel('citySite', {
   id: type.number(),
   // 名称
   name: type.string(),
-  // type 0：国内、1：海外
+  // type 1：国内、2：海外
   type: type.number(),
   // 描述
   description: type.string(),
