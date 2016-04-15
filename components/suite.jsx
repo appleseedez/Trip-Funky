@@ -27,9 +27,11 @@ const Suite = React.createClass({
             </div>
             <p>Golden trip, so it's really good.</p>
             </div>
+
             <TripListItem {...SuiteConfig['TripListItem']}
-              type={'pringles'}
-              params={_.merge({'cityId':this.props.dataParams.cityId,'type':this.props.dataParams.type},SuiteConfig['TripListItem'].params)}/>
+              type={'suite'}
+              params={_.merge({'cityId':this.props.dataParams.cityId,'type':this.props.dataParams.type},SuiteConfig['TripListItem'].params)}
+            />
 
             <div className="list-more-btn" id='J_MoreButton'>
               <span>查看更多</span>

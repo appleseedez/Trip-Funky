@@ -7,7 +7,7 @@ import { BaseConfig } from './base'
 const SuiteConfig = {
   // 广告轮播
   'MediaSlider': _.merge({
-    'dataUrl': 'adv/index_top',
+    'dataUrl': 'adv/suite_top',
     'aspectRatio': '192:68',
     'height': 680
   }, BaseConfig),
@@ -21,7 +21,7 @@ const SuiteConfig = {
   'TripListItem':_.merge({
     dataUrl:'suite',
     params:{
-      'pageSize':10,
+      'pageSize':8,
       'pageIndex':1
     }
   },BaseConfig)

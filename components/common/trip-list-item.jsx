@@ -135,41 +135,61 @@ const TripListItem = React.createClass({
 
   componentWillReceiveProps(nextProps) {
     if (this.props.type === 'suite') {
+      const setUp= ()=>{
+        $('.scrollbarall').length > 0 &&
+        _.each($(".scrollbarall"),(v,k) => {
+          let e = $(v)
+          e.tinyscrollbar();
+          e.find('.scrollbar').css({
+            opacity: 0
+          });
+
+          e.bind('mouseenter', function() {
+            $('.scrollbar', e).animate({
+              opacity: 1
+            }, 300);
+          });
+
+          e.bind('mouseleave', function() {
+            $('.scrollbar', e).animate({
+              opacity: 0
+            }, 300);
+          });
+        });
+      }
       BaseConfig['fetchFunc'](this,nextProps,false,setUp)(this,nextProps,false,setUp)
     } else {
       BaseConfig['fetchFunc'](this,nextProps)(this,nextProps)
     }
   },
+
   componentDidMount() {
     if (this.props.type === 'suite') {
+      const setUp= ()=>{
+        $('.scrollbarall').length > 0 &&
+        _.each($(".scrollbarall"),(v,k) => {
+          let e = $(v)
+          e.tinyscrollbar();
+          e.find('.scrollbar').css({
+            opacity: 0
+          });
+
+          e.bind('mouseenter', function() {
+            $('.scrollbar', e).animate({
+              opacity: 1
+            }, 300);
+          });
+
+          e.bind('mouseleave', function() {
+            $('.scrollbar', e).animate({
+              opacity: 0
+            }, 300);
+          });
+        });
+      }
       BaseConfig['fetchFunc'](this,null,false,setUp)(this,null,false,setUp)
     } else {
       BaseConfig['fetchFunc'](this,null)(this)
-    }
-  },
-
-  setUp() {
-    if (this.props.type === 'suite') {
-      $('.scrollbarall').length > 0 &&
-      _.each($(".scrollbarall"),(v,k) => {
-        let e = $(v)
-        e.tinyscrollbar();
-        e.find('.scrollbar').css({
-          opacity: 0
-        });
-
-        e.bind('mouseenter', function() {
-          $('.scrollbar', e).animate({
-            opacity: 1
-          }, 300);
-        });
-
-        e.bind('mouseleave', function() {
-          $('.scrollbar', e).animate({
-            opacity: 0
-          }, 300);
-        });
-      });
     }
   }
 })

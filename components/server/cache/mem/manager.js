@@ -13,12 +13,18 @@ function MEMUtil() {};
 
 MEMUtil.prototype.getMemCache = function(url)
 {
-    return myCache.get(url);
+    if (Config.MemConfig.cache_flg) {
+        return myCache.get(url);
+    }
+
+    return null;
 }
 
 MEMUtil.prototype.setMemCache = function(url, data)
 {
-    myCache.set(url, data, Config.MemConfig.cache_timeout);
+    if (Config.MemConfig.cache_flg) {
+        myCache.set(url, data, Config.MemConfig.cache_timeout);
+    }
 }
 
 /*
