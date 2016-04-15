@@ -14,7 +14,7 @@ const ComponentsIndex = {
   'sample': <Sample />,
   'pringles': <Pringles />,
   'suite': <Suite />,
-  'suite-detail':<SuiteDetails />,
+  'suite-details':<SuiteDetails />,
   'pringles-details':<PringlesDetails />,
   'sample-details':<SampleDetails />
 }

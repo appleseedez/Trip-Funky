@@ -3,6 +3,7 @@
  */
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
+import { PageFooter } from './common/page-footer.jsx'
 import { MediaItem } from './common/media-item.jsx'
 import { PringlesDetailsConfig } from './config/pringles-details-config'
 /**
@@ -61,6 +62,8 @@ const PringlesDetails = React.createClass({
             </div>
           </div>
         </div>
+
+        <PageFooter />
 
       </div>
     );

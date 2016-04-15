@@ -3,6 +3,7 @@
  */
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
+import { PageFooter } from './common/page-footer.jsx'
 import { MediaItem } from './common/media-item.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { SampleDetailsConfig } from './config/sample-details-config'
@@ -37,9 +38,7 @@ const SampleDetails = React.createClass({
         <div className="layout-center-box" id="photo_slider">
           <div className="photo-show-box">
             <div className="cover-box">
-              <a>
-                <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={false} />
-              </a>
+              <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={false} />
               <div className='info-box'>
                 <h1>{this.state.details.name}</h1>
                 <p>
@@ -78,6 +77,8 @@ const SampleDetails = React.createClass({
 
           </div>
         </div>
+
+        <PageFooter />
 
       </div>
     );

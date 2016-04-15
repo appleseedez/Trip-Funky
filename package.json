@@ -13,7 +13,7 @@
     "build-pringles": "watchify ./src/client/pringles.js -o 'uglifyjs -cm > ./assets/script/modules/pringles.min.js'",
     "build-pringles-details": "watchify ./src/client/pringles-details.js -o 'uglifyjs -cm > ./assets/script/modules/pringles-details.min.js'",
     "build-suite": "watchify ./src/client/suite.js -o 'uglifyjs -cm > ./assets/script/modules/suite.min.js'",
-    "build-suite-detail": "watchify ./src/client/suite-detail.js -o 'uglifyjs -cm > ./assets/script/modules/suite-detail.min.js'",
+    "build-suite-detail": "watchify ./src/client/suite-details.js -o 'uglifyjs -cm > ./assets/script/modules/suite-details.min.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

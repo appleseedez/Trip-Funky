@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import _ from 'lodash'
-
+import { PageFooter } from './common/page-footer.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { SuiteConfig } from './config/suite-config'
 import { TripListItem } from './common/trip-list-item.jsx'
@@ -25,7 +25,7 @@ const SuiteItemInfo = React.createClass({
 
 const SuiteList = React.createClass({
   render() {
-    let hrefUrl='/suite-detail?cityId='+this.props.cityId+'&type='+this.props.cityType+'&id='
+    let hrefUrl='/suite-details?cityId='+this.props.cityId+'&type='+this.props.cityType+'&id='
     return (
       <ul className="suites-list layout-center-box">
         {
@@ -130,6 +130,7 @@ const Suite = React.createClass({
             <span>查看更多</span>
           </div>
         </div>
+        <PageFooter />
       </div>
     )
   },
