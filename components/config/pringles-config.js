@@ -4,7 +4,7 @@ import { BaseConfig } from './base'
 const PringlesConfig = {
   // 广告轮播
   'MediaSlider': _.merge({
-    'dataUrl': 'adv/index_top',
+    'dataUrl': 'adv/pringles_top',
     'aspectRatio': '192:68',
     'height': 680
   }, BaseConfig),
