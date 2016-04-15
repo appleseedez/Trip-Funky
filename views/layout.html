@@ -27,6 +27,12 @@
     <script src="/script/vendors/jquery.tinyscrollbar.js" charset="utf-8"></script>
   	<script src="/script/vendors/mediaelement/mediaelement-and-player.js"></script>
     <script src="//api.video.taobao.com//video/getPlayerJS"></script>
+    <!--[if gte IE 8]><!-->
+    <script src='/script/store.min.js' charset='utf-8'></script>
+    <!--<![endif]-->
+    <!--[if lt IE 8]>
+    <script src='/script/store+json2.min.js' charset='utf-8'></script>
+    <![endif]-->
   </head>
   <body>
     <div id='root' class='<%= platformClass %>'>
