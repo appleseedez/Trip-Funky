@@ -14,13 +14,13 @@ const CityChooser = React.createClass({
                       <div className="close-box">
                           <a></a>
                       </div>
-                      <div className="menu-box">
+                      <div className="menu-box J_MenuBox">
                           <div className="tab-box inland tab-current">
                               <a href="#">
                                   <span className="tab-title"></span>
                               </a>
                               <ul className="tab-item">
-                                  {_.map(this.props.city, (v, k) => {
+                                  {_.map(this.props.homeCity, (v, k) => {
                                       return (
                                           <li key={k}>
                                               <a href={'/home?cityId=' + v.id + '&type=' + v.type}>{v.name}</a>
@@ -34,9 +34,15 @@ const CityChooser = React.createClass({
                               <a href="#">
                                   <span className="tab-title"></span>
                               </a>
-                              <ul className="tab-item" style={{
-                                  display: 'none'
-                              }}>
+                              <ul className="tab-item">
+                              {_.map(this.props.overseaCity, (v, k) => {
+                                  return (
+                                      <li key={k}>
+                                          <a href={'/home?cityId=' + v.id + '&type=' + v.type}>{v.name}</a>
+                                      </li>
+                                  )
+                              })
+                            }
                               </ul>
                           </div>
                       </div>
@@ -45,6 +51,11 @@ const CityChooser = React.createClass({
           </div>
       </div>
     )
+  },
+  componentDidMount() {
+    $('.J_MenuBox').on('click','.tab-box',(evt)=>{
+      $(evt.currentTarget).addClass('tab-current').siblings().removeClass('tab-current')
+    })
   }
 })
 
@@ -61,12 +72,12 @@ const Navigation = React.createClass({
         }
         if (this.props.currentUrl === '/') {
             return (
-              <CityChooser city={this.state.city} />
+              <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} />
             )
         }
         return (
             <div>
-                <CityChooser city={this.state.city} />
+                <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} />
                 <div className="app-top">
                     <div className="relative-box">
                         <span className="lef"></span>
@@ -135,7 +146,7 @@ const Navigation = React.createClass({
         }
     },
     getInitialState() {
-        return {city: []}
+        return {homeCity: [],overseaCity:[]}
     },
     componentWillReceiveProps(nextProps) {
         console.log('nav:', nextProps);
@@ -209,7 +220,13 @@ const Navigation = React.createClass({
             fetch(BaseConfig.baseUrl + this.props.dataUrl).then(res => {
                 return res.json()
             }).then(j => {
-                this.setState({'city': j.data})
+              let homeCity = _.filter(j.data,(v)=>{
+                return v.type === 1
+              })
+              let overseaCity = _.filter(j.data,(v)=>{
+                return v.type === 2
+              })
+                this.setState({'homeCity': homeCity,'overseaCity':overseaCity})
             })
         }
 
