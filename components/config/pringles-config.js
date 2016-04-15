@@ -5,8 +5,8 @@ const PringlesConfig = {
   // 广告轮播
   'MediaSlider': _.merge({
     'dataUrl': 'adv/pringles_top',
-    'aspectRatio': '192:68',
-    'height': 680
+    'aspectRatio': '1920:577',
+    'height': 577
   }, BaseConfig),
 
   'Banner':[

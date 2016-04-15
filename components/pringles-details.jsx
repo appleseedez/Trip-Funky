@@ -53,13 +53,14 @@ const PringlesDetails = React.createClass({
                     if(this.props.platform === '0') {// 如果是pc端,需要切图
                       srcUrl += '@1e_1c_0o_0l_130h_130w_90q.src';
                     } else {
-                      srcUrl += '@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                      srcUrl += '@80Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
                     }
                     return(
                       <li key={k} className="item item-current"
                           data-big-img-url={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
                         <a className="img-box">
                           <img src={srcUrl} />
+                          <div className="round-shade-10"></div>
                         </a>
                       </li>
                     )
@@ -69,6 +70,7 @@ const PringlesDetails = React.createClass({
             </div>
           </div>
         </div>
+        <div className="photo-box-border"></div>
       </div>
     );
   },

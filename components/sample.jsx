@@ -20,7 +20,7 @@ const Sample = React.createClass({
           </div>
 
           <div className="block-tit-box">
-            <h1><b>样片欣赏</b></h1>
+            <h1><b>作品欣赏</b></h1>
             <h2>Golden trip, so it's really good.</h2>
           </div>
 
@@ -32,6 +32,7 @@ const Sample = React.createClass({
               <span>查看更多</span>
           </div>
         </div>
+        <div className="photo-box-border"></div>
       </div>
     )
   },
