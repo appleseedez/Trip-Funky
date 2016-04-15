@@ -31,6 +31,7 @@ const Pringles = React.createClass({
           <div className="list-more-btn" id='J_MoreButton'>
             <span>查看更多</span>
           </div>
+          <div className="photo-box-border"></div>
         </div>
       </div>
     )
