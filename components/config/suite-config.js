@@ -12,6 +12,12 @@ const SuiteConfig = {
     'height': 680
   }, BaseConfig),
 
+  'Banner':[
+    {
+      'imageUrl': '/images/static-7.jpg'
+    }
+  ],
+
   'TripListItem':_.merge({
     dataUrl:'suite',
     params:{

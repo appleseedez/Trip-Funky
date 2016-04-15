@@ -9,6 +9,12 @@ const SampleConfig = {
     'height': 680
   }, BaseConfig),
 
+  'Banner':[
+    {
+      'imageUrl': '/images/ypxx-sy.png'
+    }
+  ],
+
   'TripListItem':_.merge({
     dataUrl:'sample',
     params:{

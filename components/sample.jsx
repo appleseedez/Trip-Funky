@@ -15,8 +15,10 @@ const Sample = React.createClass({
           </div>
         </div>
         <div className='gray-bg-box'>
+          <div className="photo-box layout-center-box">
+            <img src={SampleConfig['Banner'][0].imageUrl} />
+          </div>
 
-          <div className="photo-box layout-center-box"><img src="/images/ypxx-sy.png" /></div>
           <div className="block-tit-box">
             <h1><b>样片欣赏</b></h1>
             <h2>Golden trip, so it's really good.</h2>
