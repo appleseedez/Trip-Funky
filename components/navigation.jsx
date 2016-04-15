@@ -146,7 +146,7 @@ const Navigation = React.createClass({
         }
     },
     getInitialState() {
-        return {homeCity: [],overseaCity:[]}
+        return {homeCity: [],overseaCity:[],city:[]}
     },
     componentWillReceiveProps(nextProps) {
         console.log('nav:', nextProps);
@@ -226,7 +226,7 @@ const Navigation = React.createClass({
               let overseaCity = _.filter(j.data,(v)=>{
                 return v.type === 2
               })
-                this.setState({'homeCity': homeCity,'overseaCity':overseaCity})
+                this.setState({'homeCity': homeCity,'overseaCity':overseaCity,'city':j.data})
             })
         }
 
