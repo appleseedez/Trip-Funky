@@ -5,17 +5,6 @@ import { HomeConfig } from './config/home-config'
 import { Recommand } from './common/recommand.jsx'
 import { SampleRecommand } from './common/sample-recommand.jsx'
 import { PringlesRecommand } from './common/pringles-recommand.jsx'
-import { SuiteRecommand } from './common/suite-recommand.jsx'
-
-// <SuiteRecommand {...HomeConfig['SuiteRecommand']} cityId={this.props.dataParams.cityId}/>
-//<div className="photo-box layout-center-box"><img src="/images/static-5.jpg" /></div>
-//  <div className="block-tit-box" id='suite'>
-//  <div className="border-box">
-//  <h1><span>金色旅拍</span><b>套系热卖</b></h1>
-//  <h2></h2>
-//  </div>
-//  <p>Golden trip, so it's really good.</p>
-//</div>
 
 const Home = React.createClass({
   render () {

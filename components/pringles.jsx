@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 import { MediaSlider } from './common/media-slider.jsx'
 import { PringlesConfig } from './config/pringles-config'
-import { SuiteRecommand } from './common/suite-recommand.jsx'
 import { PageFooter } from './common/page-footer.jsx'
 import { TripListItem } from './common/trip-list-item.jsx'
 import _ from 'lodash'
+
 const Pringles = React.createClass({
   render () {
     return (

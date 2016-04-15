@@ -14,6 +14,7 @@ import { PringlesDetailsConfig } from './config/pringles-details-config'
 
 const PringlesDetails = React.createClass({
   render() {
+    console.log('8899')
     return(
       <div className="detail-view">
 
@@ -32,7 +33,7 @@ const PringlesDetails = React.createClass({
           <div className="photo-show-box">
             <div className="big-img-box">
               <div className="img-box">
-                <img className='big-img' src='http://placehold.it/1200x800' />
+                <img className='big-img' />
               </div>
               <div className="left-hover-box btn-prev">
                 <div className="bg-ico"></div>
@@ -86,61 +87,6 @@ const PringlesDetails = React.createClass({
   componentDidMount() {
 
     const setUp = ()=> {
-      var winW = $(window).width()
-      var J_menu_btn = $('#J_menu_btn')
-      var J_drop_down_menu = $('#J_drop_down_menu')
-      var J_win_rig_btn = $('#J_win_rig_btn')
-      var J_app_view = $('#J_app_view')
-      var J_layer = $('#J_layer')
-      var B_drop_down = false;
-      var $select_module = $('.select-module');
-      var $app_header = $('.app-header');
-
-      J_win_rig_btn.bind('click',function(){
-        console.log('dfdfdf');
-        J_app_view.animate({
-          marginLeft:-winW+50
-        })
-
-        J_layer.css('display','block').animate({
-          opacity:0.4
-        })
-      })
-
-      J_layer.bind('click',function(){
-        J_app_view.animate({
-          marginLeft:0
-        })
-
-        $(this).animate({
-          opacity:0
-        },function(){
-          $(this).css('display','none')
-        })
-      })
-
-      J_menu_btn.bind('click',function(){
-        (B_drop_down === false &&
-        J_menu_btn.find('i').attr('class','arrow-1 arrow-b-1 transition') &&
-        J_drop_down_menu.animate({
-          height:50 * 3
-        },300,function(){B_drop_down = true})) ||
-        (B_drop_down === true &&
-        J_menu_btn.find('i').attr('class','arrow-1 arrow-r-1 transition') &&
-        J_drop_down_menu.animate({
-          height:0
-        },300,function(){B_drop_down = false}))
-      })
-
-      $select_module.on('click','.close-box',function(){
-        $select_module.animate({opacity:0},function(){
-          $(this).css('display','none');
-        });
-      });
-      $app_header.on('click','.select-box',function(){
-        $select_module.css('display','block').animate({opacity:1});
-      });
-
       $('#photo_slider').Slider({type:'Horizontal'});
     }
 

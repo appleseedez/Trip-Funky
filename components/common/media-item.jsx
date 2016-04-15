@@ -236,7 +236,7 @@ const ImageItem = React.createClass({
   //   }
   // },
   imageNotLoaded(evt){
-    let errorUrl = '//placehold.it/'+this.props.width+'x'+this.props.height
+    let errorUrl = ''
     evt.target.src = errorUrl
   }
 })
@@ -288,7 +288,7 @@ const MediaItem = React.createClass({
   },
   getDefaultProps(){
     return {
-      mediaUrl:'//placehold.it/380x570',
+      mediaUrl:'',
       aspectRatio:'2:3'
     }
   }

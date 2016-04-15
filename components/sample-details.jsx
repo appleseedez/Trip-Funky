@@ -14,11 +14,6 @@ import { SampleDetailsConfig } from './config/sample-details-config'
  </SampleDetails>
  **/
 
-//<div className='bannar-all-box' >
-//  <div className='slider-box bannar' id='slider_top'>
-//  <MediaSlider {...SampleDetailsConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
-//</div>
-//</div>
 const SampleDetails = React.createClass({
   render() {
     return(
@@ -38,7 +33,7 @@ const SampleDetails = React.createClass({
         <div className="layout-center-box" id="photo_slider">
           <div className="photo-show-box">
             <div className="cover-box">
-              <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={false} />
+              <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={true} />
               <div className='info-box'>
                 <h1>{this.state.details.name}</h1>
                 <p>
@@ -101,9 +96,6 @@ const SampleDetails = React.createClass({
   componentDidMount() {
     let cfg = SampleDetailsConfig['SampleDetails']
     let fetchUrl = cfg['buildUrl'](this.props.dataParams,cfg['dataUrl'])
-
-    console.log(JSON.stringify(this.props.dataParams))
-    console.log(fetchUrl)
 
     if(fetchUrl){
       fetch(fetchUrl)

@@ -2,13 +2,11 @@ import React, { PropTypes } from 'react'
 import { PageFooter } from './common/page-footer.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { SampleConfig } from './config/sample-config'
-import { SuiteRecommand } from './common/suite-recommand.jsx'
 import { TripListItem } from './common/trip-list-item.jsx'
 import _ from 'lodash'
 
 const Sample = React.createClass({
   render () {
-    console.log(JSON.stringify(this.props.dataParams))
     return (
       <div className='samples-view'>
         <div className='bannar-all-box' >

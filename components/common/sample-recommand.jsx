@@ -100,7 +100,7 @@ const SampleRecommand = React.createClass({
           let size = _.size(five)
           _.times(5-size,()=>{
             five.push({
-              coverUrlWeb:'//placehold.it/800x1200',
+              coverUrlWeb:'',
               name:'金色百年'
             })
           })
