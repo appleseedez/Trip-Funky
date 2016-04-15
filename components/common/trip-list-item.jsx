@@ -31,31 +31,40 @@ const TripListItem = React.createClass({
 
       )
     } else if (this.props.type === 'pringles') {// 客片列表
-      let hrefUrl='/pringles-details?cityId='+this.props.params.cityId+'&type='+this.props.params.type+'&id='
-      return (
-        <ul className="recommend-list layout-center-box">
-          {
-            _.map(this.state.data,(v,k)=>{
-              return (
-                <li key={k} className="item-box">
-                  <a href={hrefUrl+v.id} className="img-box" target='_blank'>
-                    <MediaItem
-                      height={579}
-                      aspectRatio={'-1:579'}
-                      mediaUrl={v.coverUrlWeb} />
-                    <div className="layer-box"></div>
-                    <div className="info-box">
-                      <em>GoldenWedding</em>
-                      <h2>{v.actorMaleName + ' & ' + v.actorFemaleName}</h2>
-                    </div>
-                  </a>
-                  <div className="item-shadow"></div>
-                </li>
-              )
-            })
-          }
-        </ul>
-      )
+      if (this.state.data && this.state.data.length > 0) {
+        let hrefUrl='/pringles-details?cityId='+this.props.params.cityId+'&type='+this.props.params.type+'&id='
+        return (
+          <ul className="recommend-list layout-center-box">
+            {
+              _.map(this.state.data,(v,k)=>{
+                return (
+                  <li key={k} className="item-box">
+                    <a href={hrefUrl+v.id} className="img-box" target='_blank'>
+                      <MediaItem
+                        height={579}
+                        aspectRatio={'-1:579'}
+                        mediaUrl={v.coverUrlWeb} />
+                      <div className="layer-box"></div>
+                      <div className="info-box">
+                        <em>GoldenWedding</em>
+                        <h2>{v.actorMaleName + ' & ' + v.actorFemaleName}</h2>
+                      </div>
+                    </a>
+                    <div className="item-shadow"></div>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        )
+      } else {
+        // 展示敬请期待图片....
+        return (
+          <div className="photo-box layout-center-box">
+            <img src='/images/ypxx-sy.png' />
+          </div>
+        )
+      }
     } else if (this.props.type === 'suite') {// 套系列表
       let hrefUrl='/suite-details?cityId='+this.props.params.cityId+'&type='+this.props.params.type+'&id='
       return (
