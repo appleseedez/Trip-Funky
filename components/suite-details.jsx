@@ -25,6 +25,7 @@ const SuiteDetails = React.createClass({
             <div className='content mgb30 clearfix'></div>
           </div>
         </div>
+        <div className="photo-box-border"></div>
       </div>
     )
   },

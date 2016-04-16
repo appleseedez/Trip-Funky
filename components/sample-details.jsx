@@ -79,6 +79,7 @@ const SampleDetails = React.createClass({
 
           </div>
         </div>
+        <div className="photo-box-border"></div>
       </div>
     );
   },

@@ -70,6 +70,7 @@ const PringlesDetails = React.createClass({
             </div>
           </div>
         </div>
+        <div className="photo-box-border"></div>
       </div>
     );
   },
