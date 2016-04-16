@@ -47,7 +47,7 @@ const HomeConfig = {
         }
     }, BaseConfig),
 
-    'IndexHot1':_.merge({
+    'RecommendHot1':_.merge({
         'dataUrl': 'adv/index_hot1',
     }, BaseConfig)
 }
