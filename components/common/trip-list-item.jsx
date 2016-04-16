@@ -64,7 +64,7 @@ const TripListItem = React.createClass({
         // 展示敬请期待图片....
         return (
           <div className="photo-box layout-center-box">
-            <img src='/images/ypxx-sy.png' />
+            <img src='//img2.jsbn.com/trip/assets/images/jqqd.jpg' />
           </div>
         )
       }
