@@ -65,7 +65,7 @@ const renderOption = (templateName, currentUrl,platformClass,params,wrapperClass
     'seoKeywords':ComponentsSeo[templateName].seoKeywords || '',
     'seoDescription':ComponentsSeo[templateName].seoDescription || '',
     'reactMarkup': renderToString(ComponentsIndex[templateName]),
-    'reactNavMarkup': renderToString(<Navigation currentUrl={currentUrl||'/'} />),
+    'reactNavMarkup': renderToString(<Navigation currentUrl={currentUrl||'/'} dataParams={p} />),
     'wrapperClass':wrapperClass || 't', // t: 顶部有菜单的margin un: 无margin b:底部有margin tb 顶部底部都有margin
     'platformType':platformType,// 0:是pc 1:移动端
     'platformClass':platformClass || 'adaptation-1200',
@@ -83,9 +83,6 @@ siteRouter.get('/',function* (next){
   }
 })
 siteRouter.get('/home',function* (next){
-  if (_.size(this.request.query)<2) {
-    this.response.redirect('/')
-  }
   yield this.render('modules/default',renderOption('home','/home',this.platformClass,this.request.query))
 })
 

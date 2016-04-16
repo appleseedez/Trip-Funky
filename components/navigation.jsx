@@ -23,7 +23,7 @@ const CityChooser = React.createClass({
                                   {_.map(this.props.homeCity, (v, k) => {
                                       return (
                                           <li key={k}>
-                                              <a href={'/home?cityId=' + v.id + '&type=' + v.type}>{v.name}</a>
+                                              <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
                                           </li>
                                       )
                                   })
@@ -38,7 +38,7 @@ const CityChooser = React.createClass({
                               {_.map(this.props.overseaCity, (v, k) => {
                                   return (
                                       <li key={k}>
-                                          <a href={'/home?cityId=' + v.id + '&type=' + v.type}>{v.name}</a>
+                                          <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
                                       </li>
                                   )
                               })
@@ -65,11 +65,6 @@ const CityChooser = React.createClass({
 const Navigation = React.createClass({
 
     render() {
-        let city = _.filter(this.state.city, (v) => {
-            return this.props.dataParams.cityId === v.id + ''
-        })[0] || {
-            'name': '获取中...'
-        }
         if (this.props.currentUrl === '/') {
             return (
               <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} />
@@ -87,10 +82,10 @@ const Navigation = React.createClass({
                 <div className="app-header">
                     <div className="relative-box">
                         <a href={'/'} className="logo-pc"/>
-                        <span className="city-name">{city.name}</span>
+                        <span className="city-name">{this.props.dataParams.cityName}</span>
                         <div className="title-box" id="J_menu_btn">
                             <i className="arrow-1 arrow-r-1 transition"/>
-                            <h1>{city.name}</h1>
+                            <h1>{this.props.dataParams.cityName}</h1>
                         </div>
                         <div className="win-rig-btn" id="J_win_rig_btn">
                             <div className="menu-box">
@@ -107,22 +102,22 @@ const Navigation = React.createClass({
                         </div>
                         <ul className="drop-down-menu" id="J_drop_down_menu">
                             <li>
-                                <a href={'/home?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/home')
+                                <a href={'/home' } className={(this.props.currentUrl === '/home')
                                     ? 'current'
-                                    : ''}>{city.name + '首页'}</a>
+                                    : ''}>{this.props.dataParams.cityName + '首页'}</a>
                             </li>
                             <li>
-                                <a href={'/sample?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/sample')
+                                <a href={'/sample'} className={(this.props.currentUrl === '/sample')
                                     ? 'current'
                                     : ''}>作品欣赏</a>
                             </li>
                             <li>
-                                <a href={'/pringles?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/pringles')
+                                <a href={'/pringles' } className={(this.props.currentUrl === '/pringles')
                                     ? 'current'
                                     : ''}>客片欣赏</a>
                             </li>
                             <li>
-                                <a href={'/suite?cityId=' + this.props.dataParams.cityId + '&type=' + this.props.dataParams.type} className={(this.props.currentUrl === '/suite')
+                                <a href={'/suite' } className={(this.props.currentUrl === '/suite')
                                     ? 'current'
                                     : ''}>套系报价</a>
                             </li>

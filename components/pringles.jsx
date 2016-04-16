@@ -26,7 +26,7 @@ const Pringles = React.createClass({
 
           <TripListItem {...PringlesConfig['TripListItem']}
             type={'pringles'}
-            params={_.merge({'cityId':this.props.dataParams.cityId,'type':this.props.dataParams.type},PringlesConfig['TripListItem'].params)}/>
+            params={_.merge({'cityId':this.props.dataParams.cityId},PringlesConfig['TripListItem'].params)}/>
 
           <div className="list-more-btn" id='J_MoreButton'>
             <span>查看更多</span>

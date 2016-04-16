@@ -30,7 +30,7 @@ const Suite = React.createClass({
 
             <TripListItem {...SuiteConfig['TripListItem']}
               type={'suite'}
-              params={_.merge({'cityId':this.props.dataParams.cityId,'type':this.props.dataParams.type},SuiteConfig['TripListItem'].params)}
+              params={_.merge({'cityId':this.props.dataParams.cityId},SuiteConfig['TripListItem'].params)}
             />
 
             <div className="list-more-btn" id='J_MoreButton'>
