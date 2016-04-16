@@ -4,7 +4,7 @@ import _ from 'lodash'
 const PringlesDetailsConfig  = {
   'Banner':[
     {
-      'imageUrl': '/images/static-2.jpg'
+      'imageUrl': '//img2.jsbn.com/trip/assets/images/pringles-detail-brand.jpg'
     }
   ],
 

@@ -11,6 +11,29 @@ const AdvTemplate=React.createClass({
 
     if (this.props.data.length < 5 && this.props.data.length > 2) {
       // 采用三个广告的模板
+      return (
+        <div className="list-recommend layout-center-box">
+          <ul className="recomd-nav-3">
+            {
+              _.map(this.props.data, (v,k)=>{
+                return (
+                  <li key={k} className="item-box">
+                    <a href={v.linkUrl} className="img-box">
+                      <MediaItem
+                        height={268}
+                        aspectRatio={'397:268'}
+                        mediaUrl={v.coverUrlWeb}
+                        water={false}
+                      />
+                      <div className="cover-layer"/>
+                    </a>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+      )
     } else if (this.props.data.length < 3) {
       // 采用一个广告的模板
       return (

@@ -9,7 +9,7 @@ const CityChooser = React.createClass({
     return (
       <div className="sliding-window">
           <div className="content-view">
-              <div className="select-module mainhome-module">
+              <div className="select-module select-style-1">
                   <div className="nav-local">
                       <div className="close-box">
                           <a></a>

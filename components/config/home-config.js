@@ -10,16 +10,7 @@ const HomeConfig = {
 
     'Banner':[
         {
-            'imageUrl': '/images/static-1.jpg'
-        },
-        {
-            'imageUrl': '/images/static-2.jpg'
-        },
-        {
-            'imageUrl': '/images/static-6.jpg'
-        },
-        {
-            'imageUrl': '/images/ypxx-sy.png'
+            'imageUrl': '//img2.jsbn.com/trip/assets/images/ypxx-sy.png'
         }
     ],
 

@@ -19,7 +19,7 @@ const Index = React.createClass({
                             <ul className="slider">
                                 <li className="item">
                                     <a href={'/'} className="img-box">
-                                        <img src="/images/home_banner_bg.jpg"/>
+                                        <img src="//img2.jsbn.com/trip/assets/images/home_banner_bg.jpg"/>
                                         <div className="cover-layer"/>
                                     </a>
                                 </li>
@@ -28,7 +28,7 @@ const Index = React.createClass({
                     </div>
                 </div>
                 <div className="main-content">
-                    <img src="/images/home_content_bg.jpg" alt/>
+                    <img src="//img2.jsbn.com/trip/assets/images/home_content_bg.jpg" alt/>
                 </div>
             </div>
 
