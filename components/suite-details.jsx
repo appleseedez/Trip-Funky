@@ -42,7 +42,7 @@ const SuiteDetails = React.createClass({
   },
   componentDidMount() {
     let cfg = SuiteDetailsConfig['SuiteDetails']
-    let fetchUrl = cfg['baseUrl']+cfg['dataUrl']+this.props.dataParams.id
+    let fetchUrl = cfg['buildUrl'](this.props.dataParams,cfg['dataUrl'])
     if(fetchUrl){
       fetch(fetchUrl)
         .then(res => {return res.json()})

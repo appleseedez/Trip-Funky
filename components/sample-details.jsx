@@ -97,8 +97,6 @@ const SampleDetails = React.createClass({
   },
 
   componentDidMount() {
-    console.log('平台:'+this.props.platform)
-
     let cfg = SampleDetailsConfig['SampleDetails']
     let fetchUrl = cfg['buildUrl'](this.props.dataParams,cfg['dataUrl'])
 

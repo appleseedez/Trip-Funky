@@ -5,7 +5,7 @@ import _ from 'lodash'
 const TripListItem = React.createClass({
   render () {
     if (this.props.type === 'sample') {// 样片列表
-      let hrefUrl='/sample-details?cityId='+this.props.params.cityId+'&type='+this.props.params.type+'&id='
+      let hrefUrl='/sample-details/'
       return (
         <ul className="recommend-list layout-center-box">
           {
@@ -33,7 +33,7 @@ const TripListItem = React.createClass({
       )
     } else if (this.props.type === 'pringles') {// 客片列表
       if (this.state.data && this.state.data.length > 0) {
-        let hrefUrl='/pringles-details?cityId='+this.props.params.cityId+'&type='+this.props.params.type+'&id='
+        let hrefUrl='/pringles-details/'
         return (
           <ul className="recommend-list layout-center-box">
             {
@@ -69,7 +69,7 @@ const TripListItem = React.createClass({
         )
       }
     } else if (this.props.type === 'suite') {// 套系列表
-      let hrefUrl='/suite-details?cityId='+this.props.params.cityId+'&type='+this.props.params.type+'&id='
+      let hrefUrl='/suite-details/'
       return (
         <ul className="suites-list layout-center-box">
           {

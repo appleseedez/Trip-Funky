@@ -6,26 +6,31 @@ import { MediaSlider } from './common/media-slider.jsx'
 import { MediaItem } from './common/media-item.jsx'
 import { HomeConfig } from './config/home-config'
 import { Recommand } from './common/recommand.jsx'
+import { AdvLangConfig,StyleImg } from './config/adv-lang-config'
 
 const SuiteList = React.createClass({
   render () {
-    let hrefUrl='/suite?cityId='+this.props.cityId+'&'+'type='+this.props.cityType;
+    let hrefUrl='/suite';
+    let desc = '幸福可以绽放的如此耀眼';
+    if(AdvLangConfig[this.props.cityName]) {
+      desc=AdvLangConfig[this.props.cityName]['SUITE']
+    }
     return (
       <div>
         <div className="block-tit-box-1">
-          <img src={HomeConfig['Banner'][7].imageUrl} />
+          <img src={StyleImg['head']} />
           <a href={hrefUrl}>
             <div className="english-title">
             </div>
             <div className="chinese-title">
               <i></i>
-              <p><span>幸福可以绽放的如此耀眼</span></p>
+              <p><span>{desc}</span></p>
             </div>
             <div className="list-title">
               <h1><span>金色旅拍</span><b>套系热卖</b></h1>
             </div>
           </a>
-          <img src={HomeConfig['Banner'][8].imageUrl} />
+          <img src={StyleImg['footer']} />
         </div>
 
         <div className="gray-bg-box layout-center-box">
@@ -34,7 +39,7 @@ const SuiteList = React.createClass({
               _.map(this.state.data, (v,k)=>{
                 return (
                   <li key={k} className="item-box">
-                    <a href={hrefUrl+'&id='+v.id}>
+                    <a href={'/suite-details/'+v.id}>
                       <div className="img-box">
                         <MediaItem height={320} aspectRatio={'55:32'} mediaUrl={v.coverUrlWeb} water={false} />
                         <div className="layer-box"></div>
@@ -80,23 +85,28 @@ const PringlesList = React.createClass({
       return null;
     }
 
-    let hrefUrl='/pringles?cityId='+this.props.cityId+'&'+'type='+this.props.cityType;
+    let hrefUrl='/pringles';
+    let desc = '幸福可以绽放的如此耀眼';
+    if(AdvLangConfig[this.props.cityName]) {
+      desc=AdvLangConfig[this.props.cityName]['PRINGLES']
+    }
+
     return (
       <div>
         <div className="block-tit-box-1">
-          <img src={HomeConfig['Banner'][5].imageUrl} />
+          <img src={StyleImg['head']} />
           <a href={hrefUrl}>
             <div className="english-title">
             </div>
             <div className="chinese-title">
               <i></i>
-              <p><span>幸福可以绽放的如此耀眼</span></p>
+              <p><span>{desc}</span></p>
             </div>
             <div className="list-title">
               <h1><span>金色旅拍</span><b>{this.props.cityName+'客片'}</b></h1>
             </div>
           </a>
-          <img src={HomeConfig['Banner'][6].imageUrl} />
+          <img src={StyleImg['footer']} />
         </div>
         <div className="gray-bg-box layout-center-box">
           <ul className="list-pringles layout-center-box">
@@ -104,7 +114,7 @@ const PringlesList = React.createClass({
               return (
                 <li key={k}>
                   <div className="imgbox">
-                    <a href={hrefUrl+'&id='+v.id} className="href-box"/>
+                    <a href={'/pringles-details/'+v.id} className="href-box"/>
                     <div className="info-box">
                       <span className="font-bg"/>
                       <h1>
@@ -153,23 +163,28 @@ const PringlesList = React.createClass({
 
 const SampleList = React.createClass({
   render () {
-    let hrefUrl='/sample?cityId='+this.props.cityId+'&'+'type='+this.props.cityType;
+    let hrefUrl='/sample';
+    let desc = '幸福可以绽放的如此耀眼';
+    if(AdvLangConfig[this.props.cityName]) {
+      desc=AdvLangConfig[this.props.cityName]['SAMPLE']
+    }
+
     return (
       <div>
         <div className="block-tit-box-1">
-          <img src={HomeConfig['Banner'][2].imageUrl} />
+          <img src={StyleImg['head']} />
           <a href={hrefUrl}>
             <div className="english-title">
             </div>
             <div className="chinese-title">
               <i></i>
-              <p><span>幸福可以绽放的如此耀眼</span></p>
+              <p><span>{desc}</span></p>
             </div>
             <div className="list-title">
               <h1><span>金色旅拍</span><b>{this.props.cityName+'作品'}</b></h1>
             </div>
           </a>
-          <img src={HomeConfig['Banner'][3].imageUrl} />
+          <img src={StyleImg['footer']} />
         </div>
         <div className="list-box layout-center-box clearfix">
           <ul className="list-samples">
@@ -181,7 +196,7 @@ const SampleList = React.createClass({
                     item = (
                       <li className="item item-big marginLeft" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={hrefUrl+'&id='+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} />
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
@@ -196,7 +211,7 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={hrefUrl+'&id='+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} />
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
@@ -211,7 +226,7 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-last item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={hrefUrl+'&id='+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} />
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
@@ -226,7 +241,7 @@ const SampleList = React.createClass({
                     item = (
                       <li className="item" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={hrefUrl+'&id='+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} />
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
@@ -291,12 +306,12 @@ const Home = React.createClass({
           </div>
         </div>
 
-        <SampleList cityId={this.props.dataParams.cityId} cityType={this.props.dataParams.type} cityName='三亚'/>
+        <SampleList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName}/>
         <div className=" layout-center-box">
-          <img src={HomeConfig['Banner'][4].imageUrl} />
+          <img src={HomeConfig['Banner'][2].imageUrl} />
         </div>
-        <PringlesList cityId={this.props.dataParams.cityId} cityType={this.props.dataParams.type} cityName='三亚'/>
-        <SuiteList cityId={this.props.dataParams.cityId} cityType={this.props.dataParams.type} />
+        <PringlesList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} />
+        <SuiteList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} />
 
         <div className="gray-bg-box">
           <div className="promise">
@@ -308,7 +323,7 @@ const Home = React.createClass({
               <p>Golden trip, so it's really good.</p>
             </div>
             <div className="photo-box photo-box-mgt10 layout-center-box">
-              <img src={HomeConfig['Banner'][9].imageUrl} />
+              <img src={HomeConfig['Banner'][3].imageUrl} />
             </div>
             <div className="bt-border btborder">
               <ul className="list-promise">

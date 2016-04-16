@@ -16,43 +16,12 @@ const HomeConfig = {
             'imageUrl': '/images/static-2.jpg'
         },
         {
-            'imageUrl': '/images/tit-box-1.png'
-        },
-        {
-            'imageUrl': '/images/tit-box-detail-1.png'
-        },
-        {
             'imageUrl': '/images/static-6.jpg'
-        },
-        {
-            'imageUrl': '/images/tit-box-1.png'
-        },
-        {
-            'imageUrl': '/images/tit-box-detail-1.png'
-        },
-        {
-            'imageUrl': '/images/tit-box-1.png'
-        },
-        {
-            'imageUrl': '/images/tit-box-detail-1.png'
         },
         {
             'imageUrl': '/images/ypxx-sy.png'
         }
     ],
-
-
-
-
-
-
-
-
-    'IndexHot1':_.merge({
-        'dataUrl': 'adv/index_hot1',
-    }, BaseConfig),
-
-
 
     'SampleRecommend': _.merge({
         dataUrl: 'sample',
@@ -77,6 +46,10 @@ const HomeConfig = {
             'pageIndex': 1
         }
     }, BaseConfig),
+
+    'IndexHot1':_.merge({
+        'dataUrl': 'adv/index_hot1',
+    }, BaseConfig)
 }
 
 export { HomeConfig }

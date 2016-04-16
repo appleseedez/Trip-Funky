@@ -88,8 +88,6 @@ const PringlesDetails = React.createClass({
   },
 
   componentDidMount() {
-    console.log('平台:'+this.props.platform)
-
     const setUp = ()=> {
       $('#photo_slider').Slider({type:'Horizontal'});
     }

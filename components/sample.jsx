@@ -1,12 +1,17 @@
 import React, { PropTypes } from 'react'
-import { PageFooter } from './common/page-footer.jsx'
+import _ from 'lodash'
+
 import { MediaSlider } from './common/media-slider.jsx'
 import { SampleConfig } from './config/sample-config'
 import { TripListItem } from './common/trip-list-item.jsx'
-import _ from 'lodash'
+import { AdvLangConfig,StyleImg } from './config/adv-lang-config'
 
 const Sample = React.createClass({
   render () {
+    let desc = '幸福可以绽放的如此耀眼';
+    if(AdvLangConfig[this.props.dataParams.cityName]) {
+      desc=AdvLangConfig[this.props.dataParams.cityName]['SAMPLE']
+    }
     return (
       <div className='samples-view'>
         <div className='bannar-all-box' >
@@ -15,13 +20,18 @@ const Sample = React.createClass({
           </div>
         </div>
         <div className='gray-bg-box'>
-          <div className="photo-box layout-center-box">
-            <img src={SampleConfig['Banner'][0].imageUrl} />
-          </div>
-
-          <div className="block-tit-box">
-            <h1><b>作品欣赏</b></h1>
-            <h2>Golden trip, so it's really good.</h2>
+          <div className="block-tit-box-1">
+            <img src={StyleImg['head']} />
+            <div className="english-title">
+            </div>
+            <div className="chinese-title">
+              <i></i>
+              <p><span>{desc}</span></p>
+            </div>
+            <div className="list-title">
+              <h1><span>金色旅拍</span><b>{this.props.dataParams.cityName+'作品'}</b></h1>
+            </div>
+            <img src={StyleImg['footer']} />
           </div>
 
           <TripListItem {...SampleConfig['TripListItem']}
@@ -39,7 +49,8 @@ const Sample = React.createClass({
   getDefaultProps(){
     return {
       dataParams:{
-        cityId:-1
+        cityId:-1,
+        cityName:''
       }
     }
   }

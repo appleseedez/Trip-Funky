@@ -90,23 +90,23 @@ siteRouter.get('/sample',function* (next){
   yield this.render('modules/default',renderOption('sample','/sample',this.platformClass,this.request.query))
 })
 /** 作品详情 **/
-siteRouter.get('/sample-details', function* index(next){
-  yield this.render('modules/default',renderOption('sample-details','/sample',this.platformClass,this.request.query))
+siteRouter.get('/sample-details/:id', function* index(next){
+  yield this.render('modules/default',renderOption('sample-details','/sample',this.platformClass,_.merge(this.params,this.request.query)))
 })
 
 siteRouter.get('/pringles',function* (next){
   yield this.render('modules/default',renderOption('pringles','/pringles',this.platformClass,this.request.query))
 })
 /** 客片详情 **/
-siteRouter.get('/pringles-details', function* index(next) {
-  yield this.render('modules/default',renderOption('pringles-details','/pringles',this.platformClass,this.request.query))
+siteRouter.get('/pringles-details/:id', function* index(next) {
+  yield this.render('modules/default',renderOption('pringles-details','/pringles',this.platformClass,_.merge(this.params,this.request.query)))
 })
 
 siteRouter.get('/suite',function* (next){
   yield this.render('modules/default',renderOption('suite','/suite',this.platformClass,this.request.query))
 })
-siteRouter.get('/suite-details',function* (next){
-  yield this.render('modules/default',renderOption('suite-details','/suite',this.platformClass,this.request.query))
+siteRouter.get('/suite-details/:id',function* (next){
+  yield this.render('modules/default',renderOption('suite-details','/suite',this.platformClass,_.merge(this.params,this.request.query)))
 })
 
 export { siteRouter }
