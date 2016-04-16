@@ -193,9 +193,8 @@ const ImageItem = React.createClass({
     }
     imageOption = imageOption + '90Q';
     imageOption =  this.props.water? (imageOption+'|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'):imageOption
-    let mediaUrl = 
-    //let mediaUrl = this.props.mediaUrl + imageOption;//
-    ( BaseConfig.mode === 'production')? (this.props.mediaUrl + imageOption): this.props.mediaUrl
+    let mediaUrl = this.props.mediaUrl + imageOption;//( BaseConfig.mode === 'production')? (this.props.mediaUrl + imageOption): this.props.mediaUrl
+
     if (found && 3 === found.length) {
       width = parseInt(found[1])
       height = parseInt(found[2])

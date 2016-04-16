@@ -17,6 +17,7 @@ const TripListItem = React.createClass({
                       height={576}
                       aspectRatio={'-1:576'}
                       mediaUrl={v.coverUrlWeb}
+                      water={false}
                     />
                     <div className="title-box">
                       <h2>{v.name}</h2>
@@ -43,7 +44,9 @@ const TripListItem = React.createClass({
                       <MediaItem
                         height={579}
                         aspectRatio={'-1:579'}
-                        mediaUrl={v.coverUrlWeb} />
+                        mediaUrl={v.coverUrlWeb}
+                        water={false}
+                      />
                       <div className="layer-box"></div>
                       <div className="info-box">
                         <em>GoldenWedding</em>
@@ -78,7 +81,9 @@ const TripListItem = React.createClass({
                     <MediaItem
                       height={320}
                       aspectRatio={'55:32'}
-                      mediaUrl={v.coverUrlWeb} />
+                      mediaUrl={v.coverUrlWeb}
+                      water={false}
+                    />
                   </a>
                   <div className="tit-box">
                     <h1>{v.name}</h1>
