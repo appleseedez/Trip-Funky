@@ -1,4 +1,4 @@
-const adpateParam = (params)=>{
+function adpateParam (params){
   if (params.cityId !== undefined || params.cityId === '' || params.cityId === null) {
     store.set('cityId',params.cityId )
   }else {
