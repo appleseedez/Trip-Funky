@@ -1,12 +1,18 @@
 import React, { PropTypes } from 'react'
+import _ from 'lodash'
+
 import { MediaSlider } from './common/media-slider.jsx'
 import { PringlesConfig } from './config/pringles-config'
 import { PageFooter } from './common/page-footer.jsx'
 import { TripListItem } from './common/trip-list-item.jsx'
-import _ from 'lodash'
+import { AdvLangConfig,StyleImg } from './config/adv-lang-config'
 
 const Pringles = React.createClass({
   render () {
+    let desc = '幸福可以绽放的如此耀眼';
+    if(AdvLangConfig[this.props.dataParams.cityName]) {
+      desc=AdvLangConfig[this.props.dataParams.cityName]['PRINGLES']
+    }
     return (
       <div className='pringles-view'>
         <div className='bannar-all-box' >
@@ -15,13 +21,18 @@ const Pringles = React.createClass({
           </div>
         </div>
         <div className="gray-bg-box">
-          <div className="photo-box layout-center-box">
-            <img src={PringlesConfig['Banner'][0].imageUrl} />
-          </div>
-
-          <div className="block-tit-box">
-            <h1><b>客片欣赏</b></h1>
-            <h2>Golden trip, so it's really good.</h2>
+          <div className="block-tit-box-1">
+            <img src={StyleImg['head']} />
+            <div className="english-title">
+            </div>
+            <div className="chinese-title">
+              <i></i>
+              <p><span>{desc}</span></p>
+            </div>
+            <div className="list-title">
+              <h1><span>金色旅拍</span><b>{this.props.dataParams.cityName+'客片'}</b></h1>
+            </div>
+            <img src={StyleImg['footer']} />
           </div>
 
           <TripListItem {...PringlesConfig['TripListItem']}

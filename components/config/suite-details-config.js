@@ -6,7 +6,7 @@ import { BaseConfig } from './base'
 
 const SuiteDetailsConfig = {
   'SuiteDetails':_.merge({
-    dataUrl:'suite/detail/'
+    dataUrl:'suite/detail/:id'
   },BaseConfig)
 }
 
