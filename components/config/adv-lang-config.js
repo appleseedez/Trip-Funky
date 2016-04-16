@@ -10,7 +10,7 @@ const AdvLangConfig = {
     'SUITE':'品质 于细节处彰显',
   },
   '丽江': {
-    'FOLLOW':'//img2.jsbn.com/trip/assets/images/follow-me-default.jpg',
+    'FOLLOW':'//img2.jsbn.com/trip/assets/images/follow-me-lijiang.jpg',
     'SAMPLE':'玉龙卧雪 草色漫天 在柔软时光里续写情怀',
     'PRINGLES':'我们拒绝千篇一律 热衷将爱情定格成诗画',
     'SUITE':'个性 属于自己的 才是独特的',
