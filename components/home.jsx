@@ -36,7 +36,7 @@ const SuiteList = React.createClass({
                   <li key={k} className="item-box">
                     <a href={hrefUrl+'&id='+v.id}>
                       <div className="img-box">
-                        <MediaItem height={320} aspectRatio={'55:32'} mediaUrl={v.coverUrlWeb} />
+                        <MediaItem height={320} aspectRatio={'55:32'} mediaUrl={v.coverUrlWeb} water={false} />
                         <div className="layer-box"></div>
                       </div>
                       <div className="info-box">
@@ -115,7 +115,7 @@ const PringlesList = React.createClass({
                     </div>
                     <div className="mask"/>
                     <div className='img-box'>
-                      <MediaItem mediaUrl={v.coverUrlWeb} height={445} aspectRatio={'297:445'}/>
+                      <MediaItem mediaUrl={v.coverUrlWeb} height={445} aspectRatio={'297:445'} water={false}/>
                     </div>
                   </div>
                   <a href={hrefUrl+'&id='+v.id} className="title-box">
@@ -187,7 +187,7 @@ const SampleList = React.createClass({
                             <h1>{v.name}</h1>
                           </div>
                           <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={600}/>
+                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={600} water={false} />
                         </div>
                       </li>
                     )
@@ -202,7 +202,7 @@ const SampleList = React.createClass({
                             <h1>{v.name}</h1>
                           </div>
                           <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300}/>
+                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
                         </div>
                       </li>
                     )
@@ -217,7 +217,7 @@ const SampleList = React.createClass({
                             <h1>{v.name}</h1>
                           </div>
                           <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300}/>
+                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
                         </div>
                       </li>
                     )
@@ -232,7 +232,7 @@ const SampleList = React.createClass({
                             <h1>{v.name}</h1>
                           </div>
                           <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300}/>
+                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
                         </div>
                       </li>
                     )
