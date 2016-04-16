@@ -24,7 +24,7 @@ const SampleDetails = React.createClass({
         </div>
         <div className="block-tit-box">
           <div className="border-box">
-            <h1><span>金色旅拍</span><b>样片欣赏</b></h1>
+            <h1><span>金色旅拍</span><b>作品欣赏</b></h1>
             <h2></h2>
           </div>
           <p>Golden trip, so it's really good.</p>
@@ -86,7 +86,13 @@ const SampleDetails = React.createClass({
 
   getInitialState: function() {
     return {
-      details: {}
+      details: {
+        'attractionsName':'',
+        'updateTime':'',
+        'coverUrlWeb':'',
+        'name':'',
+        'pcDetailImages':[]
+      }
     };
   },
 

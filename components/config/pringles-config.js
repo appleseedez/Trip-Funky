@@ -9,12 +9,6 @@ const PringlesConfig = {
     'height': 577
   }, BaseConfig),
 
-  'Banner':[
-    {
-      'imageUrl': '/images/ypxx-sy.png'
-    }
-  ],
-
   'TripListItem':_.merge({
     dataUrl:'pringles',
     params:{
