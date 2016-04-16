@@ -14,7 +14,6 @@ import { PringlesDetailsConfig } from './config/pringles-details-config'
 
 const PringlesDetails = React.createClass({
   render() {
-    console.log('8899')
     return(
       <div className="detail-view">
 
@@ -77,7 +76,9 @@ const PringlesDetails = React.createClass({
 
   getInitialState: function() {
     return {
-      details: {}
+      details: {
+        'pcDetailImages':[]
+      }
     };
   },
 

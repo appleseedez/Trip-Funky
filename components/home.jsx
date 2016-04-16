@@ -39,7 +39,7 @@ const SuiteList = React.createClass({
               _.map(this.state.data, (v,k)=>{
                 return (
                   <li key={k} className="item-box">
-                    <a href={'/suite-details/'+v.id}>
+                    <a href={'/suite-details/'+v.id} target='_blank'>
                       <div className="img-box">
                         <MediaItem height={320} aspectRatio={'55:32'} mediaUrl={v.coverUrlWeb} water={false} />
                         <div className="layer-box"></div>
@@ -114,7 +114,7 @@ const PringlesList = React.createClass({
               return (
                 <li key={k}>
                   <div className="imgbox">
-                    <a href={'/pringles-details/'+v.id} className="href-box"/>
+                    <a href={'/pringles-details/'+v.id} className="href-box" target='_blank'/>
                     <div className="info-box">
                       <span className="font-bg"/>
                       <h1>
@@ -196,7 +196,7 @@ const SampleList = React.createClass({
                     item = (
                       <li className="item item-big marginLeft" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
@@ -211,7 +211,7 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
@@ -226,7 +226,7 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-last item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
@@ -241,7 +241,7 @@ const SampleList = React.createClass({
                     item = (
                       <li className="item" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} />
+                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
                           <div className="info-box">
                             <span className="font-bg"/>
                             <h1>{v.name}</h1>
