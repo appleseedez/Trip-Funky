@@ -205,10 +205,16 @@ const Navigation = React.createClass({
                     opacity: 0
                 }, function() {
                     $(this).css('display', 'none');
+                    var $sliding_window = $('.sliding-window');
+                    $sliding_window.css('margin-left', '100%').animate({});
+                    $sliding_window.css('z-index', 0).animate({});
                 });
             });
             $app_container.on('click', '.select-box', function() {
                 $select_module.css('display', 'block').animate({opacity: 1});
+                var $sliding_window = $('.sliding-window');
+                $sliding_window.css('margin-left', 0).animate({});
+                $sliding_window.css('z-index', 100).animate({});
             });
         }
         //点击事件绑定
