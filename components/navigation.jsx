@@ -6,10 +6,14 @@ import {BaseConfig} from './config/base'
 
 const CityChooser = React.createClass({
   render () {
+    let kClass = "select-module select-style-2"
+    if(this.props.type === "1") {
+        kClass = "select-module select-style-1"
+    }
     return (
       <div className="sliding-window">
           <div className="content-view">
-              <div className="select-module select-style-1">
+              <div className={kClass}>
                 <div className='box-bg' />
                 <div className="nav-local">
                     <div className="close-box">
@@ -67,15 +71,15 @@ const CityChooser = React.createClass({
 const Navigation = React.createClass({
 
     render() {
-        if (this.props.currentUrl === '/') {
+        if (this.props.currentUrl === '/') {// 主页的样式与分站首页的样式不一样,通过type区分
             return (
-              <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} />
+              <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} type="1" />
             )
         }
 
         return (
             <div>
-                <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} />
+                <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} type="2" />
                 <div className="app-top">
                     <div className="relative-box">
                         <span className="lef"></span>
@@ -164,17 +168,32 @@ const Navigation = React.createClass({
             var $select_module = $('.select-module');
             var $app_container = $('.app-container');
 
-            $sliding_window.width(winW - 50);
-            J_win_rig_btn.bind('click', function() {
-                J_app_view.css({overflow: 'visible'});
-                J_app_view.animate({
-                    marginLeft: -winW + 50
-                }, function() {
-                    $('.wx-menu-btn', J_win_rig_btn).addClass('close');
-                })
+            if (this.props.platform == 1 && this.props.currentUrl === '/') {
+                // 微信端的大首页
+                $sliding_window.width(winW);
+                J_win_rig_btn.bind('click', function() {
+                    J_app_view.css({overflow: 'visible'});
+                    J_app_view.animate({
+                        marginLeft: -winW
+                    }, function() {
+                        $('.wx-menu-btn', J_win_rig_btn).addClass('close');
+                    })
 
-                J_layer.css('display', 'block').animate({opacity: 0.4})
-            })
+                    J_layer.css('display', 'block').animate({opacity: 0.4})
+                })
+            } else {
+                $sliding_window.width(winW - 50);
+                J_win_rig_btn.bind('click', function() {
+                    J_app_view.css({overflow: 'visible'});
+                    J_app_view.animate({
+                        marginLeft: -winW + 50
+                    }, function() {
+                        $('.wx-menu-btn', J_win_rig_btn).addClass('close');
+                    })
+
+                    J_layer.css('display', 'block').animate({opacity: 0.4})
+                })
+            }
 
             J_layer.bind('click', function() {
                 J_app_view.animate({
