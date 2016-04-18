@@ -66,7 +66,7 @@ const renderOption = (templateName, currentUrl,platformClass,params,wrapperClass
     'seoDescription':ComponentsSeo[templateName].seoDescription || '',
     'reactMarkup': renderToString(ComponentsIndex[templateName]),
     'reactNavMarkup': renderToString(<Navigation currentUrl={currentUrl||'/'} dataParams={p} />),
-    'wrapperClass':wrapperClass || 'u', // t: 顶部有菜单的margin un: 无margin b:底部有margin tb 顶部底部都有margin
+    'wrapperClass':wrapperClass || 't', // t: 顶部有菜单的margin un: 无margin b:底部有margin tb 顶部底部都有margin
     'platformType':platformType,// 0:是pc 1:移动端
     'platformClass':platformClass || 'adaptation-1200',
     'main': templateName,// 客户端渲染使用的脚本名称和模板名称一致
