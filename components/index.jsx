@@ -147,31 +147,31 @@ const PringlesList = React.createClass({
         </div>
         <div className="gray-bg-box layout-center-box">
           <ul className="list-pringles layout-center-box">
-            {_.map(this.state.data, (v, k) => {
+            {
+              _.map(this.state.data, (v, k) => {
               return (
                 <li key={k}>
                   <div className="imgbox">
-                    <a href={'/pringles-details/'+v.id} className="href-box" target='_blank'/>
-                    <div className="info-box">
-                      <span className="font-bg"/>
-                      <h1>
-                        <span>{v.actorMaleName}</span>
-                        <b>&amp;</b>
-                        <span>{v.actorFemaleName}</span>
-                      </h1>
-                    </div>
-                    <div className="mask"/>
-                    <div className='img-box'>
-                      <MediaItem mediaUrl={v.coverUrlWeb} height={445} aspectRatio={'297:445'} water={false}/>
-                    </div>
+                    <a href={'/pringles-details/'+v.id} target='_blank'>
+                      <div className="info-box">
+                        <span className="font-bg"/>
+                        <h1>
+                          <span>{v.actorMaleName}</span>
+                          <b>&amp;</b>
+                          <span>{v.actorFemaleName}</span>
+                        </h1>
+                      </div>
+                      <div className="mask"/>
+                      <div className='img-box'>
+                        <MediaItem mediaUrl={v.coverUrlWeb} height={445} aspectRatio={'297:445'} water={false}/>
+                      </div>
+                      <h2>{v.name}</h2>
+                      <p>{v.description}</p>
+                    </a>
                   </div>
-                  <a href={hrefUrl+'&id='+v.id} className="title-box">
-                    <h2>{v.name}</h2>
-                    <p>{v.description}</p>
-                  </a>
                 </li>
               )
-            })
+              })
             }
 
           </ul>
@@ -233,13 +233,14 @@ const SampleList = React.createClass({
                     item = (
                       <li className="item item-big marginLeft" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
-                          <div className="info-box">
-                            <span className="font-bg"/>
-                            <h1>{v.name}</h1>
-                          </div>
-                          <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={600} water={false} />
+                          <a href={'/sample-details/'+v.id} target='_blank' >
+                            <div className="info-box">
+                              <span className="font-bg"/>
+                              <h1>{v.name}</h1>
+                            </div>
+                            <div className="mask"/>
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={600} water={false} />
+                          </a>
                         </div>
                       </li>
                     )
@@ -248,13 +249,14 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
-                          <div className="info-box">
-                            <span className="font-bg"/>
-                            <h1>{v.name}</h1>
-                          </div>
-                          <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank' >
+                            <div className="info-box">
+                              <span className="font-bg"/>
+                              <h1>{v.name}</h1>
+                            </div>
+                            <div className="mask"/>
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                          </a>
                         </div>
                       </li>
                     )
@@ -263,13 +265,14 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-last item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
-                          <div className="info-box">
-                            <span className="font-bg"/>
-                            <h1>{v.name}</h1>
-                          </div>
-                          <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'>
+                            <div className="info-box">
+                              <span className="font-bg"/>
+                              <h1>{v.name}</h1>
+                            </div>
+                            <div className="mask"/>
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                          </a>
                         </div>
                       </li>
                     )
@@ -278,13 +281,14 @@ const SampleList = React.createClass({
                     item = (
                       <li className="item" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'/>
-                          <div className="info-box">
-                            <span className="font-bg"/>
-                            <h1>{v.name}</h1>
-                          </div>
-                          <div className="mask"/>
-                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'>
+                            <div className="info-box">
+                              <span className="font-bg"/>
+                              <h1>{v.name}</h1>
+                            </div>
+                            <div className="mask"/>
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                          </a>
                         </div>
                       </li>
                     )

@@ -61,7 +61,7 @@ const SampleDetails = React.createClass({
                     if(this.props.platform === '0') {// 如果是pc端,需要切图
                       srcUrl += '@1e_1c_0o_0l_130h_130w_90q.src';
                     } else {
-                      srcUrl += '@80Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                      srcUrl += '@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
                     }
                     return(
                       <a key={k} className="item item-current img-box"
