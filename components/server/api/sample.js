@@ -29,7 +29,8 @@ const sampleApi = {
       } else if(k.indexOf('cityId') !== -1) {// 旅拍城市Id
         this.model = this.model.filter({cityId:parseInt(this.request.query['cityId'])})
       } else if(k.indexOf('attractionsId') !== -1) {// 旅拍景点Id
-        this.model = this.model.filter({attractionsId:parseInt(this.request.query['attractionsId'])})
+        // 风格 TODO:服务器返回的是字符串如"123,275,468,",这里采用"%id,%"的方式匹配
+        this.model = this.model.filter(r.row("attractionsId").match(".*?"+this.request.query['attractionsId']+","+".*?"));
       }
     })
 
@@ -44,7 +45,7 @@ const sampleApi = {
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize)
 
     // 只取有用的字段
-    this.model = this.model.pluck("id","name","coverUrlWeb","coverUrlWx","coverUrlApp","description","cityId","attractionsId");
+    this.model = this.model.pluck("id","name","coverUrlWeb","description");
 
     yield next
   },

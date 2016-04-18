@@ -14,16 +14,17 @@ const TripListItem = React.createClass({
                 <li key={k} className="item-box">
                   <a href={hrefUrl+v.id} className="img-box" target='_blank'>
                     <MediaItem
-                      height={576}
-                      aspectRatio={'-1:576'}
+                      height={600}
+                      aspectRatio={'2:3'}
                       mediaUrl={v.coverUrlWeb}
                       water={false}
                     />
                     <div className="title-box">
                       <h2>{v.name}</h2>
+                      <h1>SWEET JOURNEY</h1>
                     </div>
+                    <div className="item-shadow"></div>
                   </a>
-                  <div className="item-shadow"></div>
                 </li>
               )
             })
@@ -38,19 +39,29 @@ const TripListItem = React.createClass({
           <ul className="recommend-list layout-center-box">
             {
               _.map(this.state.data,(v,k)=>{
+                let attractionsName = null;
+                if (v.attractionsName && v.attractionsName.length>0) {
+                  if (v.attractionsName.length > 14) {
+                    attractionsName=(<em>{'<拍摄景点:'+v.attractionsName.slice(0,11)+'...>'}</em>)
+                  } else {
+                    attractionsName=(<em>{'<拍摄景点:'+v.attractionsName+'>'}</em>)
+                  }
+                }
                 return (
                   <li key={k} className="item-box">
                     <a href={hrefUrl+v.id} className="img-box" target='_blank'>
                       <MediaItem
-                        height={579}
-                        aspectRatio={'-1:579'}
+                        height={600}
+                        aspectRatio={'2:3'}
                         mediaUrl={v.coverUrlWeb}
                         water={false}
                       />
                       <div className="layer-box"></div>
                       <div className="info-box">
-                        <em>GoldenWedding</em>
-                        <h2>{v.actorMaleName + ' & ' + v.actorFemaleName}</h2>
+                        <h2>{v.actorMaleName+' ❤ '+v.actorFemaleName}</h2>
+                        {
+                          attractionsName
+                        }
                       </div>
                     </a>
                     <div className="item-shadow"></div>

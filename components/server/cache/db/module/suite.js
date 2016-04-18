@@ -52,10 +52,6 @@ const Suite = env.Thinky.createModel('suite', {
   cityId: type.number(),
   // 旅拍城市名称
   cityName: type.string(),
-  // 景点Id
-  attractionsId: type.number(),
-  // 景点名称
-  attractionsName: type.string(),
   // 网站详细图片集
   pcDetailImages: type.string(),
   // APP详细图片集

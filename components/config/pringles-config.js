@@ -12,7 +12,7 @@ const PringlesConfig = {
   'TripListItem':_.merge({
     dataUrl:'pringles',
     params:{
-      'pageSize':10,
+      'pageSize':6,
       'pageIndex':1
     }
   },BaseConfig)

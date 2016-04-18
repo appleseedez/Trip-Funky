@@ -38,6 +38,9 @@ const advApi = {
     this.model = this.model.orderBy(r.desc('weight'))
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize);
 
+    // 只取有用的字段
+    this.model = this.model.pluck("coverUrlWeb","linkUrl","videoUrl");
+
     yield next
   }
 }

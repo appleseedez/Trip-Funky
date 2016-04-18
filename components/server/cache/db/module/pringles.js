@@ -52,9 +52,9 @@ const Pringles = env.Thinky.createModel('pringles', {
   cityId: type.number(),
   // 旅拍分站城市名称
   cityName: type.string(),
-  // 景点ID
-  attractionsId: type.number(),
-  // 景点名称
+  // 景点ID,有多个,用逗号分隔,如 12,4,7,8
+  attractionsId: type.string(),
+  // 景点名称,有多个,用逗号分隔,如 小东海,西岛,一线天,天涯海角
   attractionsName: type.string(),
   // 网站详细图片集
   pcDetailImages: type.array(),
