@@ -10,43 +10,45 @@ const CityChooser = React.createClass({
       <div className="sliding-window">
           <div className="content-view">
               <div className="select-module select-style-1">
-                  <div className="nav-local">
-                      <div className="close-box">
-                          <a></a>
-                      </div>
-                      <div className="menu-box J_MenuBox">
-                          <div className="tab-box inland tab-current">
-                              <a href="#">
-                                  <span className="tab-title"></span>
-                              </a>
-                              <ul className="tab-item">
-                                  {_.map(this.props.homeCity, (v, k) => {
-                                      return (
-                                          <li key={k}>
-                                              <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
-                                          </li>
-                                      )
-                                  })
-                                }
-                              </ul>
-                          </div>
-                          <div className="tab-box oversea">
-                              <a href="#">
-                                  <span className="tab-title"></span>
-                              </a>
-                              <ul className="tab-item">
-                              {_.map(this.props.overseaCity, (v, k) => {
-                                  return (
-                                      <li key={k}>
-                                          <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
-                                      </li>
-                                  )
-                              })
-                            }
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
+                <div className='box-bg' />
+                <div className="nav-local">
+                    <div className="close-box">
+                        <a></a>
+                    </div>
+                    <div className="menu-box J_MenuBox">
+                        <div className="tab-box inland tab-current">
+                            <a href="#">
+                                <span className="tab-title"></span>
+                            </a>
+                            <ul className="tab-item">
+                                {_.map(this.props.homeCity, (v, k) => {
+                                    return (
+                                        <li key={k}>
+                                            <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
+                                        </li>
+                                    )
+                                })
+                              }
+                            </ul>
+                        </div>
+                        <div className="tab-box oversea">
+                            <a href="#">
+                                <span className="tab-title"></span>
+                            </a>
+                            <ul className="tab-item">
+                            {_.map(this.props.overseaCity, (v, k) => {
+                                return (
+                                    <li key={k}>
+                                        <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
+                                    </li>
+                                )
+                            })
+                          }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
               </div>
           </div>
       </div>
