@@ -4,7 +4,7 @@
 import _ from 'lodash'
 import { BaseConfig } from './base'
 
-const HomeConfig = {
+const IndexConfig = {
   // 全站首页的热门城市广告区
   'HotAdv1': _.merge({
     dataUrl: 'adv/home_middle_adv',
@@ -15,4 +15,4 @@ const HomeConfig = {
   }, BaseConfig)
 }
 
-export { HomeConfig }
+export { IndexConfig }

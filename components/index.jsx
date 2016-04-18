@@ -1,4 +1,72 @@
 import React, {PropTypes} from 'react'
+import _ from 'lodash'
+
+import { IndexConfig } from './config/index-config'
+import { StyleImg } from './config/adv-lang-config'
+
+const RecommendCityList = React.createClass({
+    render () {
+        return (
+          <div className="list-box layout-center-box clearfix">
+              <ul className="adv-list-sy">
+                  <li className="item">
+                      <div className="box-1">
+                          <div className="img-box">
+                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
+                              <a className="cover-layer"/>
+                          </div>
+                      </div>
+                      <div className="box-1 box-2">
+                          <div className="img-box">
+                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
+                              <a className="cover-layer"/>
+                          </div>
+                      </div>
+                  </li>
+                  <li className="item">
+                      <div className="img-box">
+                          <img src="http://ww2.sinaimg.cn/large/7890e6cfgw1eqs7jwr7bcj21kw2dcnea.jpg"/>
+                          <a className="cover-layer"/>
+                      </div>
+                  </li>
+                  <li className="item item-last">
+                      <div className="box-1 ">
+                          <div className="img-box">
+                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
+                              <a className="cover-layer"/>
+                          </div>
+                      </div>
+                      <div className="box-1 box-2">
+                          <div className="img-box">
+                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
+                              <a className="cover-layer"/>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+        )
+    },
+
+    getInitialState() {
+        return {
+            data: []
+        }
+    },
+
+    componentDidMount() {
+        if (IndexConfig['HotAdv1'].dataUrl !== undefined && this.props.cityId !== -1) {
+            let p = IndexConfig['HotAdv1'].params
+            fetch(IndexConfig['HotAdv1'].baseUrl + IndexConfig['HotAdv1'].dataUrl + '?' + $.param(p)).then(res => {
+                return res.json()
+            }).then(j => {
+                if(j.success && j.data.length > 0) {
+                    this.setState({data:j.data});
+                }
+            })
+        }
+    }
+})
 
 const Index = React.createClass({
     render() {
@@ -29,7 +97,7 @@ const Index = React.createClass({
                 </div>
                 <div className="main-content">
                     <div className="block-tit-box-1">
-                        <img src="/images/tit-box-1.png"/>
+                        <img src={StyleImg['head']}/>
                         <div className="english-title"></div>
                         <div className="chinese-title">
                             <i/>
@@ -43,50 +111,12 @@ const Index = React.createClass({
                                 <b>热门城市</b>
                             </h1>
                         </div>
-                        <img src="/images/tit-box-detail-1.png"/>
+                        <img src={StyleImg['footer']}/>
                     </div>
-                    <div className="list-box layout-center-box clearfix">
-                        <ul className="adv-list-sy">
-                            <li className="item">
-                                <div className="box-1">
-                                    <div className="img-box">
-                                        <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                                        <a className="cover-layer"/>
-                                    </div>
-                                </div>
-                                <div className="box-1 box-2">
-                                    <div className="img-box">
-                                        <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                                        <a className="cover-layer"/>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="item">
-                                <div className="img-box">
-                                    <img src="http://ww2.sinaimg.cn/large/7890e6cfgw1eqs7jwr7bcj21kw2dcnea.jpg"/>
-                                    <a className="cover-layer"/>
-                                </div>
-                            </li>
-                            <li className="item item-last">
-                                <div className="box-1 ">
-                                    <div className="img-box">
-                                        <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                                        <a className="cover-layer"/>
-                                    </div>
-                                </div>
-                                <div className="box-1 box-2">
-                                    <div className="img-box">
-                                        <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                                        <a className="cover-layer"/>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <RecommendCityList />
                 </div>
 
             </div>
-
         )
     }
 
