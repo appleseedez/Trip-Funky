@@ -9,10 +9,10 @@ function adpateParam (params){
     }
   }
   if (params.cityName !== undefined || params.cityName === '' || params.cityName === null) {
-    store.set('cityName',params.cityName )
+    store.set('cityName',params.cityName)
   }else {
     if (store.get('cityName')) {
-      params.cityName = decodeURI(store.get('cityName'))
+      params.cityName = decodeURIComponent(store.get('cityName'))
     }else {
       window.location.href='/'
     }

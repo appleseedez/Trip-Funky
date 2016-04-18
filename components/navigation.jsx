@@ -29,7 +29,7 @@ const CityChooser = React.createClass({
                                     _.map(this.props.homeCity, (v, k) => {
                                     return (
                                         <li key={k}>
-                                            <a href={'/index?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
+                                            <a href={'/index?cityId=' + v.id + '&cityName=' + encodeURIComponent(v.name)}>{v.name}</a>
                                         </li>
                                     )
                                 })
@@ -45,7 +45,7 @@ const CityChooser = React.createClass({
                                 _.map(this.props.overseaCity, (v, k) => {
                                 return (
                                     <li key={k}>
-                                        <a href={'/index?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
+                                        <a href={'/index?cityId=' + v.id + '&cityName=' + encodeURIComponent(v.name)}>{v.name}</a>
                                     </li>
                                 )
                             })
