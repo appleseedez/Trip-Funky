@@ -3,6 +3,7 @@ import _ from 'lodash'
 
 import { IndexConfig } from './config/index-config'
 import { StyleImg } from './config/adv-lang-config'
+import { MediaItem } from './common/media-item.jsx'
 
 const RecommendCityList = React.createClass({
     render () {
@@ -10,38 +11,54 @@ const RecommendCityList = React.createClass({
           <div className="list-box layout-center-box clearfix">
               <ul className="adv-list-sy">
                   <li className="item">
-                      <div className="box-1">
-                          <div className="img-box">
-                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                              <a className="cover-layer"/>
-                          </div>
-                      </div>
-                      <div className="box-1 box-2">
-                          <div className="img-box">
-                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                              <a className="cover-layer"/>
-                          </div>
-                      </div>
+                      {
+                        _.map(this.state.data2, (v,k)=>{
+                            let kClass = (k==0)?"box-1":"box-1 box-2"
+                            return (
+                              <div key={k} className={kClass}>
+                                  <a href={v.linkUrl} target='_blank'>
+                                      <div className="img-box">
+                                          <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'395:296'} width={395} water={false} />
+                                          <div className="cover-layer" />
+                                      </div>
+                                  </a>
+                              </div>
+                            )
+                        })
+                      }
                   </li>
                   <li className="item">
-                      <div className="img-box">
-                          <img src="http://ww2.sinaimg.cn/large/7890e6cfgw1eqs7jwr7bcj21kw2dcnea.jpg"/>
-                          <a className="cover-layer"/>
-                      </div>
+                      {
+                          _.map(this.state.data1, (v,k)=>{
+                              return (
+                                <div key={k} className="img-box">
+                                    <a href={v.linkUrl} target='_blank'>
+                                        <div className="img-box">
+                                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'395:600'} width={395} water={false} />
+                                            <div className="cover-layer" />
+                                        </div>
+                                    </a>
+                                </div>
+                              )
+                          })
+                      }
                   </li>
                   <li className="item item-last">
-                      <div className="box-1 ">
-                          <div className="img-box">
-                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                              <a className="cover-layer"/>
-                          </div>
-                      </div>
-                      <div className="box-1 box-2">
-                          <div className="img-box">
-                              <img src="http://pic6.wed114.cn/20140601/2014060121300339.jpg"/>
-                              <a className="cover-layer"/>
-                          </div>
-                      </div>
+                      {
+                          _.map(this.state.data3, (v,k)=>{
+                              let kClass = (k==0)?"box-1":"box-1 box-2"
+                              return (
+                                <div key={k} className={kClass}>
+                                    <a href={v.linkUrl} target='_blank'>
+                                        <div className="img-box">
+                                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'395:296'} width={395} water={false} />
+                                            <div className="cover-layer"/>
+                                        </div>
+                                    </a>
+                                </div>
+                              )
+                          })
+                      }
                   </li>
               </ul>
           </div>
@@ -50,7 +67,9 @@ const RecommendCityList = React.createClass({
 
     getInitialState() {
         return {
-            data: []
+            data1: [],
+            data2: [],
+            data3: []
         }
     },
 
@@ -61,7 +80,7 @@ const RecommendCityList = React.createClass({
                 return res.json()
             }).then(j => {
                 if(j.success && j.data.length > 0) {
-                    this.setState({data:j.data});
+                    this.setState({data1:j.data.slice(0,1),data2:j.data.slice(1,3),data3:j.data.slice(3,5)});
                 }
             })
         }

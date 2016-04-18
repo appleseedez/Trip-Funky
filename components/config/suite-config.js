@@ -8,8 +8,8 @@ const SuiteConfig = {
   // 广告轮播
   'MediaSlider': _.merge({
     'dataUrl': 'adv/suite_top',
-    'aspectRatio': '1920:577',
-    'height': 577
+    'aspectRatio': '3:1',
+    'height': 640
   }, BaseConfig),
 
   'Banner':[

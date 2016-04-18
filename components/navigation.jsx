@@ -21,11 +21,12 @@ const CityChooser = React.createClass({
                     </div>
                     <div className="menu-box J_MenuBox">
                         <div className="tab-box inland tab-current">
-                            <a href="#">
+                            <a href="javascript:void(0)">
                                 <span className="tab-title"></span>
                             </a>
                             <ul className="tab-item">
-                                {_.map(this.props.homeCity, (v, k) => {
+                                {
+                                    _.map(this.props.homeCity, (v, k) => {
                                     return (
                                         <li key={k}>
                                             <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
@@ -36,11 +37,12 @@ const CityChooser = React.createClass({
                             </ul>
                         </div>
                         <div className="tab-box oversea">
-                            <a href="#">
+                            <a href="javascript:void(0)">
                                 <span className="tab-title"></span>
                             </a>
                             <ul className="tab-item">
-                            {_.map(this.props.overseaCity, (v, k) => {
+                            {
+                                _.map(this.props.overseaCity, (v, k) => {
                                 return (
                                     <li key={k}>
                                         <a href={'/home?cityId=' + v.id + '&cityName=' + v.name}>{v.name}</a>
