@@ -165,8 +165,10 @@ const PringlesList = React.createClass({
                       <div className='img-box'>
                         <MediaItem mediaUrl={v.coverUrlWeb} height={445} aspectRatio={'297:445'} water={false}/>
                       </div>
-                      <h2>{v.name}</h2>
-                      <p>{v.description}</p>
+                      <div className="title-box">
+                        <h2>{v.name}</h2>
+                        <p>{v.description}</p>
+                      </div>
                     </a>
                   </div>
                 </li>
@@ -249,7 +251,7 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank' >
+                          <a href={'/sample-details/'+v.id} target='_blank' >
                             <div className="info-box">
                               <span className="font-bg"/>
                               <h1>{v.name}</h1>
@@ -265,7 +267,7 @@ const SampleList = React.createClass({
                     item=(
                       <li className="item item-last item-mgt" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'>
+                          <a href={'/sample-details/'+v.id} target='_blank'>
                             <div className="info-box">
                               <span className="font-bg"/>
                               <h1>{v.name}</h1>
@@ -281,7 +283,7 @@ const SampleList = React.createClass({
                     item = (
                       <li className="item" key={k}>
                         <div className="img-box">
-                          <a className="href-box" href={'/sample-details/'+v.id} target='_blank'>
+                          <a href={'/sample-details/'+v.id} target='_blank'>
                             <div className="info-box">
                               <span className="font-bg"/>
                               <h1>{v.name}</h1>
