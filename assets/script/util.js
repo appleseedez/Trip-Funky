@@ -12,7 +12,7 @@ function adpateParam (params){
     store.set('cityName',params.cityName )
   }else {
     if (store.get('cityName')) {
-      params.cityName = store.get('cityName')
+      params.cityName = decodeURI(store.get('cityName'))
     }else {
       window.location.href='/'
     }
