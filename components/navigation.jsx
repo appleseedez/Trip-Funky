@@ -72,6 +72,7 @@ const Navigation = React.createClass({
               <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} />
             )
         }
+
         return (
             <div>
                 <CityChooser homeCity={this.state.homeCity} overseaCity={this.state.overseaCity} />
@@ -87,7 +88,9 @@ const Navigation = React.createClass({
                         <span className="city-name">{this.props.dataParams.cityName}</span>
                         <div className="title-box" id="J_menu_btn">
                             <i className="arrow-1 arrow-r-1 transition"/>
-                            <h1>{this.props.dataParams.cityName}</h1>
+                            {
+                                this.props.dataParams.cityName && <h1>{this.props.dataParams.cityName}</h1>
+                            }
                         </div>
                         <div className="win-rig-btn" id="J_win_rig_btn">
                             <div className="menu-box">
@@ -106,7 +109,7 @@ const Navigation = React.createClass({
                             <li>
                                 <a href={'/home' } className={(this.props.currentUrl === '/home')
                                     ? 'current'
-                                    : ''}>{this.props.dataParams.cityName + '首页'}</a>
+                                    : ''}>首页</a>
                             </li>
                             <li>
                                 <a href={'/sample'} className={(this.props.currentUrl === '/sample')
@@ -138,7 +141,7 @@ const Navigation = React.createClass({
             dataUrl: 'city',
             dataParams: {
                 cityId: -1,
-                name: ''
+                cityName: ''
             }
         }
     },
