@@ -9,8 +9,8 @@ import { PringlesDetails } from '../pringles-details.jsx'
 import { SampleDetails } from '../sample-details.jsx'
 
 const ComponentsIndex = {
-  'index': <Index />,
   'home': <Home />,
+  'index': <Index />,
   'sample': <Sample />,
   'pringles': <Pringles />,
   'suite': <Suite />,

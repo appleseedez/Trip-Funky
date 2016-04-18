@@ -2,7 +2,7 @@ const MenuConfig = {
   '/':{
     'name':'城市选择'
   },
-  '/home':{
+  '/index':{
     'name':'首页'
   },
   '/sample':{
