@@ -241,7 +241,7 @@ const SampleList = React.createClass({
                               <h1>{v.name}</h1>
                             </div>
                             <div className="mask"/>
-                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={600} water={false} />
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'598:900'} width={598} water={false} />
                           </a>
                         </div>
                       </li>

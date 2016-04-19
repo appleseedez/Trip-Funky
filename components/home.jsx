@@ -27,9 +27,11 @@ const RecommendCityList = React.createClass({
                 } else {
                   return(
                     <li key={k} className={kClass}>
-                      <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} />
-                      <div className="layer-box"></div>
-                      <div className="item-shadow"></div>
+                      <a className="img-box">
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} />
+                        <div className="layer-box"></div>
+                        <div className="item-shadow"></div>
+                      </a>
                     </li>
                   )
                 }
@@ -48,9 +50,11 @@ const RecommendCityList = React.createClass({
                 } else {
                   return (
                     <li key={k} className={kClass}>
-                      <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} />
-                      <div className="layer-box"></div>
-                      <div className="item-shadow"></div>
+                      <a className="img-box">
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} />
+                        <div className="layer-box"></div>
+                        <div className="item-shadow"></div>
+                      </a>
                     </li>
                   )
                 }
@@ -102,9 +106,8 @@ const Home = React.createClass({
             <div className="header bannar">
               <ul className="slider">
                 <li className="item">
-                  <a href={'/'} className="img-box">
+                  <a className="img-box">
                     <img src="//img2.jsbn.com/trip/assets/images/home_banner_bg.jpg"/>
-                    <div className="cover-layer"/>
                   </a>
                 </li>
               </ul>
