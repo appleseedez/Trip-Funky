@@ -73,7 +73,9 @@ const Home = React.createClass({
               <div className="right-box ico-text"/>
             </div>
             <div className="relative-box">
-              <div className="left-box ico-lp select-box"/>
+              <a>
+                <div className="left-box ico-lp select-box"/>
+              </a>
             </div>
           </div>
           <div className="bannar-all-box">
