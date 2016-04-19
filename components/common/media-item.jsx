@@ -210,18 +210,19 @@ const ImageItem = React.createClass({
     //     </div>
     //   )
     // }
+    // 在高版本的IE下面,如果img有onError的话会卡死,所以去掉 <img src={mediaUrl} onError={this.imageNotLoaded} />
     if (this.props.outerLink) {
       return (
         <a href={this.props.outerLink} className='img-box'>
           <div className='J_MediaWrapper' style={{'height':'100%'}} data-width={width} data-height={height}>
-            <img src={mediaUrl} onError={this.imageNotLoaded}  />
+            <img src={mediaUrl}  />
           </div>
         </a>
       )
     }else {
       return (
         <div className='J_MediaWrapper' style={{'height':'100%'}} data-width={width} data-height={height}>
-          <img src={mediaUrl} onError={this.imageNotLoaded}  />
+          <img src={mediaUrl} />
         </div>
       )
     }
@@ -231,16 +232,16 @@ const ImageItem = React.createClass({
     return {
       water:true
     }
-  },
+  }
   // getInitialState() {
   //   return {
   //     errorState:false
   //   }
   // },
-  imageNotLoaded(evt){
-    let errorUrl = ''
-    evt.target.src = errorUrl
-  }
+  //imageNotLoaded(evt){
+  //  let errorUrl = ''
+  //  evt.target.src = errorUrl
+  //}
 })
 
 

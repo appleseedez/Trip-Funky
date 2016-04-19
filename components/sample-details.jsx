@@ -16,6 +16,12 @@ import { SampleDetailsConfig } from './config/sample-details-config'
 
 const SampleDetails = React.createClass({
   render() {
+
+    let attractionsName = ''
+    if (this.state.details.attractionsName && this.state.details.attractionsName.length>0) {
+      attractionsName = this.state.details.attractionsName.slice(0,-1);
+    }
+
     return(
       <div className="detail-view">
 
@@ -33,11 +39,11 @@ const SampleDetails = React.createClass({
         <div className="layout-center-box" id="photo_slider">
           <div className="photo-show-box">
             <div className="cover-box">
-              <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={true} />
+              <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={false} />
               <div className='info-box'>
                 <h1>{this.state.details.name}</h1>
                 <p>
-                  <span>拍摄地点：</span><span>{this.state.details.attractionsName}</span>
+                  <span>拍摄地点：</span><span>{attractionsName}</span>
                 </p>
                 <p>
                   <span>上传日期：</span><span>{this.state.details.updateTime}</span>
@@ -59,19 +65,28 @@ const SampleDetails = React.createClass({
                   _.map(this.state.details.pcDetailImages, (v,k)=>{
                     let srcUrl = v;
                     if(this.props.platform === '0') {// 如果是pc端,需要切图
-                      srcUrl += '@90Q|1e_1c_0o_0l_130h_130w_90q.src';
+                      srcUrl += '@1e_1c_0o_0l_130h_130w_90q.src';
+                      return(
+                        <a key={k} className="item item-current img-box"
+                           data-uk-lightbox="{'group':'sample-img'}"
+                           data-lightbox-type='image'
+                           href={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
+                          <img src={srcUrl} />
+                          <div className="round-shade-10"></div>
+                        </a>
+                      )
                     } else {
                       srcUrl += '@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                      return(
+                        <li key={k} className="item item-current"
+                            data-big-img-url={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
+                          <a className="img-box">
+                            <img src={srcUrl} />
+                            <div className="round-shade-10"></div>
+                          </a>
+                        </li>
+                      )
                     }
-                    return(
-                      <a key={k} className="item item-current img-box"
-                         data-uk-lightbox="{'group':'sample-img'}"
-                         data-lightbox-type='image'
-                         href={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
-                        <img src={srcUrl} />
-                        <div className="round-shade-10"></div>
-                      </a>
-                    )
                   })
                 }
               </div>

@@ -41,11 +41,9 @@ const TripListItem = React.createClass({
               _.map(this.state.data,(v,k)=>{
                 let attractionsName = null;
                 if (v.attractionsName && v.attractionsName.length>0) {
-                  if (v.attractionsName.length > 14) {
-                    attractionsName=(<em>{'<拍摄景点:'+v.attractionsName.slice(0,11)+'...>'}</em>)
-                  } else {
-                    attractionsName=(<em>{'<拍摄景点:'+v.attractionsName+'>'}</em>)
-                  }
+                  let value = v.attractionsName.slice(0,-1);
+                  console.log(value.length)
+                  attractionsName=(<em>{'< 拍摄景点：'+value+' >'}</em>)
                 }
                 return (
                   <li key={k} className="item-box">
