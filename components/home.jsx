@@ -14,27 +14,47 @@ const RecommendCityList = React.createClass({
             _.map(this.state.data,(v,k)=>{
               let kClass="item-box item-"+(k+1);
               if(k == 0) {
-                return(
-                  <li key={k} className={kClass}>
-                    <a href={v.linkUrl} className="img-box">
+                if (v.linkUrl && v.linkUrl !== "") {
+                  return(
+                    <li key={k} className={kClass}>
+                      <a href={v.linkUrl} className="img-box">
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} />
+                        <div className="layer-box"></div>
+                        <div className="item-shadow"></div>
+                      </a>
+                    </li>
+                  )
+                } else {
+                  return(
+                    <li key={k} className={kClass}>
                       <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} />
                       <div className="layer-box"></div>
-                    </a>
-                    <div className="item-shadow"></div>
-                  </li>
-                )
+                      <div className="item-shadow"></div>
+                    </li>
+                  )
+                }
+
               } else {
-                return(
-                  <li key={k} className={kClass}>
-                    <a href={v.linkUrl} className="img-box">
+                if (v.linkUrl && v.linkUrl !== "") {
+                  return(
+                    <li key={k} className={kClass}>
+                      <a href={v.linkUrl} className="img-box">
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} />
+                        <div className="layer-box"></div>
+                        <div className="item-shadow"></div>
+                      </a>
+                    </li>
+                  )
+                } else {
+                  return (
+                    <li key={k} className={kClass}>
                       <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} />
                       <div className="layer-box"></div>
-                    </a>
-                    <div className="item-shadow"></div>
-                  </li>
-                )
+                      <div className="item-shadow"></div>
+                    </li>
+                  )
+                }
               }
-
             })
           }
         </ul>
