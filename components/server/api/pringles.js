@@ -44,7 +44,7 @@ const pringlesApi = {
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize)
 
     // 只取有用的字段
-    this.model = this.model.pluck("id","name","coverUrlWeb","actorFemaleName","actorMaleName","description","attractionsName");
+    this.model = this.model.pluck("id","coverUrlWeb","actorFemaleName","actorMaleName","attractionsName");
 
     yield next
   },
@@ -55,6 +55,9 @@ const pringlesApi = {
     this.model = pringles.filter({
       id: parseInt(this.params.id)
     })
+
+    // 只取有用的字段
+    this.model = this.model.pluck("name","pcDetailImages","shootingTime","cityName","attractionsName","actorMaleName","actorFemaleName");
 
     yield next
   }

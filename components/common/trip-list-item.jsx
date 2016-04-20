@@ -42,7 +42,6 @@ const TripListItem = React.createClass({
                 let attractionsName = null;
                 if (v.attractionsName && v.attractionsName.length>0) {
                   let value = v.attractionsName.slice(0,-1);
-                  console.log(value.length)
                   attractionsName=(<em>{'< 拍摄景点：'+value+' >'}</em>)
                 }
                 return (

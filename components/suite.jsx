@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react'
 import _ from 'lodash'
 
-import { PageFooter } from './common/page-footer.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { SuiteConfig } from './config/suite-config'
 import { TripListItem } from './common/trip-list-item.jsx'

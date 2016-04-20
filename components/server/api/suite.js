@@ -41,7 +41,7 @@ const suiteApi = {
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize)
 
     // 只取有用的字段
-    this.model = this.model.pluck("id","name","coverUrlWeb","description","detail","salePrice");
+    this.model = this.model.pluck("id","name","coverUrlWeb","detail","salePrice");
 
     yield next
   },
@@ -52,6 +52,9 @@ const suiteApi = {
     this.model = suite.filter({
       id: parseInt(this.params.id)
     })
+
+    // 只取有用的字段
+    this.model = this.model.pluck("pcDetailImages");
 
     yield next
   }

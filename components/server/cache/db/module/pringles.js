@@ -62,6 +62,8 @@ const Pringles = env.Thinky.createModel('pringles', {
   appDetailImages: type.array(),
   // 微信详细图片集
   wxDetailImages: type.array(),
+  // 拍摄时间
+  shootingTime: type.string(),
   // 权重
   weight: type.number()
 })

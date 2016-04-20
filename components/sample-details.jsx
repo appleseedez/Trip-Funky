@@ -3,7 +3,7 @@
  */
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
-import { PageFooter } from './common/page-footer.jsx'
+
 import { MediaItem } from './common/media-item.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { SampleDetailsConfig } from './config/sample-details-config'
@@ -16,7 +16,6 @@ import { SampleDetailsConfig } from './config/sample-details-config'
 
 const SampleDetails = React.createClass({
   render() {
-
     let attractionsName = ''
     if (this.state.details.attractionsName && this.state.details.attractionsName.length>0) {
       attractionsName = this.state.details.attractionsName.slice(0,-1);
@@ -28,15 +27,13 @@ const SampleDetails = React.createClass({
         <div className="photo-box layout-center-box">
           <img src={SampleDetailsConfig['Banner'][0].imageUrl} />
         </div>
-        <div className="block-tit-box">
-          <div className="border-box">
-            <h1><span>金色旅拍</span><b>作品欣赏</b></h1>
-            <h2></h2>
-          </div>
-          <p>Golden trip, so it's really good.</p>
+
+        <div className="separation-line" id="separation-line">
+          <div className="left-bg"></div>
+          <div className="right-bg"></div>
         </div>
 
-        <div className="layout-center-box" id="photo_slider">
+        <div className="layout-center-box">
           <div className="photo-show-box">
             <div className="cover-box">
               <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={false} />
@@ -91,10 +88,9 @@ const SampleDetails = React.createClass({
                 }
               </div>
             </div>
-
           </div>
+          <div className="photo-box-border"></div>
         </div>
-        <div className="photo-box-border"></div>
       </div>
     );
   },
@@ -118,6 +114,11 @@ const SampleDetails = React.createClass({
   },
 
   componentDidMount() {
+
+    const setUp = ()=> {
+      window.location.href="#separation-line"
+    }
+
     let cfg = SampleDetailsConfig['SampleDetails']
     let fetchUrl = cfg['buildUrl'](this.props.dataParams,cfg['dataUrl'])
 
@@ -126,7 +127,7 @@ const SampleDetails = React.createClass({
         .then(res => {return res.json()})
         .then(j=>{
           if(j.success && j.data.length>0) {
-            this.setState({details:j.data[0]});
+            this.setState({details:j.data[0]}, setUp);
           }
         })
     }

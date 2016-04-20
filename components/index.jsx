@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
 
-import { PageFooter } from './common/page-footer.jsx'
 import { MediaSlider } from './common/media-slider.jsx'
 import { MediaItem } from './common/media-item.jsx'
 import { IndexConfig } from './config/index-config'

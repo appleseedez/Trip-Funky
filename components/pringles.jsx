@@ -3,7 +3,6 @@ import _ from 'lodash'
 
 import { MediaSlider } from './common/media-slider.jsx'
 import { PringlesConfig } from './config/pringles-config'
-import { PageFooter } from './common/page-footer.jsx'
 import { TripListItem } from './common/trip-list-item.jsx'
 import { AdvLangConfig,StyleImg } from './config/adv-lang-config'
 

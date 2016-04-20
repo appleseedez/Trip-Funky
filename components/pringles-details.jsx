@@ -3,7 +3,7 @@
  */
 import React, { PropTypes } from 'react'
 import _ from 'lodash'
-import { PageFooter } from './common/page-footer.jsx'
+
 import { MediaItem } from './common/media-item.jsx'
 import { PringlesDetailsConfig } from './config/pringles-details-config'
 /**
@@ -11,21 +11,27 @@ import { PringlesDetailsConfig } from './config/pringles-details-config'
  <PringlesDetails> <= styles,scenes,list
  </PringlesDetails>
  **/
-
 const PringlesDetails = React.createClass({
   render() {
+
+    let attractionsName = null;
+    if (this.state.details.attractionsName && this.state.details.attractionsName.length>0) {
+      attractionsName = this.state.details.attractionsName.slice(0,-1);
+    }
+    let shootingTime = '保密';
+    if (this.state.details.shootingTime && this.state.details.shootingTime.length>0) {
+      shootingTime = this.state.details.shootingTime;
+    }
+
     return(
       <div className="detail-view">
-
         <div className="photo-box layout-center-box">
           <img src={PringlesDetailsConfig['Banner'][0].imageUrl} />
         </div>
-        <div className="block-tit-box">
-          <div className="border-box">
-            <h1><span>金色旅拍</span><b>客片欣赏</b></h1>
-            <h2></h2>
-          </div>
-          <p>Golden trip, so it's really good.</p>
+
+        <div className="separation-line" id="separation-line">
+          <div className="left-bg"></div>
+          <div className="right-bg"></div>
         </div>
 
         <div className="layout-center-box" id="photo_slider">
@@ -67,9 +73,33 @@ const PringlesDetails = React.createClass({
                 }
               </ul>
             </div>
+
+            <div className="pringles-info-box">
+              <div className="theme">
+                <h1>{this.state.details.name}</h1>
+                <h2>{'拍摄时间SHOOTING TIME: '+shootingTime}</h2>
+              </div>
+              <div className="info-box">
+                <div className="name">
+                  <span className="info-love-ico"></span>
+                  <span className="title">{this.state.details.actorMaleName+' ❤ '+this.state.details.actorFemaleName}</span>
+                </div>
+                <div className="city">
+                  <span className="info-time-ico"></span>
+                  <span className="title">拍摄城市</span>
+                  <span className="content">{this.state.details.cityName}</span>
+                </div>
+                <div className="address">
+                  <span className="info-photo-ico"></span>
+                  <span className="title">拍摄景点</span>
+                  <span className="content">{attractionsName}</span>
+                </div>
+              </div>
+            </div>
+
           </div>
+          <div className="photo-box-border"></div>
         </div>
-        <div className="photo-box-border"></div>
       </div>
     );
   },
@@ -77,7 +107,12 @@ const PringlesDetails = React.createClass({
   getInitialState: function() {
     return {
       details: {
-        'pcDetailImages':[]
+        'pcDetailImages':[],
+        'shootingTime':'',
+        'actorMaleName':'',
+        'actorFemaleName':'',
+        'cityName':'',
+        'attractionsName':''
       }
     };
   },
@@ -91,6 +126,7 @@ const PringlesDetails = React.createClass({
   componentDidMount() {
     const setUp = ()=> {
       $('#photo_slider').Slider({type:'Horizontal'});
+      window.location.href="#separation-line"
     }
 
     let cfg = PringlesDetailsConfig['PringlesDetails']

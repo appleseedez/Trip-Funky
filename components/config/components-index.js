@@ -20,43 +20,43 @@ const ComponentsIndex = {
 }
 
 const ComponentsSeo = {
-  'index':{
-    'seoTitle':'index',
-    'seoKeywords':'index',
-    'seoDescription':'index'
-  },
   'home':{
-    'seoTitle':'home',
+    'seoTitle':'金色百年',
     'seoKeywords':'home',
     'seoDescription':'home'
   },
+  'index':{
+    'seoTitle':'金色旅拍',
+    'seoKeywords':'index',
+    'seoDescription':'index'
+  },
   'sample':{
-    'seoTitle':'sample',
+    'seoTitle':'作品欣赏',
     'seoKeywords':'sample',
     'seoDescription':'sample'
   },
   'pringles':{
-    'seoTitle':'pringles',
+    'seoTitle':'客片欣赏',
     'seoKeywords':'pringles',
     'seoDescription':'pringles'
   },
   'suite':{
-    'seoTitle':'suite',
+    'seoTitle':'套系报价',
     'seoKeywords':'suite',
     'seoDescription':'suite'
   },
   'suite-details':{
-    'seoTitle':'suite-details',
+    'seoTitle':'套系详情',
     'seoKeywords':'suite-details',
     'seoDescription':'suite-details'
   },
   'pringles-details':{
-    'seoTitle':'pringles-details',
+    'seoTitle':'客片详情',
     'seoKeywords':'pringles-details',
     'seoDescription':'pringles-details'
   },
   'sample-details':{
-    'seoTitle':'sample-details',
+    'seoTitle':'作品详情',
     'seoKeywords':'sample-details',
     'seoDescription':'sample-details'
   }

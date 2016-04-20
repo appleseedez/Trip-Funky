@@ -45,7 +45,7 @@ const sampleApi = {
     this.model = this.model.skip(pageIndex * pageSize).limit(pageSize)
 
     // 只取有用的字段
-    this.model = this.model.pluck("id","name","coverUrlWeb","description");
+    this.model = this.model.pluck("id","name","coverUrlWeb");
 
     yield next
   },
@@ -57,6 +57,9 @@ const sampleApi = {
     this.model = sample.filter({
       id:parseInt(this.params.id)
     })
+
+    // 只取有用的字段
+    this.model = this.model.pluck("coverUrlWeb","name","attractionsName","updateTime","pcDetailImages");
 
     yield next
   }
