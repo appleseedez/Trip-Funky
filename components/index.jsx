@@ -46,6 +46,11 @@ const RecommendList = React.createClass({
 
 const SuiteList = React.createClass({
   render () {
+
+    if (this.state.data.length === 0) {
+      return null;
+    }
+
     let hrefUrl='/suite';
     let desc = '幸福可以绽放的如此耀眼';
     if(AdvLangConfig[this.props.cityName]) {

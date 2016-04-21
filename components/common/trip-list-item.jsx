@@ -77,61 +77,74 @@ const TripListItem = React.createClass({
         )
       }
     } else if (this.props.type === 'suite') {// 套系列表
-      let hrefUrl='/suite-details/'
-      return (
-        <ul className="suites-list layout-center-box">
-          {
-            _.map(this.state.data, (v,k) => {
-              let infoData = v.detail && v.detail.split && v.detail.split('|') || []
-              return (
-                <li key={k} className="item">
-                  <a className="img-box" href={hrefUrl+v.id} target="_brank">
-                    <MediaItem
-                      height={320}
-                      aspectRatio={'55:32'}
-                      mediaUrl={v.coverUrlWeb}
-                      water={false}
-                    />
-                  </a>
-                  <div className="tit-box">
-                    <h1>{v.name}</h1>
-                  </div>
-                  <div className="scrollbarall">
-                    <div className="scrollbar">
-                      <div className="track">
-                        <div className="thumb">
-                          <div className="end">
+      if (this.state.data && this.state.data.length > 0) {
+        let hrefUrl='/suite-details/'
+        return (
+          <ul className="suites-list layout-center-box">
+            {
+              _.map(this.state.data, (v,k) => {
+                let infoData = v.detail && v.detail.split && v.detail.split('|') || []
+                return (
+                  <li key={k} className="item">
+                    <a className="img-box" href={hrefUrl+v.id} target="_brank">
+                      <MediaItem
+                        height={320}
+                        aspectRatio={'55:32'}
+                        mediaUrl={v.coverUrlWeb}
+                        water={false}
+                      />
+                    </a>
+                    <div className="tit-box">
+                      <a href={hrefUrl+v.id} target="_brank">
+                        <h1>{v.name}</h1>
+                      </a>
+                    </div>
+                    <div className="scrollbarall">
+                      <div className="scrollbar">
+                        <div className="track">
+                          <div className="thumb">
+                            <div className="end">
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="viewport">
-                      {
-                        <div className="info">
-                          <div className="overview">
-                            {
-                              _.map(infoData,(v,k)=>{
-                                return (
-                                  <span key={k}>
+                      <div className="viewport">
+                        {
+                          <div className="info">
+                            <div className="overview">
+                              {
+                                _.map(infoData,(v,k)=>{
+                                  return (
+                                    <span key={k}>
                                     <p>{v}</p>
                                   </span>)
-                              })
-                            }
+                                })
+                              }
+                            </div>
                           </div>
-                        </div>
-                      }
+                        }
+                      </div>
                     </div>
-                  </div>
-                  <div className='price-box'>
-                    <div className='price'><span>{v.salePrice}</span><b>RMB</b></div>
-                    <a className='btn-detail' href={hrefUrl+v.id} target="_brank">详情</a>
-                  </div>
-                </li>
-              )
-            })
-          }
-        </ul>
-      )
+                    <div className='price-box'>
+                      <a href={hrefUrl+v.id} target="_brank">
+                        <div className='price'><span>{v.salePrice}</span><b>RMB</b></div>
+                      </a>
+                      <a className='btn-detail' href={hrefUrl+v.id} target="_brank">详情</a>
+                    </div>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        )
+      } else {
+        // 展示敬请期待图片....
+        return (
+          <div className="photo-box layout-center-box">
+            <img src='//img2.jsbn.com/trip/assets/images/jqqd.jpg' />
+          </div>
+        )
+      }
     }
 
   },
