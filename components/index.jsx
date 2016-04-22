@@ -332,7 +332,7 @@ const SampleList = React.createClass({
     }
   }
 })
-
+//<PageFooter />
 const Index = React.createClass({
   render () {
     return (
@@ -347,7 +347,6 @@ const Index = React.createClass({
         <SampleList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} platformType={this.props.dataParams.platformType} />
         <PringlesList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} platformType={this.props.dataParams.platformType} />
         <SuiteList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} platformType={this.props.dataParams.platformType} />
-        <PageFooter />
 
       </div>
     )
