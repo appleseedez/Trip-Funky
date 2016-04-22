@@ -5,14 +5,15 @@ import { MediaItem } from './common/media-item.jsx'
 
 const SuiteDetails = React.createClass({
   render () {
+    let q = this.props.dataParams.platformType===1?'@85q':'@95q'
     return (
-      <div className='layout-center-box'>
+      <div className='topic'>
         {
           _.map(this.state.details,(v,k)=>{
             return (
               <div key={k} className='bottom' style={{height:'auto'}}>
                 <div className='img-box'>
-                  <img src={v+'@95q'} />
+                  <img src={v+q} />
                 </div>
               </div>
             )
@@ -26,7 +27,11 @@ const SuiteDetails = React.createClass({
     dataParams: React.PropTypes.object
   },
   getDefaultProps(){
-    return {}
+    return {
+      dataParams:{
+        platformType:0
+      }
+    }
   },
   getInitialState() {
     return {

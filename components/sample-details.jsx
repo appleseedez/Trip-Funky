@@ -72,11 +72,11 @@ const SampleDetails = React.createClass({
                           <div className="round-shade-10"></div>
                         </a>
                       )
-                    } else {
-                      srcUrl += '@95q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                    } else {// 移动端
+                      srcUrl += '@85q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
                       return(
                         <li key={k} className="item item-current"
-                            data-big-img-url={v+'@95q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
+                            data-big-img-url={srcUrl}>
                           <a className="img-box">
                             <img src={srcUrl} />
                             <div className="round-shade-10"></div>
