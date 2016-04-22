@@ -18,7 +18,7 @@ const RecommendCityList = React.createClass({
                   return(
                     <li key={k} className={kClass}>
                       <a href={v.linkUrl} className="img-box">
-                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} />
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} platformType={this.props.platformType} />
                         <div className="layer-box"></div>
                         <div className="item-shadow"></div>
                       </a>
@@ -28,7 +28,7 @@ const RecommendCityList = React.createClass({
                   return(
                     <li key={k} className={kClass}>
                       <a className="img-box">
-                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} />
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:600'} width={398} water={false} platformType={this.props.platformType} />
                         <div className="layer-box"></div>
                         <div className="item-shadow"></div>
                       </a>
@@ -41,7 +41,7 @@ const RecommendCityList = React.createClass({
                   return(
                     <li key={k} className={kClass}>
                       <a href={v.linkUrl} className="img-box">
-                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} />
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} platformType={this.props.platformType} />
                         <div className="layer-box"></div>
                         <div className="item-shadow"></div>
                       </a>
@@ -51,7 +51,7 @@ const RecommendCityList = React.createClass({
                   return (
                     <li key={k} className={kClass}>
                       <a className="img-box">
-                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} />
+                        <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'398:299'} width={398} water={false} platformType={this.props.platformType} />
                         <div className="layer-box"></div>
                         <div className="item-shadow"></div>
                       </a>
@@ -88,6 +88,11 @@ const RecommendCityList = React.createClass({
 
 const Home = React.createClass({
   render() {
+    let bgUrl = '//img2.jsbn.com/trip/assets/images/home_banner_bg.jpg';
+    if (this.props.dataParams.platformType === 1) {
+      bgUrl += '@75q'
+    }
+
     return (
       <div className="mainhome-view">
         <div className="main-top">
@@ -107,7 +112,7 @@ const Home = React.createClass({
               <ul className="slider">
                 <li className="item">
                   <a className="img-box">
-                    <img src="//img2.jsbn.com/trip/assets/images/home_banner_bg.jpg"/>
+                    <img src={bgUrl}/>
                   </a>
                 </li>
               </ul>
@@ -132,11 +137,19 @@ const Home = React.createClass({
             </div>
             <img src={StyleImg['footer']}/>
           </div>
-          <RecommendCityList />
+          <RecommendCityList platformType={this.props.dataParams.platformType} />
         </div>
 
       </div>
     )
+  },
+
+  getDefaultProps(){
+    return {
+      dataParams:{
+        platformType:0
+      }
+    }
   }
 
 })

@@ -11,8 +11,6 @@ let paramsString = $('#J_Matrix').attr('data-params') || '{}' //从J_Matrix标�
 let params = JSON.parse(paramsString)
 params = adpateParam(params)
 
-let platform = $('#J_Matrix').attr('data-platform') || '0'
-
 /*渲染本模块的菜单*/
-ReactDOM.render(<Navigation currentUrl={'/pringles'} dataParams={params} platform={platform} />, document.getElementById('J_Nav'))
-ReactDOM.render(<PringlesDetails dataParams={params} platform={platform} />,document.getElementById('J_Main'))
+ReactDOM.render(<Navigation currentUrl={'/pringles'} dataParams={params} />, document.getElementById('J_Nav'))
+ReactDOM.render(<PringlesDetails dataParams={params} />,document.getElementById('J_Main'))

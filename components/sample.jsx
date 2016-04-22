@@ -16,7 +16,7 @@ const Sample = React.createClass({
       <div className='samples-view'>
         <div className='bannar-all-box' >
           <div className='slider-box bannar' id='slider_top'>
-            <MediaSlider {...SampleConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
+            <MediaSlider {...SampleConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} platformType={this.props.dataParams.platformType} />
           </div>
         </div>
         <div className='gray-bg-box'>
@@ -36,6 +36,7 @@ const Sample = React.createClass({
 
           <TripListItem {...SampleConfig['TripListItem']}
             type={'sample'}
+            platformType={this.props.dataParams.platformType}
             params={_.merge({'cityId':this.props.dataParams.cityId},SampleConfig['TripListItem'].params)}/>
 
           <div className="list-more-btn" id='J_MoreButton'>
@@ -50,7 +51,8 @@ const Sample = React.createClass({
     return {
       dataParams:{
         cityId:-1,
-        cityName:''
+        cityName:'',
+        platformType:0
       }
     }
   }

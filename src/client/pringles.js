@@ -8,7 +8,5 @@ let paramsString = $('#J_Matrix').attr('data-params') || '{}' //从J_Matrix标�
 let params = JSON.parse(paramsString)
 params = adpateParam(params)
 
-let platform = $('#J_Matrix').attr('data-platform') || '0'
-
-ReactDOM.render(<Navigation currentUrl={'/pringles'} dataParams={params} platform={platform} />, document.getElementById('J_Nav'))
+ReactDOM.render(<Navigation currentUrl={'/pringles'} dataParams={params} />, document.getElementById('J_Nav'))
 ReactDOM.render(<Pringles dataParams={params} />,document.getElementById('J_Main'))

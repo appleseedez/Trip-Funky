@@ -7,24 +7,17 @@ const SuiteDetails = React.createClass({
   render () {
     return (
       <div className='layout-center-box'>
-        <div className='container wedding-detail clearfix'>
-          <div className='detail-box container mgt30 clearfix'>
-            <div className='photo-box mgb30 clearfix'>
-              {
-                _.map(this.state.details,(v,k)=>{
-                  return (
-                    <div key={k} className='bottom' style={{height:'auto'}}>
-                      <div className='img-box'>
-                        <MediaItem width={1200} aspectRadio={'1:-1'} mediaUrl={v} water={false} />
-                      </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
-            <div className='content mgb30 clearfix'></div>
-          </div>
-        </div>
+        {
+          _.map(this.state.details,(v,k)=>{
+            return (
+              <div key={k} className='bottom' style={{height:'auto'}}>
+                <div className='img-box'>
+                  <img src={v+'@95q'} />
+                </div>
+              </div>
+            )
+          })
+        }
         <div className="photo-box-border"></div>
       </div>
     )

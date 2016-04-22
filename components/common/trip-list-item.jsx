@@ -18,6 +18,7 @@ const TripListItem = React.createClass({
                       aspectRatio={'2:3'}
                       mediaUrl={v.coverUrlWeb}
                       water={false}
+                      platformType={this.props.platformType}
                     />
                     <div className="title-box">
                       <h2>{v.name}</h2>
@@ -52,6 +53,7 @@ const TripListItem = React.createClass({
                         aspectRatio={'2:3'}
                         mediaUrl={v.coverUrlWeb}
                         water={false}
+                        platformType={this.props.platformType}
                       />
                       <div className="layer-box"></div>
                       <div className="info-box">
@@ -92,6 +94,7 @@ const TripListItem = React.createClass({
                         aspectRatio={'55:32'}
                         mediaUrl={v.coverUrlWeb}
                         water={false}
+                        platformType={this.props.platformType}
                       />
                     </a>
                     <div className="tit-box">
@@ -138,10 +141,10 @@ const TripListItem = React.createClass({
           </ul>
         )
       } else {
-        // 展示敬请期待图片....
+        // 展示即将推出图片....
         return (
           <div className="photo-box layout-center-box">
-            <img src='//img2.jsbn.com/trip/assets/images/jqqd.jpg' />
+            <img src='//img2.jsbn.com/trip/assets/images/jjtc.jpg' />
           </div>
         )
       }

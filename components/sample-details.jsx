@@ -36,7 +36,7 @@ const SampleDetails = React.createClass({
         <div className="layout-center-box">
           <div className="photo-show-box">
             <div className="cover-box">
-              <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={false} />
+              <MediaItem aspectRatio='2:3' height={210} mediaUrl={this.state.details.coverUrlWeb} water={false} platformType={this.props.dataParams.platformType}/>
               <div className='info-box'>
                 <h1>{this.state.details.name}</h1>
                 <p>
@@ -61,22 +61,22 @@ const SampleDetails = React.createClass({
                 {
                   _.map(this.state.details.pcDetailImages, (v,k)=>{
                     let srcUrl = v;
-                    if(this.props.platform === '0') {// 如果是pc端,需要切图
-                      srcUrl += '@1e_1c_0o_0l_130h_130w_90q.src';
+                    if(this.props.dataParams.platformType === 0) {// 如果是pc端,需要切图
+                      srcUrl += '@90q|1e_1c_0o_0l_130h_130w_90q.src';
                       return(
                         <a key={k} className="item item-current img-box"
                            data-uk-lightbox="{'group':'sample-img'}"
                            data-lightbox-type='image'
-                           href={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
+                           href={v+'@95q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'} >
                           <img src={srcUrl} />
                           <div className="round-shade-10"></div>
                         </a>
                       )
                     } else {
-                      srcUrl += '@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                      srcUrl += '@95q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
                       return(
                         <li key={k} className="item item-current"
-                            data-big-img-url={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
+                            data-big-img-url={v+'@95q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
                           <a className="img-box">
                             <img src={srcUrl} />
                             <div className="round-shade-10"></div>
@@ -109,7 +109,9 @@ const SampleDetails = React.createClass({
 
   getDefaultProps(){
     return {
-      platform:'0'
+      dataParams:{
+        platformType:0
+      }
     }
   },
 

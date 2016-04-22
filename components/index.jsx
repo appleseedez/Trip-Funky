@@ -6,6 +6,7 @@ import { MediaItem } from './common/media-item.jsx'
 import { IndexConfig } from './config/index-config'
 import { AdvTemplate } from './common/adv-template.jsx'
 import { AdvLangConfig,StyleImg } from './config/adv-lang-config'
+import { PageFooter } from './common/page-footer.jsx'
 
 const RecommendList = React.createClass({
   render () {
@@ -19,7 +20,7 @@ const RecommendList = React.createClass({
         <div className="photo-box layout-center-box">
           <img src={brandUrl} />
         </div>
-        <AdvTemplate data={this.state.data} />
+        <AdvTemplate data={this.state.data} platformType={this.props.platformType} />
       </div>
     )
   },
@@ -82,7 +83,7 @@ const SuiteList = React.createClass({
                   <li key={k} className="item-box">
                     <a href={'/suite-details/'+v.id} target='_blank'>
                       <div className="img-box">
-                        <MediaItem height={320} aspectRatio={'55:32'} mediaUrl={v.coverUrlWeb} water={false} />
+                        <MediaItem height={320} aspectRatio={'55:32'} mediaUrl={v.coverUrlWeb} water={false} platformType={this.props.platformType} />
                         <div className="layer-box"></div>
                       </div>
                       <div className="info-box">
@@ -167,7 +168,7 @@ const PringlesList = React.createClass({
                       </div>
                       <div className="mask"/>
                       <div className='img-box'>
-                        <MediaItem mediaUrl={v.coverUrlWeb} height={445} aspectRatio={'297:445'} water={false}/>
+                        <MediaItem mediaUrl={v.coverUrlWeb} height={445} aspectRatio={'297:445'} water={false} platformType={this.props.platformType}/>
                       </div>
                       <div className="title-box">
                         <h2>{v.name}</h2>
@@ -245,7 +246,7 @@ const SampleList = React.createClass({
                               <h1>{v.name}</h1>
                             </div>
                             <div className="mask"/>
-                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'598:900'} width={598} water={false} />
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'598:900'} width={598} water={false} platformType={this.props.platformType} />
                           </a>
                         </div>
                       </li>
@@ -261,7 +262,7 @@ const SampleList = React.createClass({
                               <h1>{v.name}</h1>
                             </div>
                             <div className="mask"/>
-                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} platformType={this.props.platformType} />
                           </a>
                         </div>
                       </li>
@@ -277,7 +278,7 @@ const SampleList = React.createClass({
                               <h1>{v.name}</h1>
                             </div>
                             <div className="mask"/>
-                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} platformType={this.props.platformType} />
                           </a>
                         </div>
                       </li>
@@ -293,7 +294,7 @@ const SampleList = React.createClass({
                               <h1>{v.name}</h1>
                             </div>
                             <div className="mask"/>
-                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} />
+                            <MediaItem mediaUrl={v.coverUrlWeb} aspectRatio={'2:3'} width={300} water={false} platformType={this.props.platformType} />
                           </a>
                         </div>
                       </li>
@@ -338,50 +339,15 @@ const Index = React.createClass({
       <div className='home-view'>
         <div className='bannar-all-box' >
           <div className='slider-box bannar' id='slider_top'>
-            <MediaSlider {...IndexConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
+            <MediaSlider {...IndexConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} platformType={this.props.dataParams.platformType} />
           </div>
         </div>
 
-        <RecommendList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName}/>
-        <SampleList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName}/>
-        <PringlesList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} />
-        <SuiteList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} />
-
-        <div className="gray-bg-box">
-          <div className="promise">
-            <div className="block-tit-box">
-              <div className="border-box">
-                <h1><span>金色旅拍</span><b>九大承诺</b></h1>
-                <h2></h2>
-              </div>
-              <p>Golden trip, so it's really good.</p>
-            </div>
-            <div className="photo-box photo-box-mgt10 layout-center-box">
-              <img src={IndexConfig['Banner'][0].imageUrl} />
-            </div>
-            <div className="bt-border btborder">
-              <ul className="list-promise">
-                <li><h2>全城最高性价比</h2><p>City maximum price </p></li>
-                <li><h2>先行制定拍摄计划</h2><p>City maximum price </p></li>
-                <li><h2>绝无任何隐形消费</h2><p>City maximum price </p></li>
-              </ul>
-            </div>
-            <div className="bt-border">
-              <ul className="list-promise">
-                <li><h2>不满意免费补拍或重拍</h2><p>City maximum price </p></li>
-                <li><h2>重拍不满意退款</h2><p>City maximum price </p></li>
-                <li><h2>全城独家激光摄影棚 </h2><p>City maximum price </p></li>
-              </ul>
-            </div>
-            <div className="bt-border">
-              <ul className="list-promise">
-                <li><h2>全场Dior,CHANEL美妆</h2><p>City maximum price </p></li>
-                <li><h2>主城九区免费送件上门</h2><p>City maximum price </p></li>
-                <li><h2>400全程回访监督</h2><p>City maximum price </p></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <RecommendList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} platformType={this.props.dataParams.platformType} />
+        <SampleList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} platformType={this.props.dataParams.platformType} />
+        <PringlesList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} platformType={this.props.dataParams.platformType} />
+        <SuiteList cityId={this.props.dataParams.cityId} cityName={this.props.dataParams.cityName} platformType={this.props.dataParams.platformType} />
+        <PageFooter />
 
       </div>
     )

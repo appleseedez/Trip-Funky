@@ -25,6 +25,7 @@ const AdvTemplate=React.createClass({
                           aspectRatio={'398:299'}
                           mediaUrl={v.coverUrlWeb}
                           water={false}
+                          platformType={this.props.platformType}
                         />
                         <div className="cover-layer"/>
                       </a>
@@ -39,6 +40,7 @@ const AdvTemplate=React.createClass({
                           aspectRatio={'398:299'}
                           mediaUrl={v.coverUrlWeb}
                           water={false}
+                          platformType={this.props.platformType}
                         />
                         <div className="cover-layer"/>
                       </a>
@@ -55,8 +57,14 @@ const AdvTemplate=React.createClass({
       return (
         <div className="photo-box layout-center-box">
           <a href={this.props.data[0].linkUrl} target='_blank'>
-            <img src={this.props.data[0].coverUrlWeb} />
-            <div className="cover-layer"></div>
+            <MediaItem
+              width={1200}
+              aspectRatio={'1200:-1'}
+              mediaUrl={v.coverUrlWeb}
+              water={false}
+              platformType={this.props.platformType}
+            />
+            <div className="cover-layer"/>
           </a>
         </div>
       )
@@ -71,6 +79,7 @@ const AdvTemplate=React.createClass({
               aspectRatio={'398:600'}
               mediaUrl={this.props.data[0].coverUrlWeb}
               water={false}
+              platformType={this.props.platformType}
             />
             <div className="cover-layer"></div>
           </a>
@@ -83,6 +92,7 @@ const AdvTemplate=React.createClass({
               aspectRatio={'398:600'}
               mediaUrl={this.props.data[0].coverUrlWeb}
               water={false}
+              platformType={this.props.platformType}
             />
             <div className="cover-layer"></div>
           </a>
@@ -109,6 +119,7 @@ const AdvTemplate=React.createClass({
                             aspectRatio={'398:299'}
                             mediaUrl={v.coverUrlWeb}
                             water={false}
+                            platformType={this.props.platformType}
                           />
                           <div className="cover-layer"/>
                         </a>
@@ -123,6 +134,7 @@ const AdvTemplate=React.createClass({
                             aspectRatio={'398:299'}
                             mediaUrl={v.coverUrlWeb}
                             water={false}
+                            platformType={this.props.platformType}
                           />
                           <div className="cover-layer"/>
                         </a>

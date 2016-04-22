@@ -37,6 +37,7 @@ const Suite = React.createClass({
 
           <TripListItem {...SuiteConfig['TripListItem']}
             type={'suite'}
+            platformType={this.props.dataParams.platformType}
             params={_.merge({'cityId':this.props.dataParams.cityId},SuiteConfig['TripListItem'].params)}
           />
 

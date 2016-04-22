@@ -16,7 +16,7 @@ const Pringles = React.createClass({
       <div className='pringles-view'>
         <div className='bannar-all-box' >
           <div className='slider-box bannar' id='slider_top'>
-            <MediaSlider {...PringlesConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} />
+            <MediaSlider {...PringlesConfig['MediaSlider']} params={{'cityId':this.props.dataParams.cityId}} platformType={this.props.dataParams.platformType} />
           </div>
         </div>
         <div className="gray-bg-box">
@@ -36,6 +36,7 @@ const Pringles = React.createClass({
 
           <TripListItem {...PringlesConfig['TripListItem']}
             type={'pringles'}
+            platformType={this.props.dataParams.platformType}
             params={_.merge({'cityId':this.props.dataParams.cityId},PringlesConfig['TripListItem'].params)}/>
 
           <div className="list-more-btn" id='J_MoreButton'>

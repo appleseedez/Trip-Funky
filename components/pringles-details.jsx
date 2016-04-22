@@ -55,14 +55,14 @@ const PringlesDetails = React.createClass({
                 {
                   _.map(this.state.details.pcDetailImages, (v,k)=> {
                     let srcUrl = v;
-                    if(this.props.platform === '0') {// 如果是pc端,需要切图
-                      srcUrl += '@90Q|1e_1c_0o_0l_130h_130w_90q.src';
+                    if(this.props.dataParams.platformType === 0) {// 如果是pc端,需要切图
+                      srcUrl += '@90q|1e_1c_0o_0l_130h_130w_90q.src';
                     } else {
-                      srcUrl += '@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
+                      srcUrl += '@95q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10';
                     }
                     return(
                       <li key={k} className="item item-current"
-                          data-big-img-url={v+'@90Q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
+                          data-big-img-url={v+'@95q|watermark=1&object=c2h1aXlpbi5wbmc&t=80&p=5&y=10&x=10'}>
                         <a className="img-box">
                           <img src={srcUrl} />
                           <div className="round-shade-10"></div>
@@ -77,7 +77,7 @@ const PringlesDetails = React.createClass({
             <div className="pringles-info-box">
               <div className="theme">
                 <h1>{this.state.details.name}</h1>
-                <h2>{'拍摄时间SHOOTING TIME: '+shootingTime}</h2>
+                <h2>{'拍摄时间 ShootingTime: '+shootingTime}</h2>
               </div>
               <div className="info-box">
                 <div className="name">
@@ -119,7 +119,9 @@ const PringlesDetails = React.createClass({
 
   getDefaultProps(){
     return {
-      platform:'0'
+      dataParams:{
+        platformType:0
+      }
     }
   },
 
