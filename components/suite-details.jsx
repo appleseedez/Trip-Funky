@@ -45,8 +45,8 @@ const SuiteDetails = React.createClass({
       fetch(fetchUrl)
         .then(res => {return res.json()})
         .then(j=>{
+          let images = []
           if(j.success && j.data.length > 0) {
-            let images = []
             let origin = JSON.parse(j.data[0]['pcDetailImages'])
             let keys = [
               'pc_detailImages',
@@ -61,9 +61,13 @@ const SuiteDetails = React.createClass({
                 images.push(v1)
               })
             })
+          }
 
-            // 因为后台返回的pcDetailImages是一个字符串,所以要转换成json
+          // 如果详情图片没有,那么就跳转到在线咨询
+          if (images.length > 0) {
             this.setState({details:images});
+          } else {
+            window.location.href="http://chat16.live800.com/live800/chatClient/chatbox.jsp?companyID=533854&configID=75804&jid=6937519900&skillId=4927";
           }
         })
     }

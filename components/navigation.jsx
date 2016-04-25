@@ -96,10 +96,11 @@ const Navigation = React.createClass({
             <div className="win-rig-btn" id="J_win_rig_btn">
               <div className="menu-box">
                 <div className="wx-menu-btn">
-                  <div className="bit-1"></div>
-                  <div className="bit-2"></div>
-                  <div className="bit-3"></div>
-                  <div className="bit-4"></div>
+                  <span className="wx-city-name">
+                    {this.props.dataParams.cityName ? this.props.dataParams.cityName : ''}
+                  </span>
+                  <div className="address-ico"></div>
+                  <div className="back-btn"></div>
                 </div>
               </div>
             </div>
