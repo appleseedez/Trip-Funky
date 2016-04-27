@@ -236,8 +236,6 @@ $.fn.Slider = function(obj){
             $items.each(function(i){
                 $(this).bind("click",function(){
                     imgIndex = i;
-                    console.log(i);
-
                     changeImg($(this),imgIndex);
                     return false;
                 });

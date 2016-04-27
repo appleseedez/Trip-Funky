@@ -72,7 +72,6 @@ const MediaSlider = React.createClass({
       fetch(this.props.baseUrl + this.props.dataUrl + p)
       .then(res => {return res.json()})
       .then(j=>{
-      console.log('did:',j.data);
         this.setState({ data:j.data },()=>{
           $('#slider_top').length>0 && $('#slider_top').Slider()
         })

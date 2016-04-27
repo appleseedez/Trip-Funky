@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% include modules/meta.html%>
-    <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.min.css">
-    <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.gradient.min.css">
-    <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.min.css">
-    <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.gradient.min.css">
-    <!--<link rel="stylesheet" href="/script/vendors/mediaelement/mediaelementplayer.min.css">-->
-    <link rel="stylesheet" href="/styles/app-lp.css?t=1">
-    <!--[if gte IE 9]><!-->
-    <script src="/script/jquery-2.2.0.min.js"></script>
-    <script src="/script/vendors/uikit/js/uikit.min.js" charset="utf-8"></script>
-    <script src="/script/vendors/uikit/js/core/modal.min.js" charset="utf-8"></script>
-    <script src="/script/vendors/uikit/js/components/lightbox.min.js" charset="utf-8"></script>
-    <!--<![endif]-->
-    <!--[if lt IE 9]>
-    <script src="/script/jquery-1.12.1.min.js" charset="utf-8"></script>
-    <script src="/script/html5shiv.min.js" charset="utf-8"></script>
-    <script src="/script/es5-shim.min.js" charset="utf-8"></script>
-    <script src="/script/es5-sham.min.js" charset="utf-8"></script>
-    <script src="/script/console-polyfill.js" charset="utf-8"></script>
-    <script src="/script/vendors/uikit/js/core/modal.min.js" charset="utf-8"></script>
-    <script src="/script/vendors/uikit/js/components/lightbox-ie8.min.js" charset="utf-8"></script>
-    <script src="/script/vendors/uikit/js/uikit-ie8.min.js" charset="utf-8"></script>
-    <![endif]-->
-    <script src="/script/react.min.js" charset="utf-8"></script>
-    <script src="/script/react-dom.min.js" charset="utf-8"></script>
-    <script src="/script/adaptation.min.js" charset="utf-8"></script>
-    <script src="/script/vendors/slider.js" charset="utf-8"></script>
-    <script src="/script/vendors/jquery.tinyscrollbar.js" charset="utf-8"></script>
-  	<!--<script src="/script/vendors/mediaelement/mediaelement-and-player.min.js"></script>-->
-    <!--[if gte IE 8]><!-->
-    <script src='/script/store.min.js' charset='utf-8'></script>
-    <!--<![endif]-->
-    <!--[if lt IE 8]>
-    <script src='/script/store+json2.min.js' charset='utf-8'></script>
-    <![endif]-->
-    <script src="/script/util.js?t=1" charset="utf-8"></script>
+    <% include modules/meta.html %>
+    <% if (mode === 'production') {%>
+      <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.min.css">
+      <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.gradient.min.css">
+      <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.min.css">
+      <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.gradient.min.css">
+      <!--<link rel="stylesheet" href="/script/vendors/mediaelement/mediaelementplayer.min.css">-->
+      <link rel="stylesheet" href="http://img2.jsbn.com/trip/assets/styles/app-lp.css?t=2">
+      <!--[if gte IE 9]><!-->
+      <script src="http://img2.jsbn.com/trip/assets/script/jquery-2.2.0.min.js"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/uikit/js/uikit.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/uikit/js/core/modal.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/uikit/js/components/lightbox.min.js" charset="utf-8"></script>
+      <!--<![endif]-->
+      <!--[if lt IE 9]>
+      <script src="http://img2.jsbn.com/trip/assets/script/jquery-1.12.1.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/html5shiv.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/es5-shim.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/es5-sham.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/console-polyfill.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/uikit/js/uikit-ie8.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/uikit/js/core/modal.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/uikit/js/components/lightbox-ie8.min.js" charset="utf-8"></script>
+      <![endif]-->
+      <script src="http://img2.jsbn.com/trip/assets/script/react.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/react-dom.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/adaptation.min.js" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/slider.js?t=1" charset="utf-8"></script>
+      <script src="http://img2.jsbn.com/trip/assets/script/vendors/jquery.tinyscrollbar.js" charset="utf-8"></script>
+      <!--<script src="/script/vendors/mediaelement/mediaelement-and-player.min.js"></script>-->
+      <!--[if gte IE 8]><!-->
+      <script src='http://img2.jsbn.com/trip/assets/script/store.min.js' charset='utf-8'></script>
+      <!--<![endif]-->
+      <!--[if lt IE 8]>
+      <script src='http://img2.jsbn.com/trip/assets/script/store+json2.min.js' charset='utf-8'></script>
+      <![endif]-->
+      <script src="http://img2.jsbn.com/trip/assets/script/util.js?t=1" charset="utf-8"></script>
+    <% } else {%>
+      <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.min.css">
+      <link rel="stylesheet" href="/script/vendors/uikit/css/uikit.gradient.min.css">
+      <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.min.css">
+      <link rel="stylesheet" href="/script/vendors/uikit/css/components/slidenav.gradient.min.css">
+      <!--<link rel="stylesheet" href="/script/vendors/mediaelement/mediaelementplayer.min.css">-->
+      <link rel="stylesheet" href="/styles/app-lp.css?t=1">
+      <!--[if gte IE 9]><!-->
+      <script src="/script/jquery-2.2.0.min.js"></script>
+      <script src="/script/vendors/uikit/js/uikit.min.js" charset="utf-8"></script>
+      <script src="/script/vendors/uikit/js/core/modal.min.js" charset="utf-8"></script>
+      <script src="/script/vendors/uikit/js/components/lightbox.min.js" charset="utf-8"></script>
+      <!--<![endif]-->
+      <!--[if lt IE 9]>
+      <script src="/script/jquery-1.12.1.min.js" charset="utf-8"></script>
+      <script src="/script/html5shiv.min.js" charset="utf-8"></script>
+      <script src="/script/es5-shim.min.js" charset="utf-8"></script>
+      <script src="/script/es5-sham.min.js" charset="utf-8"></script>
+      <script src="/script/console-polyfill.js" charset="utf-8"></script>
+      <script src="/script/vendors/uikit/js/core/modal.min.js" charset="utf-8"></script>
+      <script src="/script/vendors/uikit/js/components/lightbox-ie8.min.js" charset="utf-8"></script>
+      <script src="/script/vendors/uikit/js/uikit-ie8.min.js" charset="utf-8"></script>
+      <![endif]-->
+      <script src="/script/react.min.js" charset="utf-8"></script>
+      <script src="/script/react-dom.min.js" charset="utf-8"></script>
+      <script src="/script/adaptation.min.js" charset="utf-8"></script>
+      <script src="/script/vendors/slider.js" charset="utf-8"></script>
+      <script src="/script/vendors/jquery.tinyscrollbar.js" charset="utf-8"></script>
+      <!--<script src="/script/vendors/mediaelement/mediaelement-and-player.min.js"></script>-->
+      <!--[if gte IE 8]><!-->
+      <script src='/script/store.min.js' charset='utf-8'></script>
+      <!--<![endif]-->
+      <!--[if lt IE 8]>
+      <script src='/script/store+json2.min.js' charset='utf-8'></script>
+      <![endif]-->
+      <script src="/script/util.js?t=1" charset="utf-8"></script>
+    <% }%>
   </head>
   <body>
     <div id='root' class='<%= platformClass %>'>
@@ -57,9 +95,16 @@
         <% include modules/footer.html %>
       </div>
     </div>
-    <script src='/script/vendors/mousewheel.js' charset='utf-8'></script>
-    <script src='/script/vendors/scroll.js?t=1' charset='utf-8'></script>
+
     <% include modules/thirdpartservice.html %>
     <!--<script src="http://api.video.taobao.com//video/getPlayerJS"></script>-->
+
+    <% if (mode === 'production') {%>
+      <script src='http://img2.jsbn.com/trip/assets/script/vendors/mousewheel.js' charset='utf-8'></script>
+      <script src='http://img2.jsbn.com/trip/assets/script/vendors/scroll.js?t=1' charset='utf-8'></script>
+    <% } else {%>
+      <script src='/script/vendors/mousewheel.js' charset='utf-8'></script>
+      <script src='/script/vendors/scroll.js' charset='utf-8'></script>
+    <% }%>
   </body>
 </html>
