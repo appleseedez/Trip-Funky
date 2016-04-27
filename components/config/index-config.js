@@ -8,12 +8,6 @@ const IndexConfig = {
         'height': 640
     }, BaseConfig), // 广告轮播
 
-    'Banner':[
-        {
-            'imageUrl': '//img2.jsbn.com/trip/assets/images/ypxx-sy.png'
-        }
-    ],
-
     'SampleRecommend': _.merge({
         dataUrl: 'sample',
         params: {

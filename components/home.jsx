@@ -88,7 +88,7 @@ const RecommendCityList = React.createClass({
 
 const Home = React.createClass({
   render() {
-    let bgUrl = '//img2.jsbn.com/trip/assets/images/home_banner_bg.jpg';
+    let bgUrl = '//img2.jsbn.com/trip/assets/images/home_banner_bg.jpg@95q';
     if (this.props.dataParams.platformType === 1) {
       bgUrl += '@75q'
     }

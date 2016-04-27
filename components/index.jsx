@@ -10,7 +10,7 @@ import { PageFooter } from './common/page-footer.jsx'
 
 const RecommendList = React.createClass({
   render () {
-    let brandUrl = '//img2.jsbn.com/trip/assets/images/follow-me-default.jpg';
+    let brandUrl = '//img2.jsbn.com/trip/assets/images/follow-me-default.jpg@95q';
     if (AdvLangConfig[this.props.cityName]) {
       brandUrl = AdvLangConfig[this.props.cityName]['FOLLOW']
     }
