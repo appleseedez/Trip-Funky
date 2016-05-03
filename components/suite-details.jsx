@@ -67,7 +67,7 @@ const SuiteDetails = React.createClass({
           if (images.length > 0) {
             this.setState({details:images});
           } else {
-            window.location.href="http://chat16.live800.com/live800/chatClient/chatbox.jsp?companyID=533854&configID=75804&jid=6937519900&skillId=4927";
+            window.location.href="https://static.meiqia.com/dist/standalone.html?eid=12020";
           }
         })
     }
